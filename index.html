@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javed Tahir - Développeur Full Stack</title>
+    <meta name="description" content="Portfolio de Javed Tahir, développeur full-stack spécialisé en web, mobile et IA">
+    <meta name="keywords" content="développeur, full-stack, React, Python, Android, IA, Marseille">
+    <meta property="og:title" content="Javed Tahir - Développeur Full Stack">
+    <meta property="og:description" content="Portfolio et projets de développement web, mobile et IA">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Google Analytics Placeholder -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="Javed Tahir Logo">
+                </a>
+                <nav class="header__nav" id="navMenu">
+                    <a href="index.html" class="header__nav-link header__nav-link--active">Accueil</a>
+                    <a href="projets.html" class="header__nav-link">Projets</a>
+                    <a href="about.html" class="header__nav-link">À propos</a>
+                    <a href="contact.html" class="header__nav-link">Contact</a>
+                </nav>
+                <button class="header__burger" id="burgerMenu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">Javed Tahir<span class="hero__title-dot">.</span></h1>
+                <p class="hero__subtitle">Développeur Full Stack • Web • Mobile • IA</p>
+                <a href="projets.html" class="btn btn--primary hero__cta">
+                    Découvrir mes projets →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrousel 3D - Projets Phares -->
+    <section class="carousel-3d">
+        <div class="container">
+            <h2 class="section-title">Projets Phares</h2>
+            <div class="carousel-3d__wrapper">
+                <div class="carousel-3d__scene" id="carousel3DScene">
+                    <!-- Cards générées dynamiquement par JS -->
+                </div>
+                <button class="carousel-3d__nav carousel-3d__nav--prev" id="carouselPrev" aria-label="Projet précédent">‹</button>
+                <button class="carousel-3d__nav carousel-3d__nav--next" id="carouselNext" aria-label="Projet suivant">›</button>
+                <div class="carousel-3d__dots" id="carouselDots">
+                    <!-- Dots générés dynamiquement -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grille des catégories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Explorer par catégorie</h2>
+            <div class="categories__grid">
+                <a href="projets.html#webdesign" class="category-card">
+                    <div class="category-card__icon">🌐</div>
+                    <h3 class="category-card__title">Web Design & Sites</h3>
+                    <p class="category-card__desc">Sites vitrines et plateformes web modernes</p>
+                    <div class="category-card__bar"></div>
+                </a>
+                <a href="projets.html#webapp" class="category-card">
+                    <div class="category-card__icon">🎮</div>
+                    <h3 class="category-card__title">Applications Web Interactives</h3>
+                    <p class="category-card__desc">Expériences web immersives et jeux</p>
+                    <div class="category-card__bar"></div>
+                </a>
+                <a href="projets.html#ia" class="category-card">
+                    <div class="category-card__icon">🤖</div>
+                    <h3 class="category-card__title">IA Learnings & ML</h3>
+                    <p class="category-card__desc">Projets d'intelligence artificielle et machine learning</p>
+                    <div class="category-card__bar"></div>
+                </a>
+                <a href="projets.html#data" class="category-card">
+                    <div class="category-card__icon">📊</div>
+                    <h3 class="category-card__title">Data & Business Intelligence</h3>
+                    <p class="category-card__desc">Analyse de données et tableaux de bord</p>
+                    <div class="category-card__bar"></div>
+                </a>
+                <a href="projets.html#android" class="category-card">
+                    <div class="category-card__icon">📱</div>
+                    <h3 class="category-card__title">Applications Android</h3>
+                    <p class="category-card__desc">Applications mobiles natives Android</p>
+                    <div class="category-card__bar"></div>
+                </a>
+                <a href="projets.html#automation" class="category-card">
+                    <div class="category-card__icon">⚙️</div>
+                    <h3 class="category-card__title">Automatisation & Workflow</h3>
+                    <p class="category-card__desc">Automatisation de tâches et workflows intelligents</p>
+                    <div class="category-card__bar"></div>
+                </a>
+                <a href="projets.html#mediapipe" class="category-card">
+                    <div class="category-card__icon">👁️</div>
+                    <h3 class="category-card__title">MediaPipe Détection d'Image</h3>
+                    <p class="category-card__desc">Reconnaissance visuelle et tracking en temps réel</p>
+                    <div class="category-card__bar"></div>
+                </a>
+                <a href="projets.html#tidal" class="category-card">
+                    <div class="category-card__icon">🎵</div>
+                    <h3 class="category-card__title">Son Live Tidal</h3>
+                    <p class="category-card__desc">Live coding musical et performances sonores</p>
+                    <div class="category-card__bar"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__copyright">© 2025 Javed Tahir</p>
+                <div class="footer__links">
+                    <a href="https://github.com/jean-jawed" target="_blank" rel="noopener" class="footer__link">GitHub</a>
+                    <a href="https://linkedin.com/in/javed-tahir" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
+                    <a href="mailto:jawed_tahir@yahoo.fr" class="footer__link">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

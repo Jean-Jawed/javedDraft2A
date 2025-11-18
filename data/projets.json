@@ -1,0 +1,597 @@
+{
+  "projets": [
+    {
+      "id": "generation-ia",
+      "titre": "Génération-ia.fr",
+      "categorie": "webdesign",
+      "images": {
+        "image1": "assets/images/generation-ia.jpg",
+        "image2": "assets/images/generation-ia2.jpg"
+      },
+      "descriptions": {
+        "courte": "Plateforme IA française",
+        "moyenne": "Plateforme référence dédiée à l'intelligence artificielle en France",
+        "longue": "Site vitrine présentant les dernières avancées en IA avec articles et ressources"
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "SEO"],
+      "liens": {
+        "projet": "https://generation-ia.fr",
+        "github": "https://github.com/jean-jawed/generation-ia"
+      },
+      "badges": [],
+      "ordre": 1,
+      "phare": false
+    },
+    {
+      "id": "jean-plume",
+      "titre": "Jean-Plume.fr",
+      "categorie": "webdesign",
+      "images": {
+        "image1": "assets/images/jean-plume.jpg",
+        "image2": "assets/images/jean-plume2.jpg"
+      },
+      "descriptions": {
+        "courte": "Site groupe jazz",
+        "moyenne": "Site officiel du groupe de jazz Jean Plume",
+        "longue": "Plateforme présentant le groupe, sa musique avec intégration audio et vidéo"
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "Audio API", "Responsive"],
+      "liens": {
+        "projet": "https://jean-plume.fr",
+        "github": "https://github.com/jean-jawed/jean-plume"
+      },
+      "badges": [],
+      "ordre": 2,
+      "phare": false
+    },
+    {
+      "id": "cours-julien",
+      "titre": "Cours-Julien.fr",
+      "categorie": "webdesign",
+      "images": {
+        "image1": "assets/images/cours-julien.jpg",
+        "image2": "assets/images/cours-julien2.jpg"
+      },
+      "descriptions": {
+        "courte": "Guide du quartier Cours Julien",
+        "moyenne": "Guide interactif du quartier artistique marseillais",
+        "longue": "Application web avec carte interactive, géolocalisation et informations sur les commerces"
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "Leaflet.js", "Geolocation"],
+      "liens": {
+        "projet": "https://cours-julien.fr",
+        "github": "https://github.com/jean-jawed/cours-julien"
+      },
+      "badges": [],
+      "ordre": 3,
+      "phare": false
+    },
+    {
+      "id": "stellartrack",
+      "titre": "StellarTrack",
+      "categorie": "webdesign",
+      "images": {
+        "image1": "assets/images/stellartrack.jpg",
+        "image2": "assets/images/stellartrack2.jpg"
+      },
+      "descriptions": {
+        "courte": "Visualisation 3D de l'espace",
+        "moyenne": "Visualisation en temps réel des satellites et objets spatiaux",
+        "longue": "Application web 3D interactive utilisant les données NASA pour suivre les satellites"
+      },
+      "technologies": ["Three.js", "NASA API", "WebGL", "JavaScript"],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/StellarTrack",
+        "github": "https://github.com/jean-jawed/StellarTrack"
+      },
+      "badges": [],
+      "ordre": 4,
+      "phare": false
+    },
+    {
+      "id": "wembystats",
+      "titre": "WembyStats",
+      "categorie": "webdesign",
+      "images": {
+        "image1": "https://images.unsplash.com/photo-1546519638-68e109498ffc",
+        "image2": "https://images.unsplash.com/photo-1591103161701-5df2f5cfc5c1"
+      },
+      "descriptions": {
+        "courte": "Fanpage Victor Wembanyama",
+        "moyenne": "Site dédié aux statistiques et performances de Victor Wembanyama",
+        "longue": "Plateforme présentant les stats NBA en temps réel et analyses des matchs"
+      },
+      "technologies": ["React", "NBA API", "Chart.js", "Responsive"],
+      "liens": {},
+      "badges": ["Coming Soon"],
+      "ordre": 5,
+      "phare": false
+    },
+    {
+      "id": "launchschedule",
+      "titre": "LaunchSchedule",
+      "categorie": "webdesign",
+      "images": {
+        "image1": "https://images.unsplash.com/photo-1517976487492-5750f3195933",
+        "image2": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2"
+      },
+      "descriptions": {
+        "courte": "Lancements fusées en temps réel",
+        "moyenne": "Plateforme recensant tous les lancements spatiaux mondiaux",
+        "longue": "Application web affichant le calendrier des lancements de fusées et satellites avec données en direct"
+      },
+      "technologies": ["JavaScript", "API REST", "Live Data", "Responsive"],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/LaunchSchedule",
+        "github": "https://github.com/jean-jawed/LaunchSchedule"
+      },
+      "badges": [],
+      "ordre": 6,
+      "phare": true
+    },
+    {
+      "id": "financequest",
+      "titre": "FinanceQuest",
+      "categorie": "webapp",
+      "images": {
+        "image1": "assets/images/financequest.jpg",
+        "image2": "assets/images/financequest2.jpg"
+      },
+      "descriptions": {
+        "courte": "Simulateur d'investissements",
+        "moyenne": "Outil éducatif pour simuler des stratégies d'investissement",
+        "longue": "Application interactive permettant de tester différentes stratégies financières avec données marché réelles"
+      },
+      "technologies": ["React", "Financial APIs", "Chart.js", "Responsive"],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/FinanceQuest",
+        "github": "https://github.com/jean-jawed/FinanceQuest"
+      },
+      "badges": [],
+      "ordre": 1,
+      "phare": false
+    },
+    {
+      "id": "equiflow-web",
+      "titre": "Equiflow",
+      "categorie": "webapp",
+      "images": {
+        "image1": "assets/images/equiflow.jpg",
+        "image2": "assets/images/equiflow2.jpg"
+      },
+      "descriptions": {
+        "courte": "Gestion dépenses de groupe",
+        "moyenne": "Application de rééquilibrage automatique des comptes",
+        "longue": "Outil web pour équilibrer les dépenses partagées entre amis ou colocataires avec calculs automatiques"
+      },
+      "technologies": ["React", "JavaScript", "LocalStorage", "PWA"],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/Equiflow",
+        "github": "https://github.com/jean-jawed/Equiflow"
+      },
+      "badges": [],
+      "ordre": 2,
+      "phare": true
+    },
+    {
+      "id": "rewindprotocol",
+      "titre": "RewindProtocol",
+      "categorie": "webapp",
+      "images": {
+        "image1": "assets/images/rewindprotocol.jpg",
+        "image2": "assets/images/rewindprotocol2.jpg"
+      },
+      "descriptions": {
+        "courte": "Jeu 2D rétro",
+        "moyenne": "Jeu de plateforme avec mécanique de rembobinage temporel",
+        "longue": "Jeu web interactif utilisant Next.js et Canvas API avec système de révision des actions"
+      },
+      "technologies": ["Next.js", "Canvas API", "JavaScript", "Game Development"],
+      "liens": {
+        "projet": "https://rewindprotocol.vercel.app",
+        "github": "https://github.com/jean-jawed/RewindProtocol"
+      },
+      "badges": [],
+      "ordre": 3,
+      "phare": false
+    },
+    {
+      "id": "shoot-pov",
+      "titre": "Jeu Shoot POV",
+      "categorie": "webapp",
+      "images": {
+        "image1": "assets/images/shoot-pov.jpg",
+        "image2": "assets/images/shoot-pov2.jpg"
+      },
+      "descriptions": {
+        "courte": "FPS immersif navigateur",
+        "moyenne": "Jeu de tir à la première personne en 3D",
+        "longue": "Expérience gaming WebGL avec graphismes 3D et contrôles fluides"
+      },
+      "technologies": ["Three.js", "WebGL", "JavaScript", "3D Graphics"],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/ShootPOV",
+        "github": "https://github.com/jean-jawed/ShootPOV"
+      },
+      "badges": [],
+      "ordre": 4,
+      "phare": false
+    },
+    {
+      "id": "marketwatch",
+      "titre": "MarketWatch",
+      "categorie": "webapp",
+      "images": {
+        "image1": "assets/images/marketwatch.jpg",
+        "image2": "assets/images/marketwatch2.jpg"
+      },
+      "descriptions": {
+        "courte": "Surveillance marchés temps réel",
+        "moyenne": "Dashboard financier avec données live",
+        "longue": "Application de monitoring des marchés boursiers avec alertes et visualisations temps réel"
+      },
+      "technologies": ["React", "WebSocket", "Chart.js", "Real-time Data"],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/MarketWatch",
+        "github": "https://github.com/jean-jawed/MarketWatch"
+      },
+      "badges": [],
+      "ordre": 5,
+      "phare": false
+    },
+    {
+      "id": "talklikethem",
+      "titre": "TalkLikeThem.fr",
+      "categorie": "ia",
+      "images": {
+        "image1": "assets/images/talklikethem.jpg",
+        "image2": "assets/images/talklikethem2.jpg"
+      },
+      "descriptions": {
+        "courte": "Chatbot imitation style WhatsApp",
+        "moyenne": "IA conversationnelle reproduisant des styles d'écriture",
+        "longue": "Chatbot utilisant le NLP pour imiter le style de conversation de différentes personnes"
+      },
+      "technologies": ["Deepseek API", "NLP", "JavaScript", "WebSocket"],
+      "liens": {
+        "projet": "https://talklikethem.fr",
+        "github": "https://github.com/jean-jawed/TalkLikeThem"
+      },
+      "badges": [],
+      "ordre": 1,
+      "phare": false
+    },
+    {
+      "id": "marketpredikt",
+      "titre": "MarketPredikt",
+      "categorie": "ia",
+      "images": {
+        "image1": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3",
+        "image2": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44"
+      },
+      "descriptions": {
+        "courte": "Prédiction actifs financiers ML",
+        "moyenne": "Application desktop de prédiction des marchés",
+        "longue": "Outil Python utilisant le machine learning pour anticiper les évolutions des actifs financiers"
+      },
+      "technologies": ["Python", "Machine Learning", "Pandas", "Scikit-learn"],
+      "liens": {},
+      "badges": ["Coming Soon"],
+      "ordre": 2,
+      "phare": true
+    },
+    {
+      "id": "prediktcityheat",
+      "titre": "PrediktCityHeat",
+      "categorie": "ia",
+      "images": {
+        "image1": "assets/images/prediktcityheat.jpg",
+        "image2": "assets/images/prediktcityheat2.jpg"
+      },
+      "descriptions": {
+        "courte": "Prévision températures urbaines",
+        "moyenne": "Modèle de prédiction des îlots de chaleur",
+        "longue": "Système ML prédisant les variations de température dans les zones urbaines"
+      },
+      "technologies": ["Python", "Machine Learning", "Weather API", "Data Analysis"],
+      "liens": {
+        "projet": "https://github.com/jean-jawed/PrediktCityHeat",
+        "github": "https://github.com/jean-jawed/PrediktCityHeat"
+      },
+      "badges": [],
+      "ordre": 3,
+      "phare": false
+    },
+    {
+      "id": "sql-practice",
+      "titre": "SQL Practice",
+      "categorie": "data",
+      "images": {
+        "image1": "assets/images/sql-practice.jpg",
+        "image2": "assets/images/sql-practice2.jpg"
+      },
+      "descriptions": {
+        "courte": "Outil pratique SQL en ligne",
+        "moyenne": "Environnement d'apprentissage interactif SQL",
+        "longue": "Plateforme web permettant de s'exercer aux requêtes SQL avec éditeur et base de données intégrée"
+      },
+      "technologies": ["SQLite", "JavaScript", "Monaco Editor", "Web SQL"],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/SQL-Practice",
+        "github": "https://github.com/jean-jawed/SQL-Practice"
+      },
+      "badges": [],
+      "ordre": 1,
+      "phare": false
+    },
+    {
+      "id": "dbreader",
+      "titre": "DBReader",
+      "categorie": "data",
+      "images": {
+        "image1": "assets/images/dbreader.jpg",
+        "image2": "assets/images/dbreader2.jpg"
+      },
+      "descriptions": {
+        "courte": "Lecteur bases de données",
+        "moyenne": "Outil de visualisation et exploration de BDD",
+        "longue": "Application desktop pour explorer et analyser les structures de bases de données"
+      },
+      "technologies": ["Python", "SQL", "GUI", "Database Management"],
+      "liens": {
+        "github": "https://github.com/jean-jawed/DBReader"
+      },
+      "badges": [],
+      "ordre": 2,
+      "phare": false
+    },
+    {
+      "id": "dashboard-universel",
+      "titre": "Dashboard Universel",
+      "categorie": "data",
+      "images": {
+        "image1": "assets/images/dashboard-universel.jpg",
+        "image2": "assets/images/dashboard-universel2.jpg"
+      },
+      "descriptions": {
+        "courte": "Tableau de bord analytics",
+        "moyenne": "Solution de visualisation de données modulaire",
+        "longue": "Dashboard configurable pour afficher différentes métriques et KPI avec graphiques interactifs"
+      },
+      "technologies": ["D3.js", "Chart.js", "API REST", "JavaScript"],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/Dashboard-Universel",
+        "github": "https://github.com/jean-jawed/Dashboard-Universel"
+      },
+      "badges": [],
+      "ordre": 3,
+      "phare": false
+    },
+    {
+      "id": "api-eventsmarseille",
+      "titre": "API EventsMarseille",
+      "categorie": "data",
+      "images": {
+        "image1": "https://images.unsplash.com/photo-1526392060635-9d6019884377",
+        "image2": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4"
+      },
+      "descriptions": {
+        "courte": "Scraping événements Marseille",
+        "moyenne": "API agrégateur d'événements culturels",
+        "longue": "Service web collectant et centralisant les événements culturels marseillais"
+      },
+      "technologies": ["Python", "BeautifulSoup", "Selenium", "API REST"],
+      "liens": {},
+      "badges": ["Coming Soon"],
+      "ordre": 4,
+      "phare": false
+    },
+    {
+      "id": "spacevox",
+      "titre": "SpaceVox",
+      "categorie": "android",
+      "images": {
+        "image1": "assets/images/spacevox.jpg",
+        "image2": "assets/images/spacevox2.jpg"
+      },
+      "descriptions": {
+        "courte": "Jeu reconnaissance vocale spatial",
+        "moyenne": "Jeu mobile utilisant la commande vocale",
+        "longue": "Jeu Android où le joueur contrôle le vaisseau par commandes vocales dans un environnement spatial"
+      },
+      "technologies": ["Kotlin", "Speech API", "Android", "Game Development"],
+      "liens": {
+        "projet": "https://spacegame.fr"
+      },
+      "badges": [],
+      "ordre": 1,
+      "phare": false
+    },
+    {
+      "id": "neuroharmonics",
+      "titre": "Neuroharmonics",
+      "categorie": "android",
+      "images": {
+        "image1": "assets/images/neuroharmonics.jpg",
+        "image2": "assets/images/neuroharmonics2.jpg"
+      },
+      "descriptions": {
+        "courte": "App bien-être et sons",
+        "moyenne": "Application de relaxation et méditation",
+        "longue": "Outil de bien-utilisant les sons binauraux et fréquences spécifiques pour la détente"
+      },
+      "technologies": ["Kotlin", "Audio Processing", "Android", "Material Design"],
+      "liens": {
+        "projet": "https://neuroharmonics.fr"
+      },
+      "badges": [],
+      "ordre": 2,
+      "phare": false
+    },
+    {
+      "id": "quarantedieux",
+      "titre": "QuaranteDeux",
+      "categorie": "android",
+      "images": {
+        "image1": "assets/images/quarantedieux.jpg",
+        "image2": "assets/images/quarantedieux2.jpg"
+      },
+      "descriptions": {
+        "courte": "Jeu de société numérique",
+        "moyenne": "Adaptation mobile d'un jeu de société populaire",
+        "longue": "Jeu Android reprenant les mécaniques d'un jeu de cartes classique avec mode multijoueur"
+      },
+      "technologies": ["Kotlin", "Game Logic", "Android", "Multiplayer"],
+      "liens": {
+        "projet": "https://42lejeu.fr"
+      },
+      "badges": [],
+      "ordre": 3,
+      "phare": false
+    },
+    {
+      "id": "equiflow-android",
+      "titre": "Equiflow Android",
+      "categorie": "android",
+      "images": {
+        "image1": "assets/images/equiflow-android.jpg",
+        "image2": "assets/images/equiflow-android2.jpg"
+      },
+      "descriptions": {
+        "courte": "Gestion comptes groupe mobile",
+        "moyenne": "Application Android de rééquilibrage financier",
+        "longue": "Version mobile de l'outil de gestion des dépenses partagées avec synchronisation cloud"
+      },
+      "technologies": ["Kotlin", "Room DB", "Android", "Material Design"],
+      "liens": {
+        "github": "https://github.com/jean-jawed/Equiflow-Android"
+      },
+      "badges": [],
+      "ordre": 4,
+      "phare": false
+    },
+    {
+      "id": "n8n-workflows",
+      "titre": "n8n Workflows",
+      "categorie": "automation",
+      "images": {
+        "image1": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+        "image2": "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+      },
+      "descriptions": {
+        "courte": "Automatisation workflows",
+        "moyenne": "Bibliothèque de workflows d'automatisation",
+        "longue": "Collection de workflows n8n prêts à l'emploi pour automatiser des processus métier"
+      },
+      "technologies": ["n8n", "Automation", "APIs", "Workflow"],
+      "liens": {},
+      "badges": ["Coming Soon"],
+      "ordre": 1,
+      "phare": false
+    },
+    {
+      "id": "langchain-agents",
+      "titre": "LangChain Agents",
+      "categorie": "automation",
+      "images": {
+        "image1": "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+        "image2": "https://images.unsplash.com/photo-1677442135130-2c7e47c56c84"
+      },
+      "descriptions": {
+        "courte": "Orchestration agents IA",
+        "moyenne": "Système d'agents IA spécialisés",
+        "longue": "Framework d'orchestration d'agents IA utilisant LangChain pour des tâches complexes"
+      },
+      "technologies": ["Python", "LangChain", "AI Agents", "LLM"],
+      "liens": {},
+      "badges": ["Coming Soon"],
+      "ordre": 2,
+      "phare": false
+    },
+    {
+      "id": "camtrack",
+      "titre": "CamTrack",
+      "categorie": "mediapipe",
+      "images": {
+        "image1": "assets/images/camtrack.jpg",
+        "image2": "assets/images/camtrack2.jpg"
+      },
+      "descriptions": {
+        "courte": "Tracking mouvements webcam",
+        "moyenne": "Détection et suivi des mouvements corporels",
+        "longue": "Application Python utilisant MediaPipe pour le tracking en temps réel des poses et gestes"
+      },
+      "technologies": ["Python", "MediaPipe", "Computer Vision", "OpenCV"],
+      "liens": {
+        "github": "https://github.com/jean-jawed/CamTrack"
+      },
+      "badges": [],
+      "ordre": 1,
+      "phare": false
+    },
+    {
+      "id": "camtracktest",
+      "titre": "CamTrackTest",
+      "categorie": "mediapipe",
+      "images": {
+        "image1": "assets/images/camtracktest.jpg",
+        "image2": "assets/images/camtracktest2.jpg"
+      },
+      "descriptions": {
+        "courte": "Test tracking web en ligne",
+        "moyenne": "Démo web de computer vision",
+        "longue": "Application web démontrant les capacités de MediaPipe pour la détection de poses"
+      },
+      "technologies": ["JavaScript", "Vercel", "MediaPipe", "Serverless"],
+      "liens": {
+        "projet": "https://camtracktest.vercel.app",
+        "github": "https://github.com/jean-jawed/CamTrackTest"
+      },
+      "badges": [],
+      "ordre": 2,
+      "phare": false
+    },
+    {
+      "id": "banque-sets-electro",
+      "titre": "Banque de Sets Électro",
+      "categorie": "tidal",
+      "images": {
+        "image1": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+        "image2": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4"
+      },
+      "descriptions": {
+        "courte": "Collection sets live coding",
+        "moyenne": "Bibliothèque de performances musicales algorithmiques",
+        "longue": "Collection de sets de musique électronique générés via live coding avec Tidal Cycles"
+      },
+      "technologies": ["Tidal Cycles", "Haskell", "SuperCollider", "Live Coding"],
+      "liens": {
+        "github": "https://github.com/jean-jawed/tidal-sets"
+      },
+      "badges": [],
+      "ordre": 1,
+      "phare": false
+    },
+    {
+      "id": "demo-video-livecoding",
+      "titre": "Démo Vidéo Live Coding",
+      "categorie": "tidal",
+      "images": {
+        "image1": "https://images.unsplash.com/photo-1571330735066-03aaa9429d89",
+        "image2": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745"
+      },
+      "descriptions": {
+        "courte": "Performance musicale en direct",
+        "moyenne": "Démonstration de live coding musical",
+        "longue": "Vidéo de performance utilisant Tidal Cycles pour créer de la musique électronique en temps réel"
+      },
+      "technologies": ["Live Performance", "Video", "Tidal Cycles", "Music Production"],
+      "liens": {
+        "projet": "https://youtube.com/playlist?list=..."
+      },
+      "badges": [],
+      "ordre": 2,
+      "phare": false
+    }
+  ]
+}
