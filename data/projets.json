@@ -5,8 +5,8 @@
       "titre": "Génération-ia.fr",
       "categorie": "webdesign",
       "images": {
-        "image1": "assets/images/generation-ia.jpg",
-        "image2": "assets/images/generation-ia2.jpg"
+        "image1": "assets/images/generation-ia.png",
+        "image2": "assets/images/generation-ia2.png"
       },
       "descriptions": {
         "courte": "Plateforme IA française",
@@ -15,8 +15,8 @@
       },
       "technologies": ["HTML", "CSS", "JavaScript", "SEO"],
       "liens": {
-        "projet": "https://generation-ia.fr",
-        "github": "https://github.com/jean-jawed/generation-ia"
+        "projet": "https://génération-ia.fr",
+        "github": "https://github.com/Jean-Jawed/SiteWebG-n-ration-IA"
       },
       "badges": [],
       "ordre": 1,
@@ -27,8 +27,8 @@
       "titre": "Jean-Plume.fr",
       "categorie": "webdesign",
       "images": {
-        "image1": "assets/images/jean-plume.jpg",
-        "image2": "assets/images/jean-plume2.jpg"
+        "image1": "assets/images/jean-plume.png",
+        "image2": "assets/images/jean-plume2.png"
       },
       "descriptions": {
         "courte": "Site groupe jazz",
@@ -37,8 +37,8 @@
       },
       "technologies": ["HTML", "CSS", "JavaScript", "Audio API", "Responsive"],
       "liens": {
-        "projet": "https://jean-plume.fr",
-        "github": "https://github.com/jean-jawed/jean-plume"
+        "projet": "https://jean-jawed.github.io/SiteWebJeanPlumeDraft4/",
+        "github": "https://github.com/Jean-Jawed/SiteWebJeanPlumeDraft4"
       },
       "badges": [],
       "ordre": 2,
@@ -50,7 +50,7 @@
       "categorie": "webdesign",
       "images": {
         "image1": "assets/images/cours-julien.jpg",
-        "image2": "assets/images/cours-julien2.jpg"
+        "image2": "assets/images/cours-julien2.png"
       },
       "descriptions": {
         "courte": "Guide du quartier Cours Julien",
@@ -84,7 +84,7 @@
         "projet": "https://jean-jawed.github.io/StellarTrack",
         "github": "https://github.com/jean-jawed/StellarTrack"
       },
-      "badges": [],
+      "badges": ["Coming Soon"],
       "ordre": 4,
       "phare": false
     },
@@ -93,8 +93,8 @@
       "titre": "WembyStats",
       "categorie": "webdesign",
       "images": {
-        "image1": "https://images.unsplash.com/photo-1546519638-68e109498ffc",
-        "image2": "https://images.unsplash.com/photo-1591103161701-5df2f5cfc5c1"
+        "image1": "assets/images/wembystats.jpg",
+        "image2": "assets/images/wembystats2.png"
       },
       "descriptions": {
         "courte": "Fanpage Victor Wembanyama",
@@ -107,13 +107,36 @@
       "ordre": 5,
       "phare": false
     },
+  
+    {
+      "id": "rolaphotos",
+      "titre": "Portfolio photographe",
+      "categorie": "webdesign",
+      "images": {
+        "image1": "assets/images/rolaphotos.png",
+        "image2": "assets/images/rolaphotos2.png"
+      },
+      "descriptions": {
+        "courte": "Portfolio photographe",
+        "moyenne": "Site web élégant de type galerie photos",
+        "longue": "Ce site web est un exemple de portfolio personnalisé et adapté au style de l'artiste. Sobre et dynamique, il permet de se déplacer comme dans une galerie dans les travaux de l'auteure."
+      },
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/SiteWebRolaDraft2/",
+        "github": "https://github.com/jean-jawed/SiteWebRolaDraft2"
+      },
+      "badges": [],
+      "ordre": 6,
+      "phare": false
+    },
     {
       "id": "launchschedule",
       "titre": "LaunchSchedule",
       "categorie": "webdesign",
       "images": {
-        "image1": "https://images.unsplash.com/photo-1517976487492-5750f3195933",
-        "image2": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2"
+        "image1": "assets/images/launchschedule.png",
+        "image2": "assets/images/launchschedule2.png"
       },
       "descriptions": {
         "courte": "Lancements fusées en temps réel",
@@ -122,11 +145,11 @@
       },
       "technologies": ["JavaScript", "API REST", "Live Data", "Responsive"],
       "liens": {
-        "projet": "https://jean-jawed.github.io/LaunchSchedule",
+        "projet": "https://jean-jawed.github.io/LaunchSchedule/",
         "github": "https://github.com/jean-jawed/LaunchSchedule"
       },
       "badges": [],
-      "ordre": 6,
+      "ordre": 7,
       "phare": true
     },
     {
@@ -135,7 +158,7 @@
       "categorie": "webapp",
       "images": {
         "image1": "assets/images/financequest.jpg",
-        "image2": "assets/images/financequest2.jpg"
+        "image2": "assets/images/financequest2.png"
       },
       "descriptions": {
         "courte": "Simulateur d'investissements",
@@ -147,7 +170,7 @@
         "projet": "https://jean-jawed.github.io/FinanceQuest",
         "github": "https://github.com/jean-jawed/FinanceQuest"
       },
-      "badges": [],
+      "badges": ["Coming Soon"],
       "ordre": 1,
       "phare": false
     },
@@ -157,7 +180,7 @@
       "categorie": "webapp",
       "images": {
         "image1": "assets/images/equiflow.jpg",
-        "image2": "assets/images/equiflow2.jpg"
+        "image2": "assets/images/equiflow2.png"
       },
       "descriptions": {
         "courte": "Gestion dépenses de groupe",
@@ -166,7 +189,7 @@
       },
       "technologies": ["React", "JavaScript", "LocalStorage", "PWA"],
       "liens": {
-        "projet": "https://jean-jawed.github.io/Equiflow",
+        "projet": "https://equi-flow.vercel.app",
         "github": "https://github.com/jean-jawed/Equiflow"
       },
       "badges": [],
@@ -178,8 +201,8 @@
       "titre": "RewindProtocol",
       "categorie": "webapp",
       "images": {
-        "image1": "assets/images/rewindprotocol.jpg",
-        "image2": "assets/images/rewindprotocol2.jpg"
+        "image1": "assets/images/rewindprotocol.png",
+        "image2": "assets/images/rewindprotocol2.png"
       },
       "descriptions": {
         "courte": "Jeu 2D rétro",
@@ -188,7 +211,7 @@
       },
       "technologies": ["Next.js", "Canvas API", "JavaScript", "Game Development"],
       "liens": {
-        "projet": "https://rewindprotocol.vercel.app",
+        "projet": "https://jean-jawed.github.io/RewindProtocol/",
         "github": "https://github.com/jean-jawed/RewindProtocol"
       },
       "badges": [],
@@ -200,8 +223,8 @@
       "titre": "Jeu Shoot POV",
       "categorie": "webapp",
       "images": {
-        "image1": "assets/images/shoot-pov.jpg",
-        "image2": "assets/images/shoot-pov2.jpg"
+        "image1": "assets/images/shoot.png",
+        "image2": "assets/images/shoot2.jpg"
       },
       "descriptions": {
         "courte": "FPS immersif navigateur",
@@ -210,10 +233,10 @@
       },
       "technologies": ["Three.js", "WebGL", "JavaScript", "3D Graphics"],
       "liens": {
-        "projet": "https://jean-jawed.github.io/ShootPOV",
-        "github": "https://github.com/jean-jawed/ShootPOV"
+        "projet": "#",
+        "github": "#"
       },
-      "badges": [],
+      "badges": ["coming soon"],
       "ordre": 4,
       "phare": false
     },
@@ -222,8 +245,8 @@
       "titre": "MarketWatch",
       "categorie": "webapp",
       "images": {
-        "image1": "assets/images/marketwatch.jpg",
-        "image2": "assets/images/marketwatch2.jpg"
+        "image1": "assets/images/marketwatch.png",
+        "image2": "assets/images/marketwatch2.png"
       },
       "descriptions": {
         "courte": "Surveillance marchés temps réel",
@@ -232,7 +255,7 @@
       },
       "technologies": ["React", "WebSocket", "Chart.js", "Real-time Data"],
       "liens": {
-        "projet": "https://jean-jawed.github.io/MarketWatch",
+        "projet": "https://marketwatch-roan.vercel.app/",
         "github": "https://github.com/jean-jawed/MarketWatch"
       },
       "badges": [],
@@ -257,7 +280,7 @@
         "projet": "https://talklikethem.fr",
         "github": "https://github.com/jean-jawed/TalkLikeThem"
       },
-      "badges": [],
+      "badges": ["coming soon"],
       "ordre": 1,
       "phare": false
     },
@@ -271,7 +294,7 @@
       },
       "descriptions": {
         "courte": "Prédiction actifs financiers ML",
-        "moyenne": "Application desktop de prédiction des marchés",
+        "moyenne": "Application desktop de prédiction des marchés. A télécharger",
         "longue": "Outil Python utilisant le machine learning pour anticiper les évolutions des actifs financiers"
       },
       "technologies": ["Python", "Machine Learning", "Pandas", "Scikit-learn"],
@@ -391,8 +414,8 @@
       "titre": "SpaceVox",
       "categorie": "android",
       "images": {
-        "image1": "assets/images/spacevox.jpg",
-        "image2": "assets/images/spacevox2.jpg"
+        "image1": "assets/images/spacevox.png",
+        "image2": "assets/images/spacevox2.png"
       },
       "descriptions": {
         "courte": "Jeu reconnaissance vocale spatial",
@@ -429,12 +452,12 @@
       "phare": false
     },
     {
-      "id": "quarantedieux",
+      "id": "quarantedeux",
       "titre": "QuaranteDeux",
       "categorie": "android",
       "images": {
-        "image1": "assets/images/quarantedieux.jpg",
-        "image2": "assets/images/quarantedieux2.jpg"
+        "image1": "assets/images/quarantedeux.png",
+        "image2": "assets/images/quarantedeux2.png"
       },
       "descriptions": {
         "courte": "Jeu de société numérique",
