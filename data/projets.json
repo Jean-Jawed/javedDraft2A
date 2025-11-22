@@ -102,7 +102,11 @@
         "longue": "Plateforme présentant les stats NBA en temps réel et analyses des matchs"
       },
       "technologies": ["React", "NBA API", "Chart.js", "Responsive"],
-      "liens": {},
+      "liens": {
+        
+        "projet": "https://nba-wemby-test-web.vercel.app/",
+        "github": "https://github.com/jean-jawed/nbaWembyTestWeb"
+      },
       "badges": ["Coming Soon"],
       "ordre": 5,
       "phare": false

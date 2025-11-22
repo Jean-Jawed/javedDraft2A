@@ -120,6 +120,10 @@ function createProjectCard(projet) {
   card.setAttribute('aria-label', `Projet: ${projet.titre}`);
   card.setAttribute('tabindex', '0');
   
+  // Wrapper de l'image
+  const imageWrapper = document.createElement('div');
+  imageWrapper.className = 'project-card-unified__image-wrapper';
+  
   // Image
   const imageDiv = document.createElement('div');
   imageDiv.className = 'project-card-unified__image';
@@ -133,22 +137,41 @@ function createProjectCard(projet) {
   );
   imageDiv.appendChild(img);
   
-  // Contenu de base
-  const content = document.createElement('div');
-  content.className = 'project-card-unified__content';
-  content.innerHTML = `
-    <h3 class="project-card-unified__title">${projet.titre}</h3>
-    <p class="project-card-unified__description">${projet.descriptions.courte}</p>
-    <div class="project-card-unified__tech">
-      ${projet.technologies.slice(0, 2).map(tech => 
+  // Overlay (au-dessus de l'image) - SANS LES BOUTONS
+  const overlay = document.createElement('div');
+  overlay.className = 'project-card-unified__overlay';
+  
+  overlay.innerHTML = `
+    <p class="project-card-unified__overlay-desc">${projet.descriptions.moyenne}</p>
+    <div class="project-card-unified__overlay-tech">
+      ${projet.technologies.slice(0, 3).map(tech => 
         `<span class="tech-badge">${tech}</span>`
       ).join('')}
     </div>
   `;
   
-  // Overlay
-  const overlay = document.createElement('div');
-  overlay.className = 'project-card-unified__overlay';
+  imageWrapper.appendChild(imageDiv);
+  imageWrapper.appendChild(overlay);
+  
+  // Badge Coming Soon (dans le wrapper)
+  if (projet.badges.includes('Coming Soon')) {
+    const badge = document.createElement('div');
+    badge.className = 'project-card-unified__badge project-card-unified__badge--soon';
+    badge.textContent = 'Coming Soon';
+    imageWrapper.appendChild(badge);
+  }
+  
+  card.appendChild(imageWrapper);
+  
+  // Titre au repos (en dessous de l'image)
+  const titleRest = document.createElement('h3');
+  titleRest.className = 'project-card-unified__title-rest';
+  titleRest.textContent = projet.titre;
+  card.appendChild(titleRest);
+  
+  // NOUVEAU - Boutons en dessous du titre (visibles au hover)
+  const actionsHover = document.createElement('div');
+  actionsHover.className = 'project-card-unified__actions-hover';
   
   let actionsHTML = '';
   if (projet.liens.projet) {
@@ -159,35 +182,13 @@ function createProjectCard(projet) {
     actionsHTML += `<button class="project-card-unified__btn project-card-unified__btn--tertiary btn-code" aria-label="Voir le code source">Voir le code</button>`;
   }
   
-  overlay.innerHTML = `
-    <h3 class="project-card-unified__overlay-title">${projet.titre}</h3>
-    <p class="project-card-unified__overlay-desc">${projet.descriptions.moyenne}</p>
-    <div class="project-card-unified__overlay-tech">
-      ${projet.technologies.slice(0, 2).map(tech => 
-        `<span class="tech-badge">${tech}</span>`
-      ).join('')}
-    </div>
-    <div class="project-card-unified__actions">
-      ${actionsHTML}
-    </div>
-  `;
-  
-  card.appendChild(imageDiv);
-  card.appendChild(content);
-  card.appendChild(overlay);
-  
-  // Badge Coming Soon
-  if (projet.badges.includes('Coming Soon')) {
-    const badge = document.createElement('div');
-    badge.className = 'project-card-unified__badge project-card-unified__badge--soon';
-    badge.textContent = 'Coming Soon';
-    card.appendChild(badge);
-  }
+  actionsHover.innerHTML = actionsHTML;
+  card.appendChild(actionsHover);
   
   // Event listeners pour les boutons
-  const btnVisit = overlay.querySelector('.btn-visit');
-  const btnDetails = overlay.querySelector('.btn-details');
-  const btnCode = overlay.querySelector('.btn-code');
+  const btnVisit = actionsHover.querySelector('.btn-visit');
+  const btnDetails = actionsHover.querySelector('.btn-details');
+  const btnCode = actionsHover.querySelector('.btn-code');
   
   if (btnVisit) {
     btnVisit.addEventListener('click', (e) => {
