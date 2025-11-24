@@ -65,6 +65,27 @@
       "badges": [],
       "ordre": 3,
       "phare": false
+    },{
+      "id": "4films",
+      "titre": "4 FILMS",
+      "categorie": "webdesign",
+      "images": {
+        "image1": "assets/images/4films.png",
+        "image2": "assets/images/4films2.png"
+      },
+      "descriptions": {
+        "courte": "Site web ciné-club",
+        "moyenne": "Site web qui réalise des top 4 de films dans de multiples catégories et filtres croisés",
+        "longue": "Utilisant les données de TMDB (The Movie DataBase), ce site va permettre de récupérer les films les mieux notés par année, pays, plateforme de streaming etc... mais aussi chercher des films ressemblant au chef d'oeuvre qui vient de vous frapper."
+      },
+      "technologies": ["Vanilla JS", "CSS", "API REST"],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/4Films",
+        "github": "https://github.com/jean-jawed/4Films"
+      },
+      "badges": [],
+      "ordre": 4,
+      "phare": false
     },
     {
       "id": "stellartrack",
