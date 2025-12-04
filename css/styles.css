@@ -542,12 +542,17 @@ button {
     padding-left: 2rem;
 }
 
+/* ⭐ v1.2.2: Flexbox pour séparer flèches et cards */
 .streaming-scroll {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     position: relative;
     overflow: visible;
 }
 
 .streaming-scroll__container {
+    flex: 1;  /* Prend l'espace restant */
     display: flex;
     gap: 1.5rem;
     overflow-x: auto;
@@ -555,17 +560,16 @@ button {
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding: 1rem 0;
+    padding: 1rem 0;  /* Plus besoin de 80px ! */
 }
 
 .streaming-scroll__container::-webkit-scrollbar {
     display: none;
 }
 
+/* Navigation arrows - ⭐ v1.2.2: Position static, flex item */
 .streaming-scroll__nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    flex-shrink: 0;  /* Ne rétrécit pas */
     background: rgba(0,0,0,0.8);
     color: var(--color-white);
     width: 50px;
@@ -575,9 +579,9 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 5;
     opacity: 0;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .streaming-section:hover .streaming-scroll__nav {
@@ -588,12 +592,11 @@ button {
     background: var(--color-accent);
 }
 
+/* ⭐ v1.2.2: Plus besoin de left/right, flexbox positionne automatiquement */
 .streaming-scroll__nav--left {
-    left: 1rem;
 }
 
 .streaming-scroll__nav--right {
-    right: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -607,35 +610,27 @@ button {
    ============================================ */
 
 /* Card de base */
+
+/* Card de base - v1.2 */
 .project-card-unified {
     position: relative;
     flex: 0 0 320px;
-    background: transparent;              /* ⭐ v1.1: était var(--color-bg-lighter) */
+    background: transparent;
     border-radius: 8px;
     cursor: pointer;
     scroll-snap-align: start;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
-    /* ⭐ v1.1: height: 180px supprimée */
-    /* ⭐ v1.1: overflow: hidden supprimé */
 }
 
-.project-card-unified:hover {
-    transform: scale(1.7);                /* ⭐ v1.1: était scale(1.12) */
-    z-index: 10;
-    /* ⭐ v1.1: box-shadow supprimée */
-}
+/* ⭐ v1.2: Hover scale supprimé, remplacé par modale */
 
-/* ⭐ v1.1: NOUVEAU - Wrapper de l'image */
 .project-card-unified__image-wrapper {
     position: relative;
     width: 100%;
     height: 180px;
     border-radius: 8px;
-    /* ⭐ v1.1.4: overflow: hidden supprimé pour permettre le débordement au hover */
 }
 
-/* Image */
 .project-card-unified__image {
     width: 100%;
     height: 100%;
@@ -648,7 +643,6 @@ button {
     display: block;
 }
 
-/* ⭐ v1.1: NOUVEAU - Titre au repos (en dessous de l'image) */
 .project-card-unified__title-rest {
     padding: 0.5rem 0 0 0;
     font-size: 0.9rem;
@@ -656,69 +650,134 @@ button {
     text-align: left;
 }
 
-/* Overlay - MODIFIÉ v1.1 */
+/* ⭐ v1.2: Overlay et actions supprimés */
 .project-card-unified__overlay {
-    position: absolute;
-    top: 0;                               /* ⭐ v1.1: était bottom: 0 */
-    left: 0;
-    right: 0;
-    bottom: 0;                            /* ⭐ v1.1: NOUVEAU - couvre toute la card */
-    background: linear-gradient(0deg,     /* ⭐ v1.1: gradient modifié */
-        rgba(20,20,20,0.95) 0%, 
-        rgba(20,20,20,0.7) 50%, 
-        rgba(20,20,20,0.3) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-    display: flex;                        /* ⭐ v1.1: NOUVEAU */
-    flex-direction: column;               /* ⭐ v1.1: NOUVEAU */
-    justify-content: flex-end;            /* ⭐ v1.1: NOUVEAU */
-    padding: 1.5rem;
-}
-
-.project-card-unified:hover .project-card-unified__overlay {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.project-card-unified__overlay-title {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-white);
+    display: none;
 }
 
 .project-card-unified__overlay-desc {
-    font-size: 0.85rem;
-    color: var(--color-secondary);
-    margin-bottom: 0.75rem;
-    line-height: 1.4;
+    display: none;
 }
 
 .project-card-unified__overlay-tech {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    /* ⭐ v1.1.2: margin-bottom supprimé car plus de boutons ici */
+    display: none;
 }
 
-/* ⭐ v1.1.2: Ancienne classe .project-card-unified__actions supprimée */
-
-/* ⭐ v1.1.2: NOUVEAU - Boutons en dessous du titre */
 .project-card-unified__actions-hover {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    display: none;
 }
 
-.project-card-unified:hover .project-card-unified__actions-hover {
-    opacity: 1;
-    pointer-events: auto;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .project-card-unified__btn {
     padding: 0.5rem 1rem;
@@ -802,6 +861,96 @@ button {
     .project-card-unified__actions-hover {
         display: none;
     }
+}
+
+/* ============================================
+   HOVER MODAL - v1.2
+   ============================================ */
+
+/* Backdrop */
+.hover-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 900;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.hover-modal-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modale hover - ⭐ v1.2.4: Position calculée par JS */
+.hover-modal {
+    position: fixed;
+    /* top et left définis par JS */
+    transform: scale(0.9);
+    transform-origin: center;
+    z-index: 901;
+    width: 90%;
+    max-width: 480px;  /* ⭐ v1.2: 1.5× la card repos (320px × 1.5) */
+    background: var(--color-bg-lighter);
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+}
+
+.hover-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.hover-modal__image {
+    width: 100%;
+    height: 270px;  /* ⭐ v1.2: 1.5× image repos (180px × 1.5) */
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+
+.hover-modal__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hover-modal__content {
+    padding: 2rem;
+}
+
+.hover-modal__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.hover-modal__desc {
+    font-size: 0.95rem;
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.hover-modal__tech {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.hover-modal__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* ============================================

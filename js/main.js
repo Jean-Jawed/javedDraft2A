@@ -230,7 +230,170 @@ function createProjectCard(projet) {
     }
   });
   
+  // ===================================
+  // MODALE HOVER (Desktop uniquement)
+  // ===================================
+  
+  if (window.innerWidth > 768) {
+    card.addEventListener('mouseenter', () => {
+      // Annuler le timer précédent si existe
+      if (hoverModalTimer) {
+        clearTimeout(hoverModalTimer);
+      }
+      
+      // Délai de 400ms avant ouverture
+      hoverModalTimer = setTimeout(() => {
+        createHoverModal(projet, card);
+      }, 400);
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      // Annuler le timer si on sort avant l'ouverture
+      if (hoverModalTimer) {
+        clearTimeout(hoverModalTimer);
+        hoverModalTimer = null;
+      }
+    });
+  }
+  
   return card;
+}
+
+// ===================================
+// MODALE HOVER - v1.2
+// ===================================
+
+let hoverModalTimer = null;
+let currentHoverModal = null;
+
+function createHoverModal(projet, cardElement) {
+  // Desktop uniquement
+  if (window.innerWidth <= 768) return;
+  
+  // Calculer la position de la card
+  const cardRect = cardElement.getBoundingClientRect();
+  
+  // Taille de la modale
+  const modalWidth = 480;
+  const modalHeight = 450;  // Hauteur fixe
+  
+  // Calculer position centrée sur la card
+  let modalTop = cardRect.top + (cardRect.height / 2) - (modalHeight / 2);
+  let modalLeft = cardRect.left + (cardRect.width / 2) - (modalWidth / 2);
+  
+  // Limiter pour éviter débordement écran
+  const margin = 20;
+  modalTop = Math.max(margin, Math.min(modalTop, window.innerHeight - modalHeight - margin));
+  modalLeft = Math.max(margin, Math.min(modalLeft, window.innerWidth - modalWidth - margin));
+  
+  // Créer le backdrop
+  const backdrop = document.createElement('div');
+  backdrop.className = 'hover-modal-backdrop';
+  
+  // Créer la modale
+  const modal = document.createElement('div');
+  modal.className = 'hover-modal';
+  
+  // Positionner la modale
+  modal.style.top = modalTop + 'px';
+  modal.style.left = modalLeft + 'px';
+  
+  // Générer les boutons
+  let actionsHTML = '';
+  if (projet.liens.projet) {
+    actionsHTML += `<button class="project-card-unified__btn project-card-unified__btn--primary btn-visit-hover" aria-label="Visiter le site">Visiter</button>`;
+  }
+  actionsHTML += `<button class="project-card-unified__btn project-card-unified__btn--secondary btn-details-hover" aria-label="Voir les détails">Détails</button>`;
+  if (projet.liens.github) {
+    actionsHTML += `<button class="project-card-unified__btn project-card-unified__btn--tertiary btn-code-hover" aria-label="Voir le code">Code</button>`;
+  }
+  
+  // Contenu de la modale
+  modal.innerHTML = `
+    <div class="hover-modal__image">
+      <img src="${projet.images.image1}" alt="${projet.titre}">
+    </div>
+    <div class="hover-modal__content">
+      <h3 class="hover-modal__title">${projet.titre}</h3>
+      <p class="hover-modal__desc">${projet.descriptions.moyenne}</p>
+      <div class="hover-modal__tech">
+        ${projet.technologies.slice(0, 3).map(tech => 
+          `<span class="tech-badge">${tech}</span>`
+        ).join('')}
+      </div>
+      <div class="hover-modal__actions">
+        ${actionsHTML}
+      </div>
+    </div>
+  `;
+  
+  // Ajouter au DOM
+  document.body.appendChild(backdrop);
+  document.body.appendChild(modal);
+  
+  // Animer l'apparition
+  setTimeout(() => {
+    backdrop.classList.add('active');
+    modal.classList.add('active');
+  }, 10);
+  
+  // Event listeners pour les boutons
+  const btnVisit = modal.querySelector('.btn-visit-hover');
+  const btnDetails = modal.querySelector('.btn-details-hover');
+  const btnCode = modal.querySelector('.btn-code-hover');
+  
+  if (btnVisit) {
+    btnVisit.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeHoverModal();
+      window.open(projet.liens.projet, '_blank');
+    });
+  }
+  
+  if (btnDetails) {
+    btnDetails.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeHoverModal();
+      openModal(projet);
+    });
+  }
+  
+  if (btnCode) {
+    btnCode.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeHoverModal();
+      window.open(projet.liens.github, '_blank');
+    });
+  }
+  
+  // Fermer au survol du backdrop ou de la modale elle-même quand on sort
+  const closeHandler = () => {
+    closeHoverModal();
+  };
+  
+  backdrop.addEventListener('mouseenter', closeHandler);
+  modal.addEventListener('mouseleave', closeHandler);
+  
+  // Stocker la référence
+  currentHoverModal = { backdrop, modal };
+}
+
+function closeHoverModal() {
+  if (!currentHoverModal) return;
+  
+  const { backdrop, modal } = currentHoverModal;
+  
+  // Animer la fermeture
+  backdrop.classList.remove('active');
+  modal.classList.remove('active');
+  
+  // Supprimer du DOM après l'animation
+  setTimeout(() => {
+    if (backdrop.parentNode) backdrop.remove();
+    if (modal.parentNode) modal.remove();
+  }, 200);
+  
+  currentHoverModal = null;
 }
 
 // ===================================
