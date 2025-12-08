@@ -110,10 +110,11 @@ button {
 .header__logo img {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    border: 2px solid var(--color-accent);
-    object-fit: cover;
+    object-fit: contain;
+    border-radius: 0; 
+    border: none; 
 }
+
 
 .header__nav {
     display: flex;
@@ -254,6 +255,18 @@ button {
     margin-top: 2rem;
 }
 
+.hero__big-logo {
+    margin: 2rem auto 1rem auto;
+    display: block;
+    width: 280px;                   /* tu peux ajuster */
+    border-radius: 16px;            /* coins arrondis */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);  /* ombre */
+    background: var(--color-bg-light);
+    padding: 0.75rem;               /* effet cadre + volume */
+    transform: translateZ(0);       /* effet de netteté */
+}
+
+
 @media (max-width: 768px) {
     .hero {
         min-height: 40vh;
@@ -266,6 +279,12 @@ button {
     .hero__subtitle {
         font-size: 1.2rem;
     }
+
+    .hero__big-logo {
+        width: 200px;
+        padding: 0.5rem;
+    }
+
 }
 
 .hero-mini {
