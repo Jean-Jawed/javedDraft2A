@@ -1,0 +1,151 @@
+{
+  "title": "Profil Compétences Jawed TAHIR",
+  "packages": [
+    {
+      "id": 1,
+      "name": "Architecture & System Design",
+      "subPackages": [
+        {
+          "id": "1.1",
+          "name": "Stratégies de découplage et patterns",
+          "skills": [
+            {
+              "name": "Arbitrage Monolithic vs Microservices",
+              "description": "Capacité à choisir et migrer selon la complexité métier."
+            },
+            {
+              "name": "Communications",
+              "description": "Maîtrise des échanges synchrones (REST, gRPC) et asynchrones (Event-driven avec Kafka, RabbitMQ ou Pub/Sub)."
+            },
+            {
+              "name": "Gestion de l'état",
+              "description": "Conception de serveurs Stateless et gestion fine du State Management (front-end et distribué)."
+            },
+            {
+              "name": "Topologie réseau",
+              "description": "Mise en œuvre d'API Gateway, annuaires de services, Service Mesh et stratégies d'isolation."
+            }
+          ],
+          "bigImages": ["api-gateway.svg"],
+          "logos": ["logo-kafka.png", "logo-rabbitmq.png", "logo-grpc.svg"]
+        },
+        {
+          "id": "1.2",
+          "name": "Écosystème Data",
+          "skills": [
+            {
+              "name": "Complémentarité DB ACID & NoSQL",
+              "description": "Utilisation de PostgreSQL pour la cohérence et de NoSQL (MongoDB, Cassandra, Redis) pour la flexibilité et la performance."
+            },
+            {
+              "name": "Vector Databases",
+              "description": "Intégration de la recherche vectorielle (pgvector, Pinecone) pour les besoins de l'IA."
+            }
+          ],
+          "bigImages": ["database.jpg"],
+          "logos": ["logo-nosql.png", "logo-postgresql.png"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Data Architecture & Analysis",
+      "skills": [
+        {
+          "name": "Modélisation avancée",
+          "description": "Conception de schémas SQL/NoSQL optimisés pour le passage à l'échelle (Sharding, Partitionnement)."
+        },
+        {
+          "name": "Pipelines de données",
+          "description": "Mise en place de flux ETL/ELT pour la synchronisation entre services et l'analyse."
+        },
+        {
+          "name": "Observabilité de la donnée",
+          "description": "Monitoring de la qualité, intégrité et fraîcheur des données (Data Contracts)."
+        }
+      ],
+      "bigImages": ["data-analysis.jpg"],
+      "logos": []
+    },
+    {
+      "id": 3,
+      "name": "CI/CD & DevOps (Cloud Native)",
+      "skills": [
+        {
+          "name": "Collaboration & Workflow",
+          "description": "Git et GitHub en collectif (Trunk-based development, Pull Requests, gestion des conflits complexes)."
+        },
+        {
+          "name": "Conteneurisation",
+          "description": "Docker et Docker Compose pour l'isolation des microservices et la parité des environnements."
+        },
+        {
+          "name": "Orchestration",
+          "description": "Déploiement et scalabilité via Kubernetes (K8s) et Helm."
+        },
+        {
+          "name": "Infrastructure as Code (IaC)",
+          "description": "Automatisation via Terraform ou Ansible pour une infrastructure reproductible."
+        }
+      ],
+      "bigImages": [],
+      "logos": ["logo-git.png", "logo-docker.png", "logo-kubernetes.jpg", "logo-terraform.png"]
+    },
+    {
+      "id": 4,
+      "name": "Product XP, UI & Psychologie",
+      "skills": [
+        {
+          "name": "Product Engineering",
+          "description": "Vision orientée utilisateur, compréhension des enjeux business et psychologie de l'interface."
+        },
+        {
+          "name": "Performance & SEO",
+          "description": "Optimisation des Core Web Vitals, SSR (Server Side Rendering) et accessibilité (A11y)."
+        },
+        {
+          "name": "Analytics & Growth",
+          "description": "Implémentation de trackers, A/B testing et Feature Flagging (LaunchDarkly, Unleash)."
+        }
+      ],
+      "bigImages": [],
+      "logos": []
+    },
+    {
+      "id": 5,
+      "name": "Performance & Scaling",
+      "skills": [
+        {
+          "name": "Optimisation de base de données",
+          "description": "Analyse de plans d'exécution (EXPLAIN ANALYZE) et stratégies de caching multi-niveaux."
+        },
+        {
+          "name": "Résilience",
+          "description": "Mise en œuvre de patterns de tolérance aux pannes (Circuit Breaker, Retries, Rate Limiting)."
+        },
+        {
+          "name": "FinOps & GreenOps",
+          "description": "Optimisation des ressources pour réduire les coûts cloud et l'empreinte carbone."
+        }
+      ],
+      "bigImages": [],
+      "logos": []
+    },
+    {
+      "id": 6,
+      "name": "IA & Machine Learning",
+      "skills": [
+        {
+          "name": "Intégration LLM & RAG",
+          "description": "Développement de systèmes utilisant le Retrieval-Augmented Generation pour exploiter des données privées via IA."
+        },
+        {
+          "name": "AI-Augmented Development",
+          "description": "Maîtrise des outils d'assistance (Copilot, Cursor) pour accélérer le développement et la qualité du code."
+        }
+      ],
+      "bigImages": [],
+      "logos": []
+    }
+  ]
+}

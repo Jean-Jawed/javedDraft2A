@@ -21,6 +21,7 @@
                 <nav class="header__nav" id="navMenu">
                     <a href="index.html" class="header__nav-link">Accueil</a>
                     <a href="projets.html" class="header__nav-link">Projets</a>
+                    <a href="skills.html" class="header__nav-link">Compétences</a>
                     <a href="about.html" class="header__nav-link">À propos</a>
                     <a href="contact.html" class="header__nav-link header__nav-link--active">Contact</a>
                 </nav>
@@ -90,7 +91,7 @@
                             </svg>
                             <div>
                                 <strong>Email</strong>
-                                <a href="mailto:jawed_tahir@yahoo.fr">jawed_tahir@yahoo.fr</a>
+                                <a href="/cdn-cgi/l/email-protection#3852594f5d5c674c5950514a784159505757165e4a"><span class="__cf_email__" data-cfemail="365c574153526942575e5f44764f575e5959185044">[email&#160;protected]</span></a>
                             </div>
                         </div>
                         <div class="info-card__item">
@@ -148,6 +149,12 @@
             <div class="footer__content">
                 <p class="footer__copyright">© 2025 Javed Tahir</p>
                 <div class="footer__links">
+                    <a href="index.html" class="footer__link">Accueil</a>
+                    <a href="projets.html" class="footer__link">Projets</a>
+                    <a href="skills.html" class="footer__link">Compétences</a>
+                    <a href="about.html" class="footer__link">À propos</a>
+                    <a href="contact.html" class="footer__link">Contact</a>
+                    <span style="margin: 0 1rem; color: var(--color-secondary);">•</span>
                     <a href="https://github.com/jean-jawed" target="_blank" rel="noopener" class="footer__link">GitHub</a>
                     <a href="https://linkedin.com/in/javed-tahir" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
                     <a href="mailto:jawed_tahir@yahoo.fr" class="footer__link">Email</a>
@@ -157,55 +164,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    
-    <!-- FORMULAIRE EMAILJS - À ACTIVER PLUS TARD
-    <script>
-        // Configuration EmailJS
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validation basique
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
-            
-            if (name.length < 2) {
-                alert('Le nom doit contenir au moins 2 caractères');
-                return;
-            }
-            
-            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                alert('Email invalide');
-                return;
-            }
-            
-            if (subject.length < 3) {
-                alert('Le sujet doit contenir au moins 3 caractères');
-                return;
-            }
-            
-            if (message.length < 10) {
-                alert('Le message doit contenir au moins 10 caractères');
-                return;
-            }
-            
-            // EmailJS send (à configurer avec vos clés)
-            // emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-            //     from_name: name,
-            //     from_email: email,
-            //     subject: subject,
-            //     message: message
-            // }).then(() => {
-            //     alert('Message envoyé avec succès !');
-            //     contactForm.reset();
-            // }).catch(() => {
-            //     alert('Erreur lors de l\'envoi. Veuillez réessayer.');
-            // });
-        });
-    </script>
-    -->
 </body>
 </html>

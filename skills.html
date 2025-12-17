@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences - Javed Tahir</title>
+    <meta name="description" content="Découvrez mes compétences en architecture système, data, DevOps, IA et bien plus">
+    <meta name="keywords" content="compétences, architecture, microservices, DevOps, IA, data">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/skills.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="Javed Tahir Logo">
+                </a>
+                <nav class="header__nav" id="navMenu">
+                    <a href="index.html" class="header__nav-link">Accueil</a>
+                    <a href="projets.html" class="header__nav-link">Projets</a>
+                    <a href="skills.html" class="header__nav-link header__nav-link--active">Compétences</a>
+                    <a href="about.html" class="header__nav-link">À propos</a>
+                    <a href="contact.html" class="header__nav-link">Contact</a>
+                </nav>
+                <button class="header__burger" id="burgerMenu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Mini -->
+    <section class="hero-mini">
+        <div class="container">
+            <h1>Compétences</h1>
+            <button class="btn btn--primary btn--cta" id="scrollToSkills">
+                Comment je travaille
+                <span style="margin-left: 0.5rem;">↓</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Skills Container -->
+    <section class="skills-section">
+        <div class="container">
+            <div id="skillsContainer" class="skills-container">
+                <!-- Cards générées dynamiquement par JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__copyright">© 2025 Javed Tahir</p>
+                <div class="footer__links">
+                    <a href="https://github.com/jean-jawed" target="_blank" rel="noopener" class="footer__link">GitHub</a>
+                    <a href="https://linkedin.com/in/javed-tahir" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
+                    <a href="mailto:jawed_tahir@yahoo.fr" class="footer__link">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/skills.js"></script>
+</body>
+</html>
