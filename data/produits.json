@@ -1,0 +1,101 @@
+{
+  "title": "Offre de Services & Solutions (Produits)",
+  "products": [
+    {
+      "id": 1,
+      "emoji": "🌐",
+      "name": "Pack \"Souveraineté & Performance Web\"",
+      "shortName": "Web & Performance",
+      "tagline": "Libérez-vous des outils limitants et reprenez le contrôle de votre présence en ligne.",
+      "services": [
+        {
+          "name": "Design & Développement Sur-Mesure",
+          "description": "Création complète de votre site web personnalisé, adapté à votre identité de marque et vos objectifs business, avec une expérience utilisateur optimale."
+        },
+        {
+          "name": "Migration & Liberté",
+          "description": "Sortez du \"Vendor Lock-in\" (Wix, WordPress, Squarespace). Je vous migre vers des solutions modernes, rapides et dont vous êtes le seul propriétaire."
+        },
+        {
+          "name": "SEO & Analytics Natif",
+          "description": "Un site conçu pour Google (Core Web Vitals) avec un tableau de bord de performance intégré pour piloter votre croissance en un clic."
+        },
+        {
+          "name": "Administration Clé en Main",
+          "description": "Un back-office sur-mesure, simplifié et intuitif, pour que vous restiez maître de vos contenus sans dépendre d'un développeur."
+        }
+      ],
+      "bigImages": ["produits-web1.png", "produits-web2.png", "produits-web3.png"],
+      "logos": []
+    },
+    {
+      "id": 2,
+      "emoji": "📱",
+      "name": "Solutions Mobiles & Applications Smartphones",
+      "shortName": "Applications Mobile",
+      "tagline": "Des applications performantes centrées sur l'expérience utilisateur et la fiabilité.",
+      "services": [
+        {
+          "name": "Expertise Android & Multi-OS",
+          "description": "Développement natif haute performance sur Android, avec stratégie d'ouverture vers iOS (Kotlin Multiplatform) pour optimiser les coûts."
+        },
+        {
+          "name": "Offline-First & Data",
+          "description": "Conception d'architectures résilientes avec gestion de données embarquées pour un fonctionnement fluide, même sans connexion."
+        },
+        {
+          "name": "Design & UX",
+          "description": "Des interfaces audacieuses et ergonomiques pour garantir l'adoption immédiate de l'outil par vos utilisateurs."
+        }
+      ],
+      "bigImages": [],
+      "logos": []
+    },
+    {
+      "id": 3,
+      "emoji": "⚙️",
+      "name": "Automatisations & Workflows intelligents (IA)",
+      "shortName": "Automatisations IA",
+      "tagline": "Gagnez du temps en automatisant l'humainement répétitif.",
+      "services": [
+        {
+          "name": "Interconnexion d'Outils",
+          "description": "Synchronisation de vos outils métiers (CRM, ERP, Slack, Email) pour supprimer les doubles saisies et les erreurs manuelles."
+        },
+        {
+          "name": "IA comme Facilitateur",
+          "description": "Intégration d'assistants intelligents (IA) pour le traitement de vos données, le résumé de documents ou l'aide à la décision."
+        },
+        {
+          "name": "Robustesse Ingénieur",
+          "description": "Des automatisations surveillées et scalables qui ne \"cassent\" pas à la moindre mise à jour."
+        }
+      ],
+      "bigImages": [],
+      "logos": []
+    },
+    {
+      "id": 4,
+      "emoji": "🎓",
+      "name": "Mentorat & Expertise Technique (CTO as a Service)",
+      "shortName": "Mentorat & CTO",
+      "tagline": "Sécurisez vos développements et faites monter en compétence vos équipes.",
+      "services": [
+        {
+          "name": "Support Juniors & Mid",
+          "description": "Accompagnement sur l'architecture, le design de code et les bonnes pratiques pour éviter la dette technique."
+        },
+        {
+          "name": "Audit de Performance & Scaling",
+          "description": "Intervention ponctuelle pour identifier et résoudre les goulots d'étranglement de vos systèmes (Base de données, temps de réponse)."
+        },
+        {
+          "name": "Conseil Stratégique",
+          "description": "Aide aux choix technologiques pour garantir la pérennité de vos projets sur le long terme."
+        }
+      ],
+      "bigImages": [],
+      "logos": []
+    }
+  ]
+}

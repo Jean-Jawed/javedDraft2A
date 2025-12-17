@@ -52,6 +52,18 @@ if (burgerMenu && navMenu) {
       burgerMenu.classList.remove('active');
     });
   });
+  
+  // Gestion du dropdown "Vous êtes" sur mobile
+  const dropdown = navMenu.querySelector('.header__nav-dropdown');
+  if (dropdown) {
+    const dropdownToggle = dropdown.querySelector('.header__nav-dropdown-toggle');
+    
+    dropdownToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdown.classList.toggle('mobile-open');
+    });
+  }
 }
 
 // ===================================

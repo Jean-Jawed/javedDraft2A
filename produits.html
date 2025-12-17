@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences - Javed Tahir</title>
-    <meta name="description" content="Découvrez mes compétences en architecture système, data, DevOps, IA et bien plus">
-    <meta name="keywords" content="compétences, architecture, microservices, DevOps, IA, data">
+    <title>Solutions & Produits - Javed Tahir</title>
+    <meta name="description" content="Découvrez mes solutions : Web, Mobile, Automatisations IA, Mentorat technique">
+    <meta name="keywords" content="solutions web, applications mobile, automatisation, mentorat CTO">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/produits.css">
 </head>
 <body>
     <!-- Header -->
@@ -22,8 +22,8 @@
                 <nav class="header__nav" id="navMenu">
                     <a href="index.html" class="header__nav-link">Accueil</a>
                     <a href="projets.html" class="header__nav-link">Projets</a>
-                    <a href="skills.html" class="header__nav-link header__nav-link--active">Compétences</a>
-                    <a href="produits.html" class="header__nav-link">Solutions</a>
+                    <a href="skills.html" class="header__nav-link">Compétences</a>
+                    <a href="produits.html" class="header__nav-link header__nav-link--active">Solutions</a>
                     <div class="header__nav-dropdown">
                         <span class="header__nav-dropdown-toggle">
                             Vous êtes
@@ -50,18 +50,24 @@
     <!-- Hero Mini -->
     <section class="hero-mini">
         <div class="container">
-            <h1>Compétences</h1>
-            <button class="btn btn--primary btn--cta" id="scrollToSkills">
-                Comment je travaille
-                <span style="margin-left: 0.5rem;">↓</span>
-            </button>
+            <h1>Mes Solutions</h1>
+            <p>Des offres adaptées à vos besoins</p>
         </div>
     </section>
 
-    <!-- Skills Container -->
-    <section class="skills-section">
+    <!-- CTA Navigation Buttons -->
+    <section class="products-nav">
         <div class="container">
-            <div id="skillsContainer" class="skills-container">
+            <div class="products-nav__grid" id="productsNav">
+                <!-- Boutons générés dynamiquement par JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Container -->
+    <section class="products-section">
+        <div class="container">
+            <div id="productsContainer" class="products-container">
                 <!-- Cards générées dynamiquement par JS -->
             </div>
         </div>
@@ -73,15 +79,22 @@
             <div class="footer__content">
                 <p class="footer__copyright">© 2025 Javed Tahir</p>
                 <div class="footer__links">
+                    <a href="index.html" class="footer__link">Accueil</a>
+                    <a href="projets.html" class="footer__link">Projets</a>
+                    <a href="skills.html" class="footer__link">Compétences</a>
+                    <a href="produits.html" class="footer__link">Solutions</a>
+                    <a href="about.html" class="footer__link">À propos</a>
+                    <a href="contact.html" class="footer__link">Contact</a>
+                    <span style="margin: 0 1rem; color: var(--color-secondary);">•</span>
                     <a href="https://github.com/jean-jawed" target="_blank" rel="noopener" class="footer__link">GitHub</a>
                     <a href="https://linkedin.com/in/javed-tahir" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
-                    <a href="/cdn-cgi/l/email-protection#b4ded5c3d1d0ebc0d5dcddc6f4cdd5dcdbdb9ad2c6" class="footer__link">Email</a>
+                    <a href="/cdn-cgi/l/email-protection#c5afa4b2a0a19ab1a4adacb785bca4adaaaaeba3b7" class="footer__link">Email</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/skills.js"></script>
+    <script src="js/produits.js"></script>
 </body>
 </html>
