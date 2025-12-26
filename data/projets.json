@@ -128,7 +128,7 @@
         "projet": "https://nba-wemby-test-web.vercel.app/",
         "github": "https://github.com/jean-jawed/nbaWembyTestWeb"
       },
-      "badges": ["Coming Soon"],
+      "badges": [],
       "ordre": 5,
       "phare": false
     },
@@ -261,7 +261,7 @@
         "projet": "#",
         "github": "#"
       },
-      "badges": ["coming soon"],
+      "badges": ["Coming Soon"],
       "ordre": 4,
       "phare": false
     },
@@ -305,7 +305,7 @@
         "projet": "https://talklikethem.fr",
         "github": "https://github.com/jean-jawed/TalkLikeThem"
       },
-      "badges": ["coming soon"],
+      "badges": ["Coming soon"],
       "ordre": 1,
       "phare": false
     },
@@ -514,7 +514,7 @@
       "liens": {
         "github": "https://github.com/jean-jawed/Equiflow-Android"
       },
-      "badges": [],
+      "badges": ["Coming soon"],
       "ordre": 4,
       "phare": false
     },
