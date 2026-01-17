@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoSynthesis - Téléchargez, Transcrivez, Résumez | Javed Tahir</title>
+    <meta name="description"
+        content="VideoSynthesis : logiciel gratuit pour télécharger des vidéos, extraire l'audio, transcrire et résumer automatiquement. Sans limite de durée.">
+    <meta name="keywords"
+        content="VideoSynthesis, télécharger vidéo, transcription, résumé IA, YouTube downloader, extraction audio">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/videosynthesis.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QWX01RP7V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0QWX01RP7V');
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="Javed Tahir Logo">
+                </a>
+                <nav class="header__nav" id="navMenu">
+                    <a href="index.html" class="header__nav-link">Accueil</a>
+                    <a href="projets.html" class="header__nav-link">Projets</a>
+                    <a href="skills.html" class="header__nav-link">Compétences</a>
+                    <a href="produits.html" class="header__nav-link">Solutions</a>
+                    <div class="header__nav-dropdown">
+                        <span class="header__nav-dropdown-toggle">
+                            Vous êtes
+                            <span class="header__nav-dropdown-arrow">▼</span>
+                        </span>
+                        <div class="header__nav-dropdown-menu">
+                            <a href="skills.html" class="header__nav-dropdown-item">Un recruteur</a>
+                            <a href="produits.html" class="header__nav-dropdown-item">Un client</a>
+                            <a href="projets.html" class="header__nav-dropdown-item">Un curieux</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="header__nav-link">À propos</a>
+                    <a href="contact.html" class="header__nav-link">Contact</a>
+                </nav>
+                <button class="header__burger" id="burgerMenu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="vs-hero">
+        <div class="container">
+            <div class="vs-hero__content">
+                <div class="vs-hero__text">
+                    <span class="vs-hero__badge">🎉 100% Gratuit & Open Source</span>
+                    <h1 class="vs-hero__title">Video<span>Synthesis</span></h1>
+                    <p class="vs-hero__subtitle">
+                        Téléchargez n'importe quelle vidéo en ligne, extrayez l'audio,
+                        transcrivez et résumez automatiquement. Sans limite de durée ni de quantité.
+                    </p>
+                    <div class="vs-hero__cta">
+                        <a href="#download" class="btn btn--primary">Télécharger gratuitement</a>
+                        <a href="https://github.com/Jean-Jawed/VideoSynthesis" target="_blank" rel="noopener"
+                            class="btn btn--secondary">Voir sur GitHub</a>
+                    </div>
+                </div>
+                <div class="vs-hero__image">
+                    <img src="assets/images/VideoSynthesis/YoutubeLarge.png"
+                        alt="VideoSynthesis - Interface principale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="vs-section">
+        <div class="container">
+            <div class="vs-section__header">
+                <h2>Tout ce dont vous avez besoin</h2>
+                <p>Un seul outil pour gérer vos vidéos de A à Z, de n'importe quelle source.</p>
+            </div>
+            <div class="vs-features__grid">
+                <!-- Réutilisation de .category-card -->
+                <div class="category-card">
+                    <div class="category-card__bar"></div>
+                    <div class="category-card__icon">🌐</div>
+                    <h3 class="category-card__title">Toutes les sources</h3>
+                    <p class="category-card__desc">YouTube, Vimeo, Twitter, Instagram, TikTok et des centaines d'autres
+                        plateformes supportées.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-card__bar"></div>
+                    <div class="category-card__icon">🎵</div>
+                    <h3 class="category-card__title">Extraction audio</h3>
+                    <p class="category-card__desc">Extrayez la piste audio de n'importe quelle vidéo en un clic. Formats
+                        MP3, WAV, et plus.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-card__bar"></div>
+                    <div class="category-card__icon">📝</div>
+                    <h3 class="category-card__title">Transcription IA</h3>
+                    <p class="category-card__desc">Transcription automatique et précise grâce à l'intelligence
+                        artificielle. Multilingue.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-card__bar"></div>
+                    <div class="category-card__icon">✨</div>
+                    <h3 class="category-card__title">Résumé intelligent</h3>
+                    <p class="category-card__desc">Obtenez un résumé concis et pertinent de vos vidéos en quelques
+                        secondes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flow Section -->
+    <section class="vs-section vs-section--alt">
+        <div class="container">
+            <div class="vs-section__header">
+                <h2>Simple comme 1, 2, 3, 4</h2>
+            </div>
+            <div class="vs-flow__steps">
+                <div class="vs-flow__step">
+                    <div class="vs-flow__step-number">1</div>
+                    <h3 class="vs-flow__step-title">Collez l'URL</h3>
+                    <p class="vs-flow__step-desc">Copiez le lien de n'importe quelle vidéo en ligne</p>
+                </div>
+                <div class="vs-flow__step">
+                    <div class="vs-flow__step-number">2</div>
+                    <h3 class="vs-flow__step-title">Téléchargez</h3>
+                    <p class="vs-flow__step-desc">Récupérez la vidéo ou l'audio en local</p>
+                </div>
+                <div class="vs-flow__step">
+                    <div class="vs-flow__step-number">3</div>
+                    <h3 class="vs-flow__step-title">Transcrivez</h3>
+                    <p class="vs-flow__step-desc">Obtenez le texte complet automatiquement</p>
+                </div>
+                <div class="vs-flow__step">
+                    <div class="vs-flow__step-number">4</div>
+                    <h3 class="vs-flow__step-title">Résumez</h3>
+                    <p class="vs-flow__step-desc">Générez un résumé intelligent en un clic</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="vs-section">
+        <div class="container">
+            <div class="vs-section__header">
+                <h2>En images</h2>
+            </div>
+            <div class="vs-gallery__grid">
+                <div class="vs-gallery__item">
+                    <img src="assets/images/VideoSynthesis/YoutubePlaying.png" alt="Lecture vidéo YouTube">
+                    <div class="vs-gallery__item-overlay">
+                        <h4 class="vs-gallery__item-title">Lecture intégrée</h4>
+                        <p class="vs-gallery__item-desc">Prévisualisez vos vidéos directement dans l'application</p>
+                    </div>
+                </div>
+                <div class="vs-gallery__item">
+                    <img src="assets/images/VideoSynthesis/Download.png" alt="Interface de téléchargement">
+                    <div class="vs-gallery__item-overlay">
+                        <h4 class="vs-gallery__item-title">Téléchargement facile</h4>
+                        <p class="vs-gallery__item-desc">Choisissez la qualité et le format souhaités</p>
+                    </div>
+                </div>
+                <div class="vs-gallery__item">
+                    <img src="assets/images/VideoSynthesis/TranscriptionResult.png" alt="Résultat de transcription">
+                    <div class="vs-gallery__item-overlay">
+                        <h4 class="vs-gallery__item-title">Transcription précise</h4>
+                        <p class="vs-gallery__item-desc">Texte complet avec timestamps et formatage</p>
+                    </div>
+                </div>
+                <div class="vs-gallery__item">
+                    <img src="assets/images/VideoSynthesis/YoutubeLarge.png" alt="Vue d'ensemble">
+                    <div class="vs-gallery__item-overlay">
+                        <h4 class="vs-gallery__item-title">Interface intuitive</h4>
+                        <p class="vs-gallery__item-desc">Design moderne et facile à prendre en main</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="vs-tech">
+        <div class="container">
+            <div class="vs-tech__content">
+                <span class="vs-tech__label">Construit avec</span>
+                <div class="vs-tech__badges">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">FFmpeg</span>
+                    <span class="tech-badge">Whisper</span>
+                    <span class="tech-badge">yt-dlp</span>
+                    <span class="tech-badge">PyQt</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="vs-download" id="download">
+        <div class="container">
+            <div class="vs-section__header">
+                <h2>Télécharger VideoSynthesis</h2>
+                <p>Disponible sur Windows et macOS. 100% gratuit, pour toujours.</p>
+            </div>
+            <div class="vs-download__grid">
+                <div class="vs-download__card">
+                    <div class="vs-download__card-icon">🪟</div>
+                    <h3 class="vs-download__card-title">Windows</h3>
+                    <p class="vs-download__card-version">Windows 10/11 (64-bit)</p>
+                    <a href="https://github.com/Jean-Jawed/VideoSynthesis/releases/download/v1.0.0/VideoSynthesis-windows.exe"
+                        class="btn btn--primary" download>
+                        Télécharger .exe
+                    </a>
+                </div>
+                <div class="vs-download__card">
+                    <div class="vs-download__card-icon">🍎</div>
+                    <h3 class="vs-download__card-title">macOS</h3>
+                    <p class="vs-download__card-version">macOS 11+ (Intel & Apple Silicon)</p>
+                    <a href="https://github.com/Jean-Jawed/VideoSynthesis/releases/download/v1.0.0/VideoSynthesis-macOS.zip"
+                        class="btn btn--primary" download>
+                        Télécharger .zip
+                    </a>
+                </div>
+                <div class="vs-download__card vs-download__card--disabled">
+                    <div class="vs-download__card-icon">🐧</div>
+                    <h3 class="vs-download__card-title">Linux</h3>
+                    <p class="vs-download__card-version">Bientôt disponible</p>
+                    <span class="btn btn--disabled">
+                        Prochainement
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub CTA - Réutilise .cta-section et .cta-card -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <h3 class="cta-card__title">Open Source & Communautaire</h3>
+                <p class="cta-card__text">
+                    VideoSynthesis est un projet open source. Consultez le code, signalez des bugs,
+                    proposez des améliorations ou contribuez directement au développement.
+                </p>
+                <a href="https://github.com/Jean-Jawed/VideoSynthesis" target="_blank" rel="noopener"
+                    class="btn btn--secondary vs-github__icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    Voir sur GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__copyright">© 2025 Javed Tahir</p>
+                <div class="footer__links">
+                    <a href="index.html" class="footer__link">Accueil</a>
+                    <a href="projets.html" class="footer__link">Projets</a>
+                    <a href="skills.html" class="footer__link">Compétences</a>
+                    <a href="about.html" class="footer__link">À propos</a>
+                    <a href="contact.html" class="footer__link">Contact</a>
+                    <span style="margin: 0 1rem; color: var(--color-secondary);">•</span>
+                    <a href="https://github.com/jean-jawed" target="_blank" rel="noopener"
+                        class="footer__link">GitHub</a>
+                    <a href="https://linkedin.com/in/javed-tahir" target="_blank" rel="noopener"
+                        class="footer__link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/videosynthesis.js"></script>
+</body>
+
+</html>

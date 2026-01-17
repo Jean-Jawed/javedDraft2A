@@ -1,4 +1,44 @@
 {
+  "settings": {
+    "boutons": {
+      "projet": {
+        "texte": "Visiter",
+        "style": "primary",
+        "aria": "Visiter le site du projet",
+        "ordre": 1
+      },
+      "demo": {
+        "texte": "Voir la démo",
+        "style": "primary",
+        "aria": "Voir la démonstration",
+        "ordre": 2
+      },
+      "download": {
+        "texte": "Télécharger",
+        "style": "primary",
+        "aria": "Télécharger le projet",
+        "ordre": 3
+      },
+      "github": {
+        "texte": "Voir le code",
+        "style": "tertiary",
+        "aria": "Voir le code source",
+        "ordre": 10
+      },
+      "video": {
+        "texte": "Voir la vidéo",
+        "style": "secondary",
+        "aria": "Voir la vidéo du projet",
+        "ordre": 4
+      },
+      "docs": {
+        "texte": "Documentation",
+        "style": "secondary",
+        "aria": "Voir la documentation",
+        "ordre": 5
+      }
+    }
+  },
   "projets": [
     {
       "id": "generation-ia",
@@ -65,7 +105,8 @@
       "badges": [],
       "ordre": 3,
       "phare": false
-    },{
+    },
+    {
       "id": "4films",
       "titre": "4 FILMS",
       "categorie": "webdesign",
@@ -124,7 +165,6 @@
       },
       "technologies": ["React", "NBA API", "Chart.js", "Responsive"],
       "liens": {
-        
         "projet": "https://nba-wemby-test-web.vercel.app/",
         "github": "https://github.com/jean-jawed/nbaWembyTestWeb"
       },
@@ -132,7 +172,6 @@
       "ordre": 1,
       "phare": false
     },
-  
     {
       "id": "rolaphotos",
       "titre": "Portfolio photographe",
@@ -286,6 +325,28 @@
       "badges": [],
       "ordre": 5,
       "phare": false
+    },
+    {
+      "id": "videosynthesis",
+      "titre": "VideoSynthesis",
+      "categorie": "ia",
+      "images": {
+        "image1": "assets/images/YoutubePlaying.png",
+        "image2": "assets/images/Download.png"
+      },
+      "descriptions": {
+        "courte": "Téléchargement & transcription vidéo",
+        "moyenne": "Logiciel desktop pour télécharger, transcrire et résumer n'importe quelle vidéo en ligne",
+        "longue": "VideoSynthesis permet de récupérer des vidéos de n'importe quelle plateforme, d'extraire l'audio, de transcrire automatiquement le contenu et de générer des résumés intelligents. Sans limite de durée ni de quantité. 100% gratuit et open source."
+      },
+      "technologies": ["Python", "Whisper", "FFmpeg", "yt-dlp", "PyQt"],
+      "liens": {
+        "download": "VideoSynthesis.html",
+        "github": "https://github.com/Jean-Jawed/VideoSynthesis"
+      },
+      "badges": [],
+      "ordre": 1,
+      "phare": true
     },
     {
       "id": "talklikethem",

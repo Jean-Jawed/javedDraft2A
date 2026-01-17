@@ -15,6 +15,112 @@ function debounce(func, wait) {
 }
 
 // ===================================
+// CONFIGURATION GLOBALE DES BOUTONS
+// ===================================
+
+let boutonsConfig = {};
+
+// Configuration par défaut (fallback si settings absent du JSON)
+const defaultBoutonsConfig = {
+  projet: {
+    texte: "Visiter",
+    style: "primary",
+    aria: "Visiter le site du projet",
+    ordre: 1
+  },
+  github: {
+    texte: "Voir le code",
+    style: "tertiary",
+    aria: "Voir le code source",
+    ordre: 10
+  },
+  download: {
+    texte: "Télécharger",
+    style: "primary",
+    aria: "Télécharger le projet",
+    ordre: 3
+  },
+  demo: {
+    texte: "Voir la démo",
+    style: "secondary",
+    aria: "Voir la démonstration",
+    ordre: 2
+  },
+  video: {
+    texte: "Voir la vidéo",
+    style: "secondary",
+    aria: "Voir la vidéo du projet",
+    ordre: 4
+  },
+  docs: {
+    texte: "Documentation",
+    style: "secondary",
+    aria: "Voir la documentation",
+    ordre: 5
+  }
+};
+
+// ===================================
+// GÉNÉRATION DYNAMIQUE DES BOUTONS
+// ===================================
+
+/**
+ * Génère le HTML des boutons en fonction des liens du projet
+ * @param {Object} liens - Objet contenant les liens du projet
+ * @param {string} suffix - Suffixe pour les classes CSS (ex: '-hover' pour la modale hover)
+ * @returns {string} HTML des boutons
+ */
+function generateButtonsHTML(liens, suffix = '') {
+  if (!liens || Object.keys(liens).length === 0) {
+    return '';
+  }
+
+  // Récupérer les clés de liens présentes et les trier par ordre
+  const liensPresents = Object.keys(liens)
+    .filter(key => liens[key] && liens[key] !== '#') // Ignorer les liens vides ou "#"
+    .map(key => {
+      const config = boutonsConfig[key] || defaultBoutonsConfig[key] || {
+        texte: key.charAt(0).toUpperCase() + key.slice(1),
+        style: 'secondary',
+        aria: `Ouvrir ${key}`,
+        ordre: 99
+      };
+      return { key, config, url: liens[key] };
+    })
+    .sort((a, b) => a.config.ordre - b.config.ordre);
+
+  // Générer le HTML
+  return liensPresents.map(({ key, config }) => {
+    const btnClass = `project-card-unified__btn project-card-unified__btn--${config.style} btn-${key}${suffix}`;
+    return `<button class="${btnClass}" aria-label="${config.aria}" data-link-type="${key}">${config.texte}</button>`;
+  }).join('');
+}
+
+/**
+ * Attache les event listeners aux boutons générés
+ * @param {HTMLElement} container - Conteneur des boutons
+ * @param {Object} liens - Objet contenant les liens du projet
+ * @param {Function} onBeforeAction - Callback appelé avant l'action (optionnel, ex: fermer modale)
+ */
+function attachButtonListeners(container, liens, onBeforeAction = null) {
+  if (!liens || !container) return;
+
+  Object.keys(liens).forEach(key => {
+    const url = liens[key];
+    if (!url || url === '#') return;
+
+    const btn = container.querySelector(`[data-link-type="${key}"]`);
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (onBeforeAction) onBeforeAction();
+        window.open(url, '_blank');
+      });
+    }
+  });
+}
+
+// ===================================
 // GESTION DU HEADER AU SCROLL
 // ===================================
 
@@ -125,9 +231,13 @@ function createProjectCard(projet) {
   const card = document.createElement('div');
   card.className = 'project-card-unified';
   card.dataset.projectId = projet.id;
-  if (projet.liens.projet) {
-    card.dataset.link = projet.liens.projet;
+  
+  // Trouver le premier lien disponible pour le clic direct
+  const firstLinkKey = Object.keys(projet.liens).find(key => projet.liens[key] && projet.liens[key] !== '#');
+  if (firstLinkKey) {
+    card.dataset.link = projet.liens[firstLinkKey];
   }
+  
   card.setAttribute('role', 'article');
   card.setAttribute('aria-label', `Projet: ${projet.titre}`);
   card.setAttribute('tabindex', '0');
@@ -181,34 +291,24 @@ function createProjectCard(projet) {
   titleRest.textContent = projet.titre;
   card.appendChild(titleRest);
   
-  // NOUVEAU - Boutons en dessous du titre (visibles au hover)
+  // BOUTONS DYNAMIQUES - en dessous du titre (visibles au hover)
   const actionsHover = document.createElement('div');
   actionsHover.className = 'project-card-unified__actions-hover';
   
-  let actionsHTML = '';
-  if (projet.liens.projet) {
-    actionsHTML += `<button class="project-card-unified__btn project-card-unified__btn--primary btn-visit" aria-label="Visiter le site du projet">Visiter</button>`;
-  }
+  // Générer les boutons dynamiquement depuis la config
+  let actionsHTML = generateButtonsHTML(projet.liens);
+  
+  // Toujours ajouter le bouton Détails
   actionsHTML += `<button class="project-card-unified__btn project-card-unified__btn--secondary btn-details" aria-label="Voir les détails du projet">Détails</button>`;
-  if (projet.liens.github) {
-    actionsHTML += `<button class="project-card-unified__btn project-card-unified__btn--tertiary btn-code" aria-label="Voir le code source">Voir le code</button>`;
-  }
   
   actionsHover.innerHTML = actionsHTML;
   card.appendChild(actionsHover);
   
-  // Event listeners pour les boutons
-  const btnVisit = actionsHover.querySelector('.btn-visit');
+  // Attacher les event listeners pour les boutons de liens
+  attachButtonListeners(actionsHover, projet.liens);
+  
+  // Event listener pour le bouton Détails
   const btnDetails = actionsHover.querySelector('.btn-details');
-  const btnCode = actionsHover.querySelector('.btn-code');
-  
-  if (btnVisit) {
-    btnVisit.addEventListener('click', (e) => {
-      e.stopPropagation();
-      window.open(projet.liens.projet, '_blank');
-    });
-  }
-  
   if (btnDetails) {
     btnDetails.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -216,19 +316,10 @@ function createProjectCard(projet) {
     });
   }
   
-  if (btnCode) {
-    btnCode.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (projet.liens.github) {
-        window.open(projet.liens.github, '_blank');
-      }
-    });
-  }
-  
   // Clic direct sur la card (priorité la plus basse)
   card.addEventListener('click', () => {
-    if (projet.liens.projet && window.innerWidth > 768) {
-      window.open(projet.liens.projet, '_blank');
+    if (firstLinkKey && projet.liens[firstLinkKey] && window.innerWidth > 768) {
+      window.open(projet.liens[firstLinkKey], '_blank');
     } else if (window.innerWidth <= 768) {
       // Sur mobile, ouvrir la modale par défaut
       openModal(projet);
@@ -310,15 +401,9 @@ function createHoverModal(projet, cardElement) {
   modal.style.top = modalTop + 'px';
   modal.style.left = modalLeft + 'px';
   
-  // Générer les boutons
-  let actionsHTML = '';
-  if (projet.liens.projet) {
-    actionsHTML += `<button class="project-card-unified__btn project-card-unified__btn--primary btn-visit-hover" aria-label="Visiter le site">Visiter</button>`;
-  }
+  // Générer les boutons dynamiquement
+  let actionsHTML = generateButtonsHTML(projet.liens, '-hover');
   actionsHTML += `<button class="project-card-unified__btn project-card-unified__btn--secondary btn-details-hover" aria-label="Voir les détails">Détails</button>`;
-  if (projet.liens.github) {
-    actionsHTML += `<button class="project-card-unified__btn project-card-unified__btn--tertiary btn-code-hover" aria-label="Voir le code">Code</button>`;
-  }
   
   // Contenu de la modale
   modal.innerHTML = `
@@ -349,32 +434,31 @@ function createHoverModal(projet, cardElement) {
     modal.classList.add('active');
   }, 10);
   
-  // Event listeners pour les boutons
-  const btnVisit = modal.querySelector('.btn-visit-hover');
+  // Attacher les event listeners pour les boutons de liens (avec fermeture de modale)
+  const actionsContainer = modal.querySelector('.hover-modal__actions');
+  
+  // Pour chaque type de lien, attacher l'event listener
+  Object.keys(projet.liens).forEach(key => {
+    const url = projet.liens[key];
+    if (!url || url === '#') return;
+    
+    const btn = actionsContainer.querySelector(`[data-link-type="${key}"]`);
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeHoverModal();
+        window.open(url, '_blank');
+      });
+    }
+  });
+  
+  // Event listener pour le bouton Détails
   const btnDetails = modal.querySelector('.btn-details-hover');
-  const btnCode = modal.querySelector('.btn-code-hover');
-  
-  if (btnVisit) {
-    btnVisit.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closeHoverModal();
-      window.open(projet.liens.projet, '_blank');
-    });
-  }
-  
   if (btnDetails) {
     btnDetails.addEventListener('click', (e) => {
       e.stopPropagation();
       closeHoverModal();
       openModal(projet);
-    });
-  }
-  
-  if (btnCode) {
-    btnCode.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closeHoverModal();
-      window.open(projet.liens.github, '_blank');
     });
   }
   
@@ -435,22 +519,25 @@ function openModal(projet) {
     `<span class="tech-badge">${tech}</span>`
   ).join('');
   
-  // Configurer les boutons
-  const visitBtn = document.getElementById('modalVisitBtn');
-  const githubBtn = document.getElementById('modalGithubBtn');
-  
-  if (projet.liens.projet) {
-    visitBtn.style.display = 'inline-block';
-    visitBtn.onclick = () => window.open(projet.liens.projet, '_blank');
-  } else {
-    visitBtn.style.display = 'none';
-  }
-  
-  if (projet.liens.github) {
-    githubBtn.style.display = 'inline-block';
-    githubBtn.onclick = () => window.open(projet.liens.github, '_blank');
-  } else {
-    githubBtn.style.display = 'none';
+  // Générer les boutons dynamiquement dans la modale
+  const modalActions = modal.querySelector('.modal-actions');
+  if (modalActions) {
+    // Générer les boutons depuis la config
+    modalActions.innerHTML = generateButtonsHTML(projet.liens, '-modal');
+    
+    // Attacher les event listeners
+    Object.keys(projet.liens).forEach(key => {
+      const url = projet.liens[key];
+      if (!url || url === '#') return;
+      
+      const btn = modalActions.querySelector(`[data-link-type="${key}"]`);
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          window.open(url, '_blank');
+        });
+      }
+    });
   }
   
   // Afficher la modale
@@ -505,6 +592,13 @@ async function loadProjects() {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
+    
+    // Charger la configuration des boutons
+    if (data.settings && data.settings.boutons) {
+      boutonsConfig = data.settings.boutons;
+    } else {
+      boutonsConfig = defaultBoutonsConfig;
+    }
     
     // Grouper par catégorie
     const projectsByCategory = {};
@@ -603,6 +697,11 @@ async function loadCarousel3D() {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
+    
+    // Charger la configuration des boutons si pas déjà fait
+    if (data.settings && data.settings.boutons) {
+      boutonsConfig = data.settings.boutons;
+    }
     
     // Filtrer les projets phares
     carouselProjects = data.projets.filter(p => p.phare === true).slice(0, 3);
@@ -705,10 +804,11 @@ function createCarousel3DCard(projet, index) {
     card.appendChild(badge);
   }
   
-  // Clic sur la card
+  // Clic sur la card - utiliser le premier lien disponible
   card.addEventListener('click', () => {
-    if (projet.liens.projet) {
-      window.open(projet.liens.projet, '_blank');
+    const firstLinkKey = Object.keys(projet.liens).find(key => projet.liens[key] && projet.liens[key] !== '#');
+    if (firstLinkKey) {
+      window.open(projet.liens[firstLinkKey], '_blank');
     }
   });
   
