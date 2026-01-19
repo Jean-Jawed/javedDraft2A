@@ -53,7 +53,12 @@
         "moyenne": "Plateforme référence dédiée à l'intelligence artificielle en France",
         "longue": "Site vitrine présentant les dernières avancées en IA avec articles et ressources"
       },
-      "technologies": ["HTML", "CSS", "JavaScript", "SEO"],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SEO"
+      ],
       "liens": {
         "projet": "https://génération-ia.fr",
         "github": "https://github.com/Jean-Jawed/SiteWebG-n-ration-IA"
@@ -75,7 +80,13 @@
         "moyenne": "Site officiel du groupe de jazz Jean Plume",
         "longue": "Plateforme présentant le groupe, sa musique avec intégration audio et vidéo"
       },
-      "technologies": ["HTML", "CSS", "JavaScript", "Audio API", "Responsive"],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Audio API",
+        "Responsive"
+      ],
       "liens": {
         "projet": "https://jean-jawed.github.io/SiteWebJeanPlumeDraft4/",
         "github": "https://github.com/Jean-Jawed/SiteWebJeanPlumeDraft4"
@@ -97,7 +108,13 @@
         "moyenne": "Guide interactif du quartier artistique marseillais",
         "longue": "Application web avec carte interactive, géolocalisation et informations sur les commerces"
       },
-      "technologies": ["HTML", "CSS", "JavaScript", "Leaflet.js", "Geolocation"],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Leaflet.js",
+        "Geolocation"
+      ],
       "liens": {
         "projet": "https://cours-julien.fr",
         "github": "https://github.com/jean-jawed/cours-julien"
@@ -119,7 +136,11 @@
         "moyenne": "Site web qui réalise des top 4 de films dans de multiples catégories et filtres croisés",
         "longue": "Utilisant les données de TMDB (The Movie DataBase), ce site va permettre de récupérer les films les mieux notés par année, pays, plateforme de streaming etc... mais aussi chercher des films ressemblant au chef d'oeuvre qui vient de vous frapper."
       },
-      "technologies": ["Vanilla JS", "CSS", "API REST"],
+      "technologies": [
+        "Vanilla JS",
+        "CSS",
+        "API REST"
+      ],
       "liens": {
         "projet": "https://jean-jawed.github.io/4Films",
         "github": "https://github.com/jean-jawed/4Films"
@@ -141,12 +162,19 @@
         "moyenne": "Visualisation en temps réel des satellites et objets spatiaux",
         "longue": "Application web 3D interactive utilisant les données NASA pour suivre les satellites"
       },
-      "technologies": ["Three.js", "NASA API", "WebGL", "JavaScript"],
+      "technologies": [
+        "Three.js",
+        "NASA API",
+        "WebGL",
+        "JavaScript"
+      ],
       "liens": {
         "projet": "https://jean-jawed.github.io/StellarTrack",
         "github": "https://github.com/jean-jawed/StellarTrack"
       },
-      "badges": ["Coming Soon"],
+      "badges": [
+        "Coming Soon"
+      ],
       "ordre": 4,
       "phare": false
     },
@@ -163,7 +191,12 @@
         "moyenne": "Site dédié aux statistiques et performances de Victor Wembanyama",
         "longue": "Plateforme présentant les stats NBA en temps réel et analyses des matchs"
       },
-      "technologies": ["React", "NBA API", "Chart.js", "Responsive"],
+      "technologies": [
+        "React",
+        "NBA API",
+        "Chart.js",
+        "Responsive"
+      ],
       "liens": {
         "projet": "https://nba-wemby-test-web.vercel.app/",
         "github": "https://github.com/jean-jawed/nbaWembyTestWeb"
@@ -185,7 +218,11 @@
         "moyenne": "Site web élégant de type galerie photos",
         "longue": "Ce site web est un exemple de portfolio personnalisé et adapté au style de l'artiste. Sobre et dynamique, il permet de se déplacer comme dans une galerie dans les travaux de l'auteure."
       },
-      "technologies": ["HTML", "CSS", "JavaScript"],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "liens": {
         "projet": "https://jean-jawed.github.io/SiteWebRolaDraft2/",
         "github": "https://github.com/jean-jawed/SiteWebRolaDraft2"
@@ -207,7 +244,12 @@
         "moyenne": "Plateforme recensant tous les lancements spatiaux mondiaux",
         "longue": "Application web affichant le calendrier des lancements de fusées et satellites avec données en direct"
       },
-      "technologies": ["JavaScript", "API REST", "Live Data", "Responsive"],
+      "technologies": [
+        "JavaScript",
+        "API REST",
+        "Live Data",
+        "Responsive"
+      ],
       "liens": {
         "projet": "https://jean-jawed.github.io/LaunchSchedule/",
         "github": "https://github.com/jean-jawed/LaunchSchedule"
@@ -229,12 +271,19 @@
         "moyenne": "Outil éducatif pour simuler des stratégies d'investissement",
         "longue": "Application interactive permettant de tester différentes stratégies financières avec données marché réelles"
       },
-      "technologies": ["React", "Financial APIs", "Chart.js", "Responsive"],
+      "technologies": [
+        "React",
+        "Financial APIs",
+        "Chart.js",
+        "Responsive"
+      ],
       "liens": {
         "projet": "https://jean-jawed.github.io/FinanceQuest",
         "github": "https://github.com/jean-jawed/FinanceQuest"
       },
-      "badges": ["Coming Soon"],
+      "badges": [
+        "Coming Soon"
+      ],
       "ordre": 1,
       "phare": false
     },
@@ -251,9 +300,14 @@
         "moyenne": "Application de rééquilibrage automatique des comptes",
         "longue": "Outil web pour équilibrer les dépenses partagées entre amis ou colocataires avec calculs automatiques"
       },
-      "technologies": ["React", "JavaScript", "LocalStorage", "PWA"],
+      "technologies": [
+        "React",
+        "JavaScript",
+        "LocalStorage",
+        "PWA"
+      ],
       "liens": {
-        "projet": "https://equi-flow.vercel.app",
+        "projet": "https://equiflow.fr",
         "github": "https://github.com/jean-jawed/Equiflow"
       },
       "badges": [],
@@ -273,7 +327,12 @@
         "moyenne": "Jeu de plateforme avec mécanique de rembobinage temporel",
         "longue": "Jeu web interactif utilisant Next.js et Canvas API avec système de révision des actions"
       },
-      "technologies": ["Next.js", "Canvas API", "JavaScript", "Game Development"],
+      "technologies": [
+        "Next.js",
+        "Canvas API",
+        "JavaScript",
+        "Game Development"
+      ],
       "liens": {
         "projet": "https://jean-jawed.github.io/RewindProtocol/",
         "github": "https://github.com/jean-jawed/RewindProtocol"
@@ -295,12 +354,19 @@
         "moyenne": "Jeu de tir à la première personne en 3D",
         "longue": "Expérience gaming WebGL avec graphismes 3D et contrôles fluides"
       },
-      "technologies": ["Three.js", "WebGL", "JavaScript", "3D Graphics"],
+      "technologies": [
+        "Three.js",
+        "WebGL",
+        "JavaScript",
+        "3D Graphics"
+      ],
       "liens": {
         "projet": "#",
         "github": "#"
       },
-      "badges": ["Coming Soon"],
+      "badges": [
+        "Coming Soon"
+      ],
       "ordre": 4,
       "phare": false
     },
@@ -317,7 +383,12 @@
         "moyenne": "Dashboard financier avec données live",
         "longue": "Application de monitoring des marchés boursiers avec alertes et visualisations temps réel"
       },
-      "technologies": ["React", "WebSocket", "Chart.js", "Real-time Data"],
+      "technologies": [
+        "React",
+        "WebSocket",
+        "Chart.js",
+        "Real-time Data"
+      ],
       "liens": {
         "projet": "https://marketwatch-roan.vercel.app/",
         "github": "https://github.com/jean-jawed/MarketWatch"
@@ -339,7 +410,13 @@
         "moyenne": "Logiciel desktop pour télécharger, transcrire et résumer n'importe quelle vidéo en ligne",
         "longue": "VideoSynthesis permet de récupérer des vidéos de n'importe quelle plateforme, d'extraire l'audio, de transcrire automatiquement le contenu et de générer des résumés intelligents. Sans limite de durée ni de quantité. 100% gratuit et open source."
       },
-      "technologies": ["Python", "Whisper", "FFmpeg", "yt-dlp", "PyQt"],
+      "technologies": [
+        "Python",
+        "Whisper",
+        "FFmpeg",
+        "yt-dlp",
+        "PyQt"
+      ],
       "liens": {
         "download": "VideoSynthesis.html",
         "github": "https://github.com/Jean-Jawed/VideoSynthesis"
@@ -361,12 +438,19 @@
         "moyenne": "IA conversationnelle reproduisant des styles d'écriture",
         "longue": "Chatbot utilisant le NLP pour imiter le style de conversation de différentes personnes"
       },
-      "technologies": ["Deepseek API", "NLP", "JavaScript", "WebSocket"],
+      "technologies": [
+        "Deepseek API",
+        "NLP",
+        "JavaScript",
+        "WebSocket"
+      ],
       "liens": {
         "projet": "https://talklikethem.fr",
         "github": "https://github.com/jean-jawed/TalkLikeThem"
       },
-      "badges": ["Coming soon"],
+      "badges": [
+        "Coming soon"
+      ],
       "ordre": 1,
       "phare": false
     },
@@ -383,9 +467,16 @@
         "moyenne": "Application desktop de prédiction des marchés. A télécharger",
         "longue": "Outil Python utilisant le machine learning pour anticiper les évolutions des actifs financiers"
       },
-      "technologies": ["Python", "Machine Learning", "Pandas", "Scikit-learn"],
+      "technologies": [
+        "Python",
+        "Machine Learning",
+        "Pandas",
+        "Scikit-learn"
+      ],
       "liens": {},
-      "badges": ["Coming Soon"],
+      "badges": [
+        "Coming Soon"
+      ],
       "ordre": 2,
       "phare": true
     },
@@ -402,7 +493,12 @@
         "moyenne": "Modèle de prédiction des îlots de chaleur",
         "longue": "Système ML prédisant les variations de température dans les zones urbaines"
       },
-      "technologies": ["Python", "Machine Learning", "Weather API", "Data Analysis"],
+      "technologies": [
+        "Python",
+        "Machine Learning",
+        "Weather API",
+        "Data Analysis"
+      ],
       "liens": {
         "projet": "https://github.com/jean-jawed/PrediktCityHeat",
         "github": "https://github.com/jean-jawed/PrediktCityHeat"
@@ -424,7 +520,12 @@
         "moyenne": "Environnement d'apprentissage interactif SQL",
         "longue": "Plateforme web permettant de s'exercer aux requêtes SQL avec éditeur et base de données intégrée"
       },
-      "technologies": ["SQLite", "JavaScript", "Monaco Editor", "Web SQL"],
+      "technologies": [
+        "SQLite",
+        "JavaScript",
+        "Monaco Editor",
+        "Web SQL"
+      ],
       "liens": {
         "projet": "https://jean-jawed.github.io/SQL-Practice",
         "github": "https://github.com/jean-jawed/SQL-Practice"
@@ -446,7 +547,12 @@
         "moyenne": "Outil de visualisation et exploration de BDD",
         "longue": "Application desktop pour explorer et analyser les structures de bases de données"
       },
-      "technologies": ["Python", "SQL", "GUI", "Database Management"],
+      "technologies": [
+        "Python",
+        "SQL",
+        "GUI",
+        "Database Management"
+      ],
       "liens": {
         "github": "https://github.com/jean-jawed/DBReader"
       },
@@ -467,7 +573,12 @@
         "moyenne": "Solution de visualisation de données modulaire",
         "longue": "Dashboard configurable pour afficher différentes métriques et KPI avec graphiques interactifs"
       },
-      "technologies": ["D3.js", "Chart.js", "API REST", "JavaScript"],
+      "technologies": [
+        "D3.js",
+        "Chart.js",
+        "API REST",
+        "JavaScript"
+      ],
       "liens": {
         "projet": "https://jean-jawed.github.io/Dashboard-Universel",
         "github": "https://github.com/jean-jawed/Dashboard-Universel"
@@ -489,9 +600,16 @@
         "moyenne": "API agrégateur d'événements culturels",
         "longue": "Service web collectant et centralisant les événements culturels marseillais"
       },
-      "technologies": ["Python", "BeautifulSoup", "Selenium", "API REST"],
+      "technologies": [
+        "Python",
+        "BeautifulSoup",
+        "Selenium",
+        "API REST"
+      ],
       "liens": {},
-      "badges": ["Coming Soon"],
+      "badges": [
+        "Coming Soon"
+      ],
       "ordre": 4,
       "phare": false
     },
@@ -508,7 +626,12 @@
         "moyenne": "Jeu mobile utilisant la commande vocale",
         "longue": "Jeu Android où le joueur contrôle le vaisseau par commandes vocales dans un environnement spatial"
       },
-      "technologies": ["Kotlin", "Speech API", "Android", "Game Development"],
+      "technologies": [
+        "Kotlin",
+        "Speech API",
+        "Android",
+        "Game Development"
+      ],
       "liens": {
         "projet": "https://spacegame.fr"
       },
@@ -529,7 +652,12 @@
         "moyenne": "Application de relaxation et méditation",
         "longue": "Outil de bien-utilisant les sons binauraux et fréquences spécifiques pour la détente"
       },
-      "technologies": ["Kotlin", "Audio Processing", "Android", "Material Design"],
+      "technologies": [
+        "Kotlin",
+        "Audio Processing",
+        "Android",
+        "Material Design"
+      ],
       "liens": {
         "projet": "https://neuroharmonics.fr"
       },
@@ -550,7 +678,12 @@
         "moyenne": "Adaptation mobile d'un jeu de société populaire",
         "longue": "Jeu Android reprenant les mécaniques d'un jeu de cartes classique avec mode multijoueur"
       },
-      "technologies": ["Kotlin", "Game Logic", "Android", "Multiplayer"],
+      "technologies": [
+        "Kotlin",
+        "Game Logic",
+        "Android",
+        "Multiplayer"
+      ],
       "liens": {
         "projet": "https://42lejeu.fr"
       },
@@ -571,11 +704,18 @@
         "moyenne": "Application Android de rééquilibrage financier",
         "longue": "Version mobile de l'outil de gestion des dépenses partagées avec synchronisation cloud"
       },
-      "technologies": ["Kotlin", "Room DB", "Android", "Material Design"],
+      "technologies": [
+        "Kotlin",
+        "Room DB",
+        "Android",
+        "Material Design"
+      ],
       "liens": {
         "github": "https://github.com/jean-jawed/Equiflow-Android"
       },
-      "badges": ["Coming soon"],
+      "badges": [
+        "Coming soon"
+      ],
       "ordre": 4,
       "phare": false
     },
@@ -592,9 +732,16 @@
         "moyenne": "Bibliothèque de workflows d'automatisation",
         "longue": "Collection de workflows n8n prêts à l'emploi pour automatiser des processus métier"
       },
-      "technologies": ["n8n", "Automation", "APIs", "Workflow"],
+      "technologies": [
+        "n8n",
+        "Automation",
+        "APIs",
+        "Workflow"
+      ],
       "liens": {},
-      "badges": ["Coming Soon"],
+      "badges": [
+        "Coming Soon"
+      ],
       "ordre": 1,
       "phare": false
     },
@@ -611,9 +758,16 @@
         "moyenne": "Système d'agents IA spécialisés",
         "longue": "Framework d'orchestration d'agents IA utilisant LangChain pour des tâches complexes"
       },
-      "technologies": ["Python", "LangChain", "AI Agents", "LLM"],
+      "technologies": [
+        "Python",
+        "LangChain",
+        "AI Agents",
+        "LLM"
+      ],
       "liens": {},
-      "badges": ["Coming Soon"],
+      "badges": [
+        "Coming Soon"
+      ],
       "ordre": 2,
       "phare": false
     },
@@ -630,7 +784,12 @@
         "moyenne": "Détection et suivi des mouvements corporels",
         "longue": "Application Python utilisant MediaPipe pour le tracking en temps réel des poses et gestes"
       },
-      "technologies": ["Python", "MediaPipe", "Computer Vision", "OpenCV"],
+      "technologies": [
+        "Python",
+        "MediaPipe",
+        "Computer Vision",
+        "OpenCV"
+      ],
       "liens": {
         "github": "https://github.com/jean-jawed/CamTrack"
       },
@@ -651,7 +810,12 @@
         "moyenne": "Démo web de computer vision",
         "longue": "Application web démontrant les capacités de MediaPipe pour la détection de poses"
       },
-      "technologies": ["JavaScript", "Vercel", "MediaPipe", "Serverless"],
+      "technologies": [
+        "JavaScript",
+        "Vercel",
+        "MediaPipe",
+        "Serverless"
+      ],
       "liens": {
         "projet": "https://camtracktest.vercel.app",
         "github": "https://github.com/jean-jawed/CamTrackTest"
@@ -673,7 +837,12 @@
         "moyenne": "Bibliothèque de performances musicales algorithmiques",
         "longue": "Collection de sets de musique électronique générés via live coding avec Tidal Cycles"
       },
-      "technologies": ["Tidal Cycles", "Haskell", "SuperCollider", "Live Coding"],
+      "technologies": [
+        "Tidal Cycles",
+        "Haskell",
+        "SuperCollider",
+        "Live Coding"
+      ],
       "liens": {
         "github": "https://github.com/jean-jawed/tidal-sets"
       },
@@ -694,7 +863,12 @@
         "moyenne": "Démonstration de live coding musical",
         "longue": "Vidéo de performance utilisant Tidal Cycles pour créer de la musique électronique en temps réel"
       },
-      "technologies": ["Live Performance", "Video", "Tidal Cycles", "Music Production"],
+      "technologies": [
+        "Live Performance",
+        "Video",
+        "Tidal Cycles",
+        "Music Production"
+      ],
       "liens": {
         "projet": "https://youtube.com/playlist?list=..."
       },
