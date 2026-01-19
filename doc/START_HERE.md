@@ -1,6 +1,6 @@
-# 🚀 Portfolio Javed Tahir - Commencez ici !
+# 🚀 Portfolio Jawed Tahir - Commencez ici !
 
-Bienvenue dans le projet Portfolio Javed Tahir avec design Netflix moderne.
+Bienvenue dans le projet Portfolio Jawed Tahir avec design Netflix moderne.
 
 ## 📚 Quelle documentation lire ?
 

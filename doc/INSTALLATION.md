@@ -1,6 +1,6 @@
 # Installation et mise en place
 
-Guide rapide pour déployer le portfolio Javed Tahir.
+Guide rapide pour déployer le portfolio Jawed Tahir.
 
 ## 📦 Contenu du package
 

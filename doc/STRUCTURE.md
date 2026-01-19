@@ -1,6 +1,6 @@
 # Structure du projet
 
-Documentation complète de l'architecture du portfolio Javed Tahir.
+Documentation complète de l'architecture du portfolio Jawed Tahir.
 
 ## 📁 Arborescence complète
 

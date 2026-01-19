@@ -1,4 +1,4 @@
-# Portfolio Javed Tahir - Documentation
+# Portfolio Jawed Tahir - Documentation
 
 Site portfolio professionnel avec design Netflix moderne et architecture de données centralisée en JSON.
 
