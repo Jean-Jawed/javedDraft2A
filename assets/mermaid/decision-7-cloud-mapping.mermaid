@@ -1,0 +1,96 @@
+flowchart LR
+    subgraph CLOUD["☁️ CLOUD SÉLECTIONNÉ"]
+        AWS["AWS"]
+        GCP["GCP"]
+        AZURE["Azure"]
+        MULTI["Multi-cloud"]
+        ONPREM["On-premise"]
+    end
+
+    subgraph MAPPING["🗺️ MAPPING DES OUTILS"]
+        subgraph ROW1["Streaming"]
+            AWS1["Kinesis"]
+            GCP1["Pub/Sub + Dataflow"]
+            AZ1["Event Hubs"]
+            MU1["Kafka"]
+            OP1["Kafka"]
+        end
+        
+        subgraph ROW2["Batch"]
+            AWS2["AWS Glue"]
+            GCP2["Dataproc"]
+            AZ2["Data Factory"]
+            MU2["Airflow"]
+            OP2["Airflow"]
+        end
+        
+        subgraph ROW3["Data Lake"]
+            AWS3["S3 + Lake Formation"]
+            GCP3["GCS + Dataplex"]
+            AZ3["ADLS + Fabric"]
+            MU3["Delta Lake / Iceberg"]
+            OP3["MinIO + Delta"]
+        end
+        
+        subgraph ROW4["Warehouse"]
+            AWS4["Redshift"]
+            GCP4["BigQuery"]
+            AZ4["Synapse"]
+            MU4["Snowflake"]
+            OP4["ClickHouse / Trino"]
+        end
+        
+        subgraph ROW5["NoSQL"]
+            AWS5["DynamoDB"]
+            GCP5["Firestore / Bigtable"]
+            AZ5["Cosmos DB"]
+            MU5["MongoDB Atlas"]
+            OP5["MongoDB / Cassandra"]
+        end
+        
+        subgraph ROW6["Search"]
+            AWS6["OpenSearch"]
+            GCP6["Vertex AI Search"]
+            AZ6["Cognitive Search"]
+            MU6["Elasticsearch"]
+            OP6["Elasticsearch"]
+        end
+        
+        subgraph ROW7["Compute"]
+            AWS7["EMR / Spark"]
+            GCP7["Dataproc Spark"]
+            AZ7["Databricks / HDInsight"]
+            MU7["Databricks"]
+            OP7["Apache Spark"]
+        end
+        
+        subgraph ROW8["Serverless"]
+            AWS8["Lambda + Athena"]
+            GCP8["Functions + BigQuery"]
+            AZ8["Functions + Synapse"]
+            MU8["dbt + Snowflake"]
+            OP8["Trino + dbt"]
+        end
+        
+        subgraph ROW9["ML"]
+            AWS9["SageMaker"]
+            GCP9["Vertex AI"]
+            AZ9["Azure ML"]
+            MU9["MLflow + Databricks"]
+            OP9["Kubeflow"]
+        end
+        
+        subgraph ROW10["BI"]
+            AWS10["QuickSight"]
+            GCP10["Looker"]
+            AZ10["Power BI"]
+            MU10["Tableau / Metabase"]
+            OP10["Superset / Metabase"]
+        end
+    end
+
+    AWS --> AWS1 & AWS2 & AWS3 & AWS4 & AWS5 & AWS6 & AWS7 & AWS8 & AWS9 & AWS10
+    GCP --> GCP1 & GCP2 & GCP3 & GCP4 & GCP5 & GCP6 & GCP7 & GCP8 & GCP9 & GCP10
+    AZURE --> AZ1 & AZ2 & AZ3 & AZ4 & AZ5 & AZ6 & AZ7 & AZ8 & AZ9 & AZ10
+    MULTI --> MU1 & MU2 & MU3 & MU4 & MU5 & MU6 & MU7 & MU8 & MU9 & MU10
+    ONPREM --> OP1 & OP2 & OP3 & OP4 & OP5 & OP6 & OP7 & OP8 & OP9 & OP10

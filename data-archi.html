@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Architecture - Diagnostic & Schémas | Jawed Tahir</title>
+    <meta name="description" content="Outil de diagnostic d'architecture data : identifiez la stack idéale pour vos besoins en ingestion, stockage, traitement et visualisation de données.">
+    <meta name="keywords" content="architecture data, data engineering, data lake, data warehouse, ETL, streaming, cloud, AWS, GCP, Azure">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/data-archi.css">
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="data-bg-grid"></div>
+    <div class="data-bg-gradient"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="Jawed Tahir Logo">
+                </a>
+                <nav class="header__nav" id="navMenu">
+                    <a href="index.html" class="header__nav-link">Accueil</a>
+                    <a href="projets.html" class="header__nav-link">Projets</a>
+                    <a href="skills.html" class="header__nav-link">Compétences</a>
+                    <a href="produits.html" class="header__nav-link">Solutions</a>
+                    <a href="about.html" class="header__nav-link">À propos</a>
+                    <a href="contact.html" class="header__nav-link">Contact</a>
+                </nav>
+                <button class="header__burger" id="burgerMenu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="data-hero">
+        <div class="container">
+            <div class="data-hero__content">
+                <div class="data-hero__icon">⚡</div>
+                <h1 class="data-hero__title">Data Architecture</h1>
+                <p class="data-hero__subtitle">
+                    Construire une architecture data robuste est un défi stratégique. 
+                    Découvrez les enjeux clés, obtenez un diagnostic personnalisé de votre stack, 
+                    ou explorez les arbres de décision qui guident les choix techniques.
+                </p>
+                <div class="data-cta-group">
+                    <a href="data-archi-selector.html" class="data-btn data-btn--primary">
+                        <span class="data-btn__icon">🎯</span>
+                        Lancer le diagnostic
+                    </a>
+                    <a href="data-archi-schemes.html" class="data-btn data-btn--secondary">
+                        <span class="data-btn__icon">📊</span>
+                        Voir les schémas de décision
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enjeux Section -->
+    <section class="data-section">
+        <div class="container">
+            <h2 class="data-section__title">Les enjeux d'une architecture data moderne</h2>
+            <p class="data-section__subtitle">
+                Une plateforme data bien conçue est le socle de toute stratégie data-driven réussie.
+            </p>
+            
+            <div class="data-cards-grid">
+                <div class="data-card">
+                    <div class="data-card__icon">📈</div>
+                    <h3 class="data-card__title">Scalabilité</h3>
+                    <p class="data-card__desc">
+                        Votre architecture doit pouvoir croître avec vos données : de quelques Go à plusieurs Po, 
+                        sans refonte majeure ni dégradation des performances.
+                    </p>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-card__icon">⚡</div>
+                    <h3 class="data-card__title">Latence & Performance</h3>
+                    <p class="data-card__desc">
+                        Temps réel ou batch ? La latence acceptable dépend de vos cas d'usage : 
+                        dashboards interactifs, alerting, ou rapports hebdomadaires.
+                    </p>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-card__icon">💰</div>
+                    <h3 class="data-card__title">Optimisation des coûts</h3>
+                    <p class="data-card__desc">
+                        Le cloud offre flexibilité mais peut devenir coûteux. 
+                        Un bon design équilibre performance, stockage et compute selon vos besoins réels.
+                    </p>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-card__icon">🛡️</div>
+                    <h3 class="data-card__title">Sécurité & Conformité</h3>
+                    <p class="data-card__desc">
+                        RGPD, HIPAA, PCI-DSS : les contraintes réglementaires imposent encryption, 
+                        audit, masquage des PII et contrôle d'accès granulaire.
+                    </p>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-card__icon">🔄</div>
+                    <h3 class="data-card__title">Flexibilité technologique</h3>
+                    <p class="data-card__desc">
+                        L'écosystème data évolue rapidement. Une architecture modulaire permet 
+                        d'intégrer de nouveaux outils sans tout reconstruire.
+                    </p>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-card__icon">👥</div>
+                    <h3 class="data-card__title">Gouvernance des données</h3>
+                    <p class="data-card__desc">
+                        Catalogue de données, lineage, qualité : sans gouvernance, 
+                        vos données deviennent un marécage inexploitable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layers Architecture -->
+    <section class="data-section" style="background: var(--color-bg-light);">
+        <div class="container">
+            <h2 class="data-section__title">Les couches d'une architecture data</h2>
+            <p class="data-section__subtitle">
+                Chaque couche répond à des besoins spécifiques et nécessite des choix technologiques adaptés.
+            </p>
+            
+            <div class="data-layers">
+                <div class="data-layer">
+                    <div class="data-layer__number">1</div>
+                    <div class="data-layer__content">
+                        <h3 class="data-layer__title">Ingestion</h3>
+                        <p class="data-layer__desc">Collecte des données : streaming temps réel ou batch périodique</p>
+                    </div>
+                    <span class="data-layer__arrow">→</span>
+                </div>
+                
+                <div class="data-arrow-connector">↓</div>
+                
+                <div class="data-layer">
+                    <div class="data-layer__number">2</div>
+                    <div class="data-layer__content">
+                        <h3 class="data-layer__title">Stockage</h3>
+                        <p class="data-layer__desc">Data Lake, Warehouse, NoSQL, Search Engine selon les use cases</p>
+                    </div>
+                    <span class="data-layer__arrow">→</span>
+                </div>
+                
+                <div class="data-arrow-connector">↓</div>
+                
+                <div class="data-layer">
+                    <div class="data-layer__number">3</div>
+                    <div class="data-layer__content">
+                        <h3 class="data-layer__title">Processing</h3>
+                        <p class="data-layer__desc">Transformations distribuées ou serverless, plateforme ML</p>
+                    </div>
+                    <span class="data-layer__arrow">→</span>
+                </div>
+                
+                <div class="data-arrow-connector">↓</div>
+                
+                <div class="data-layer">
+                    <div class="data-layer__number">4</div>
+                    <div class="data-layer__content">
+                        <h3 class="data-layer__title">Serving</h3>
+                        <p class="data-layer__desc">BI & dashboards, APIs temps réel, exports de données</p>
+                    </div>
+                    <span class="data-layer__arrow">→</span>
+                </div>
+            </div>
+            
+            <div class="data-stats">
+                <div class="data-stat">
+                    <div class="data-stat__value">12</div>
+                    <div class="data-stat__label">Questions pour le diagnostic</div>
+                </div>
+                <div class="data-stat">
+                    <div class="data-stat__value">5</div>
+                    <div class="data-stat__label">Clouds supportés</div>
+                </div>
+                <div class="data-stat">
+                    <div class="data-stat__value">50+</div>
+                    <div class="data-stat__label">Outils référencés</div>
+                </div>
+                <div class="data-stat">
+                    <div class="data-stat__value">7</div>
+                    <div class="data-stat__label">Arbres de décision</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why this tool -->
+    <section class="data-section">
+        <div class="container">
+            <h2 class="data-section__title">Pourquoi cet outil ?</h2>
+            <p class="data-section__subtitle">
+                Une aide à la décision pour architectes data, data engineers et décideurs techniques.
+            </p>
+            
+            <div class="data-cards-grid">
+                <div class="data-card">
+                    <div class="data-card__icon">🎯</div>
+                    <h3 class="data-card__title">Diagnostic personnalisé</h3>
+                    <p class="data-card__desc">
+                        Répondez à 12 questions sur vos besoins et contraintes, 
+                        obtenez une recommandation d'architecture adaptée à votre contexte.
+                    </p>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-card__icon">📊</div>
+                    <h3 class="data-card__title">Arbres de décision visuels</h3>
+                    <p class="data-card__desc">
+                        Comprenez la logique derrière chaque choix grâce à des diagrammes 
+                        interactifs qui expliquent les critères de sélection.
+                    </p>
+                </div>
+                
+                <div class="data-card">
+                    <div class="data-card__icon">☁️</div>
+                    <h3 class="data-card__title">Multi-cloud</h3>
+                    <p class="data-card__desc">
+                        AWS, GCP, Azure, multi-cloud ou on-premise : 
+                        les recommandations s'adaptent à votre infrastructure cible.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="data-cta-group" style="margin-top: 3rem;">
+                <a href="data-archi-selector.html" class="data-btn data-btn--primary">
+                    <span class="data-btn__icon">🚀</span>
+                    Commencer le diagnostic
+                </a>
+                <a href="data-archi-schemes.html" class="data-btn data-btn--secondary">
+                    <span class="data-btn__icon">📐</span>
+                    Explorer les schémas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__copyright">© 2025 Jawed Tahir</p>
+                <div class="footer__links">
+                    <a href="index.html" class="footer__link">Accueil</a>
+                    <a href="projets.html" class="footer__link">Projets</a>
+                    <a href="skills.html" class="footer__link">Compétences</a>
+                    <a href="about.html" class="footer__link">À propos</a>
+                    <a href="contact.html" class="footer__link">Contact</a>
+                    <span style="margin: 0 1rem; color: var(--color-secondary);">•</span>
+                    <a href="https://github.com/jean-jawed" target="_blank" rel="noopener" class="footer__link">GitHub</a>
+                    <a href="https://linkedin.com/in/Jawed-tahir" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+flowchart TB
+    subgraph INPUTS["📥 CRITÈRES ÉVALUÉS"]
+        I1["🎯 Use cases"]
+    end
+
+    subgraph BI_DECISION["📊 BI / REPORTING"]
+        QB1{"Use case inclut\nReporting ?"}
+    end
+
+    subgraph BI["✅ BI TOOLS ACTIVÉ"]
+        B1["AWS → QuickSight"]
+        B2["GCP → Looker"]
+        B3["Azure → Power BI"]
+        B4["Multi → Tableau / Metabase"]
+        B5["On-prem → Superset / Metabase"]
+    end
+
+    subgraph API_DECISION["🔌 API LAYER"]
+        QA1{"Use case inclut API ?"}
+    end
+
+    subgraph API["✅ API LAYER ACTIVÉ"]
+        A1["REST APIs"]
+        A2["GraphQL"]
+    end
+
+    subgraph FALLBACK["🔄 FALLBACK"]
+        F1{"Aucun use case\nBI ou API ?"}
+        F2["Défaut → BI Tools"]
+    end
+
+    %% BI decision
+    I1 --> QB1
+    QB1 -->|Oui| BI
+
+    %% API decision
+    I1 --> QA1
+    QA1 -->|Oui| API
+
+    %% Fallback
+    QB1 & QA1 -->|Tous Non| F1
+    F1 -->|Oui| F2

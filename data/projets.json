@@ -531,7 +531,7 @@
         "github": "https://github.com/jean-jawed/SQL-Practice"
       },
       "badges": [],
-      "ordre": 1,
+      "ordre": 2,
       "phare": false
     },
     {
@@ -612,6 +612,32 @@
       ],
       "ordre": 4,
       "phare": false
+    },
+    {
+      "id": "data-architecturer",
+      "titre": "Data Architecturer",
+      "categorie": "data",
+      "images": {
+        "image1": "assets/images/data-architecturer.png",
+        "image2": "assets/images/data-architecturer2.png"
+      },
+      "descriptions": {
+        "courte": "Outil de diagnostic d'architecture data",
+        "moyenne": "Générateur de stack data personnalisée",
+        "longue": "Application interactive permettant de définir ses besoins et d'obtenir une architecture complète (ingestion, stockage, processing, BI) avec mapping cloud."
+      },
+      "technologies": [
+        "JavaScript",
+        "Mermaid.js",
+        "Architecture Data",
+        "Diagnostic Tool"
+      ],
+      "liens": {
+        "projet": "https://javed.fr/data-archi.html"
+      },
+      "badges": [],
+      "ordre": 1,
+      "phare": true
     },
     {
       "id": "spacevox",

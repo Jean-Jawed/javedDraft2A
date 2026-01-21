@@ -1,0 +1,51 @@
+flowchart TB
+    subgraph INPUTS["📥 CRITÈRES ÉVALUÉS"]
+        I1["📊 Volume de données"]
+        I2["📈 Pattern de lecture"]
+        I3["🎯 Use cases"]
+    end
+
+    subgraph COMPUTE_DECISION["⚙️ COMPUTE ENGINE"]
+        QC1{"Volume > 100 TB ?"}
+        QC2{"Pattern = OLAP ?"}
+        QC_OR{"AU MOINS UNE\ncondition remplie ?"}
+    end
+
+    subgraph DISTRIBUTED["✅ DISTRIBUÉ ACTIVÉ"]
+        D1["AWS → EMR / Spark"]
+        D2["GCP → Dataproc Spark"]
+        D3["Azure → Databricks / HDInsight"]
+        D4["Multi → Databricks"]
+        D5["On-prem → Apache Spark"]
+    end
+
+    subgraph SERVERLESS["✅ SERVERLESS ACTIVÉ"]
+        SL1["AWS → Lambda + Athena"]
+        SL2["GCP → Cloud Functions + BigQuery"]
+        SL3["Azure → Functions + Synapse Serverless"]
+        SL4["Multi → dbt Cloud + Snowflake"]
+        SL5["On-prem → Trino + dbt"]
+    end
+
+    subgraph ML_DECISION["🧠 ML PLATFORM"]
+        QM1{"Use case inclut ML ?"}
+    end
+
+    subgraph ML["✅ ML PLATFORM ACTIVÉ"]
+        M1["AWS → SageMaker"]
+        M2["GCP → Vertex AI"]
+        M3["Azure → Azure ML"]
+        M4["Multi → MLflow + Databricks"]
+        M5["On-prem → Kubeflow"]
+    end
+
+    %% Compute decision
+    I1 --> QC1
+    I2 --> QC2
+    QC1 & QC2 --> QC_OR
+    QC_OR -->|Oui| DISTRIBUTED
+    QC_OR -->|Non| SERVERLESS
+
+    %% ML decision
+    I3 --> QM1
+    QM1 -->|Oui| ML

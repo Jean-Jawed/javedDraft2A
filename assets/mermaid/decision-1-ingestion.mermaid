@@ -1,0 +1,46 @@
+flowchart TB
+    subgraph INPUTS["📥 CRITÈRES ÉVALUÉS"]
+        I1["⏱️ Latence requise"]
+        I2["📈 Pattern de lecture"]
+        I3["🎯 Use cases"]
+        I4["✍️ Fréquence d'écriture"]
+    end
+
+    subgraph DECISION["🔥 DÉCISION INGESTION"]
+        Q1{"Latence = temps réel ?"}
+        Q2{"Pattern = temps réel ?"}
+        Q3{"Use case inclut IoT ?"}
+        Q4{"Pattern = batch ?"}
+        Q5{"Use case inclut ETL ?"}
+        Q6{"Aucune condition\nstreaming remplie ?"}
+    end
+
+    subgraph STREAMING["✅ STREAMING ACTIVÉ"]
+        S1["AWS → Kinesis"]
+        S2["GCP → Pub/Sub + Dataflow"]
+        S3["Azure → Event Hubs + Stream Analytics"]
+        S4["Multi/On-prem → Apache Kafka"]
+    end
+
+    subgraph BATCH["✅ BATCH ACTIVÉ"]
+        B1["AWS → AWS Glue"]
+        B2["GCP → Cloud Dataproc"]
+        B3["Azure → Data Factory"]
+        B4["Multi/On-prem → Apache Airflow"]
+    end
+
+    I1 --> Q1
+    I2 --> Q2
+    I3 --> Q3
+    I2 --> Q4
+    I3 --> Q5
+
+    Q1 -->|Oui| STREAMING
+    Q2 -->|Oui| STREAMING
+    Q3 -->|Oui| STREAMING
+
+    Q4 -->|Oui| BATCH
+    Q5 -->|Oui| BATCH
+
+    Q1 & Q2 & Q3 -->|Tous Non| Q6
+    Q6 -->|Oui| BATCH

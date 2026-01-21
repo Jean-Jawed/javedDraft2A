@@ -1,0 +1,61 @@
+flowchart TB
+    subgraph INPUTS["📥 CRITÈRES ÉVALUÉS"]
+        I1["🛡️ Niveau de sécurité"]
+        I2["☁️ Cloud choisi"]
+    end
+
+    subgraph ORCHESTRATION["🔄 ORCHESTRATION — Toujours recommandé"]
+        O1["GCP → Cloud Composer + Dataform"]
+        O2["Azure → Data Factory + Synapse Pipelines"]
+        O3["Autres → Airflow / Dagster / Prefect"]
+    end
+
+    subgraph SECURITY_DECISION["🛡️ SÉCURITÉ"]
+        QSec1{"Niveau = Critical ?\nRGPD, HIPAA, PCI-DSS"}
+        QSec2{"Niveau = High ?\nPII, données financières"}
+        QSec3{"Niveau = Medium ou Basic ?"}
+    end
+
+    subgraph SEC_CRITICAL["✅ CONFORMITÉ COMPLÈTE"]
+        SC1["Privacera"]
+        SC2["Immuta"]
+        SC3["Collibra"]
+        SC4["Alation"]
+        SC5["HashiCorp Vault"]
+    end
+
+    subgraph SEC_HIGH["✅ SÉCURITÉ RENFORCÉE"]
+        SH1["Unity Catalog"]
+        SH2["AWS Lake Formation"]
+        SH3["Azure Purview"]
+        SH4["Atlan"]
+    end
+
+    subgraph SEC_STANDARD["✅ BONNES PRATIQUES"]
+        SS1["IAM Policies"]
+        SS2["KMS"]
+        SS3["CloudTrail / Audit Logs"]
+        SS4["Terraform"]
+    end
+
+    subgraph MONITORING["📈 OBSERVABILITÉ — Toujours recommandé"]
+        MON1["Monte Carlo"]
+        MON2["Great Expectations"]
+        MON3["Datadog"]
+        MON4["OpenTelemetry"]
+    end
+
+    %% Orchestration
+    I2 --> ORCHESTRATION
+
+    %% Security decision
+    I1 --> QSec1
+    I1 --> QSec2
+    I1 --> QSec3
+
+    QSec1 -->|Oui| SEC_CRITICAL
+    QSec2 -->|Oui| SEC_HIGH
+    QSec3 -->|Oui| SEC_STANDARD
+
+    %% Monitoring always
+    I1 --> MONITORING

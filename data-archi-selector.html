@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Data Architecture | Jawed Tahir</title>
+    <meta name="description" content="Répondez à 12 questions pour obtenir une recommandation personnalisée d'architecture data adaptée à vos besoins.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/data-archi.css">
+    <!-- html2pdf.js for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="data-bg-grid"></div>
+    <div class="data-bg-gradient"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="Jawed Tahir Logo">
+                </a>
+                <nav class="header__nav" id="navMenu">
+                    <a href="index.html" class="header__nav-link">Accueil</a>
+                    <a href="projets.html" class="header__nav-link">Projets</a>
+                    <a href="skills.html" class="header__nav-link">Compétences</a>
+                    <a href="produits.html" class="header__nav-link">Solutions</a>
+                    <a href="about.html" class="header__nav-link">À propos</a>
+                    <a href="contact.html" class="header__nav-link">Contact</a>
+                </nav>
+                <button class="header__burger" id="burgerMenu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding-top: 120px; min-height: 100vh; position: relative; z-index: 1;">
+        <div class="container" style="max-width: 900px;">
+            
+            <!-- Back Link -->
+            <a href="data-archi.html" class="data-btn data-btn--secondary" style="margin-bottom: 2rem; display: inline-flex;">
+                ← Retour à Data Architecture
+            </a>
+
+            <!-- Logo & Title -->
+            <header style="text-align: center; margin-bottom: 3rem;">
+                <div class="data-hero__icon" style="margin-bottom: 1rem;">⚡</div>
+                <h1 style="font-size: 2rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--data-cyan), var(--data-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">DataArchitecturer</h1>
+                <p style="color: var(--data-text-secondary); font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">Diagnostic intelligent d'architecture data</p>
+            </header>
+
+            <!-- Question Container -->
+            <div id="questionContainer">
+                <!-- Progress Bar -->
+                <div class="data-progress">
+                    <div class="data-progress__bar">
+                        <div class="data-progress__fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                    <div class="data-progress__text">
+                        <span id="progressLabel">Question 1 sur 12</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                </div>
+
+                <!-- Question Card -->
+                <div class="data-question-card" id="questionCard">
+                    <!-- Questions rendered by JS -->
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="data-nav-buttons">
+                    <button class="data-btn data-btn--secondary" id="prevBtn" onclick="prevQuestion()">
+                        ← Précédent
+                    </button>
+                    <button class="data-btn data-btn--primary" id="nextBtn" onclick="nextQuestion()">
+                        Suivant →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div class="data-loading" id="loadingContainer">
+                <div class="data-loading__spinner"></div>
+                <p class="data-loading__text">Analyse de votre architecture en cours...</p>
+                <p class="data-loading__subtext" id="loadingSubtext">Évaluation des patterns de données</p>
+            </div>
+
+            <!-- Results -->
+            <div class="data-results" id="resultsContainer">
+                <div class="data-results__header">
+                    <h1 class="data-results__title">🎯 Votre Architecture Recommandée</h1>
+                    <p class="data-results__subtitle">Basée sur vos réponses, voici notre recommandation personnalisée</p>
+                </div>
+
+                <div class="data-architecture" id="architectureDiagram">
+                    <!-- Architecture rendered by JS -->
+                </div>
+
+                <div class="data-recommendations" id="recommendations">
+                    <!-- Recommendations rendered by JS -->
+                </div>
+
+                <div class="data-cost-card" id="costCard">
+                    <!-- Cost estimate rendered by JS -->
+                </div>
+
+                <div class="data-action-buttons">
+                    <button class="data-btn data-btn--export" onclick="exportResults()">
+                        📄 Exporter en PDF
+                    </button>
+                    <button class="data-btn data-btn--restart" onclick="restart()">
+                        🔄 Recommencer
+                    </button>
+                    <a href="data-archi-schemes.html" class="data-btn data-btn--secondary">
+                        📊 Voir les schémas
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__copyright">© 2025 Jawed Tahir</p>
+                <div class="footer__links">
+                    <a href="index.html" class="footer__link">Accueil</a>
+                    <a href="projets.html" class="footer__link">Projets</a>
+                    <a href="skills.html" class="footer__link">Compétences</a>
+                    <a href="about.html" class="footer__link">À propos</a>
+                    <a href="contact.html" class="footer__link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/data-archi-selector.js"></script>
+</body>
+
+</html>

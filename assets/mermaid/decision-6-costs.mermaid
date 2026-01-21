@@ -1,0 +1,35 @@
+flowchart TB
+    subgraph INPUTS["📥 CRITÈRES ÉVALUÉS"]
+        I1["💰 Budget mensuel"]
+        I2["📊 Volume de données"]
+    end
+
+    subgraph COST_CALC["💰 CALCUL DES COÛTS"]
+        C1["Base Cost = max(Budget × 0.7, 500€)"]
+        C2["Storage Cost = Volume × 23€/TB"]
+        C3["Compute Cost = Base × 40%"]
+        C4["Network Cost = Base × 15%"]
+        C5["Licenses Cost = Base × 20%"]
+    end
+
+    subgraph RANGE["📊 FOURCHETTE ESTIMÉE"]
+        R1["Minimum = Base × 0.8"]
+        R2["Maximum = Base × 1.3"]
+    end
+
+    subgraph OUTPUT["📤 AFFICHAGE"]
+        O1["Range: Min€ - Max€"]
+        O2["Détail: Storage / Compute / Network / Licenses"]
+    end
+
+    I1 --> C1
+    I2 --> C2
+    C1 --> C3
+    C1 --> C4
+    C1 --> C5
+
+    C1 --> R1
+    C1 --> R2
+
+    R1 & R2 --> O1
+    C2 & C3 & C4 & C5 --> O2

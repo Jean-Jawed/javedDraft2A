@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schémas de Décision Data Architecture | Jawed Tahir</title>
+    <meta name="description"
+        content="Explorez les arbres de décision qui guident les choix d'architecture data : ingestion, stockage, processing, serving et plus.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/data-archi.css">
+    <!-- Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="data-bg-grid"></div>
+    <div class="data-bg-gradient"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/images/logo.png" alt="Jawed Tahir Logo">
+                </a>
+                <nav class="header__nav" id="navMenu">
+                    <a href="index.html" class="header__nav-link">Accueil</a>
+                    <a href="projets.html" class="header__nav-link">Projets</a>
+                    <a href="skills.html" class="header__nav-link">Compétences</a>
+                    <a href="produits.html" class="header__nav-link">Solutions</a>
+                    <a href="about.html" class="header__nav-link">À propos</a>
+                    <a href="contact.html" class="header__nav-link">Contact</a>
+                </nav>
+                <button class="header__burger" id="burgerMenu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="data-hero" style="min-height: 40vh; padding: 6rem 0 2rem;">
+        <div class="container">
+            <div class="data-hero__content">
+                <div class="data-hero__icon">📊</div>
+                <h1 class="data-hero__title">Arbres de Décision</h1>
+                <p class="data-hero__subtitle">
+                    Explorez les schémas qui guident la sélection des composants d'une architecture data.
+                    Chaque diagramme détaille la logique de décision pour une couche spécifique.
+                </p>
+                <div class="data-cta-group">
+                    <a href="data-archi-selector.html" class="data-btn data-btn--primary">
+                        <span class="data-btn__icon">🎯</span>
+                        Lancer le diagnostic
+                    </a>
+                    <a href="data-archi.html" class="data-btn data-btn--secondary">
+                        <span class="data-btn__icon">←</span>
+                        Retour
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs Navigation -->
+    <section class="data-section" style="padding-top: 0;">
+        <div class="container">
+            <div class="data-tabs" id="schemeTabs">
+                <button class="data-tab active" data-scheme="ingestion">🔥 Ingestion</button>
+                <button class="data-tab" data-scheme="storage">💾 Stockage</button>
+                <button class="data-tab" data-scheme="processing">⚙️ Processing</button>
+                <button class="data-tab" data-scheme="serving">📊 Serving</button>
+                <button class="data-tab" data-scheme="recommendations">🛡️ Recommandations</button>
+                <button class="data-tab" data-scheme="costs">💰 Coûts</button>
+                <button class="data-tab" data-scheme="cloudmapping">☁️ Cloud Mapping</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scheme Containers -->
+    <section class="data-section" style="padding-top: 0;">
+        <div class="container">
+
+            <!-- Ingestion -->
+            <div class="data-scheme-full scheme-container" id="scheme-ingestion">
+                <h2 class="data-scheme-full__title">
+                    <span>🔥</span> Décision Ingestion
+                </h2>
+                <p class="data-scheme-full__desc">
+                    Le choix entre streaming et batch dépend des exigences de latence, du pattern de lecture et des cas
+                    d'usage (IoT, ETL).
+                    Si aucune condition streaming n'est remplie, le batch est sélectionné par défaut.
+                </p>
+                <div class="data-scheme-full__content">
+                    <div class="mermaid" id="mermaid-ingestion"></div>
+                </div>
+            </div>
+
+            <!-- Storage -->
+            <div class="data-scheme-full scheme-container" id="scheme-storage" style="display: none;">
+                <h2 class="data-scheme-full__title">
+                    <span>💾</span> Décision Stockage
+                </h2>
+                <p class="data-scheme-full__desc">
+                    Le Data Lake est toujours activé. Le Warehouse, NoSQL et Search Engine sont ajoutés
+                    conditionnellement
+                    selon le type de données, les patterns de lecture et les cas d'usage spécifiques.
+                </p>
+                <div class="data-scheme-full__content">
+                    <div class="mermaid" id="mermaid-storage"></div>
+                </div>
+            </div>
+
+            <!-- Processing -->
+            <div class="data-scheme-full scheme-container" id="scheme-processing" style="display: none;">
+                <h2 class="data-scheme-full__title">
+                    <span>⚙️</span> Décision Processing
+                </h2>
+                <p class="data-scheme-full__desc">
+                    Le choix entre traitement distribué et serverless dépend du volume de données et du pattern
+                    analytique.
+                    La plateforme ML est ajoutée si le cas d'usage le nécessite.
+                </p>
+                <div class="data-scheme-full__content">
+                    <div class="mermaid" id="mermaid-processing"></div>
+                </div>
+            </div>
+
+            <!-- Serving -->
+            <div class="data-scheme-full scheme-container" id="scheme-serving" style="display: none;">
+                <h2 class="data-scheme-full__title">
+                    <span>📊</span> Décision Serving
+                </h2>
+                <p class="data-scheme-full__desc">
+                    La couche de serving détermine comment les données sont exposées aux utilisateurs finaux :
+                    outils BI pour le reporting, APIs pour les applications temps réel.
+                </p>
+                <div class="data-scheme-full__content">
+                    <div class="mermaid" id="mermaid-serving"></div>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="data-scheme-full scheme-container" id="scheme-recommendations" style="display: none;">
+                <h2 class="data-scheme-full__title">
+                    <span>🛡️</span> Recommandations Transverses
+                </h2>
+                <p class="data-scheme-full__desc">
+                    En plus des couches principales, l'outil recommande des composants transverses :
+                    orchestration (toujours), sécurité (selon le niveau requis) et monitoring (toujours).
+                </p>
+                <div class="data-scheme-full__content">
+                    <div class="mermaid" id="mermaid-recommendations"></div>
+                </div>
+            </div>
+
+            <!-- Costs -->
+            <div class="data-scheme-full scheme-container" id="scheme-costs" style="display: none;">
+                <h2 class="data-scheme-full__title">
+                    <span>💰</span> Estimation des Coûts
+                </h2>
+                <p class="data-scheme-full__desc">
+                    Les coûts sont estimés à partir du budget mensuel et du volume de données.
+                    La répartition type : stockage (~$23/TB), compute (40%), réseau (15%), licences (20%).
+                </p>
+                <div class="data-scheme-full__content">
+                    <div class="mermaid" id="mermaid-costs"></div>
+                </div>
+            </div>
+
+            <!-- Cloud Mapping -->
+            <div class="data-scheme-full scheme-container" id="scheme-cloudmapping" style="display: none;">
+                <h2 class="data-scheme-full__title">
+                    <span>☁️</span> Mapping Cloud → Outils
+                </h2>
+                <p class="data-scheme-full__desc">
+                    Tableau de correspondance entre les 5 environnements cloud supportés et les outils recommandés
+                    pour chaque catégorie de la stack data.
+                </p>
+                <div class="mermaid" id="mermaid-cloudmapping"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="data-section" style="padding-bottom: 4rem;">
+        <div class="container">
+            <div class="data-cta-group" style="justify-content: center;">
+                <a href="data-archi-selector.html" class="data-btn data-btn--primary">
+                    <span class="data-btn__icon">🎯</span>
+                    Obtenir mon diagnostic personnalisé
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__copyright">© 2025 Jawed Tahir</p>
+                <div class="footer__links">
+                    <a href="index.html" class="footer__link">Accueil</a>
+                    <a href="projets.html" class="footer__link">Projets</a>
+                    <a href="skills.html" class="footer__link">Compétences</a>
+                    <a href="about.html" class="footer__link">À propos</a>
+                    <a href="contact.html" class="footer__link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/data-archi-schemes.js"></script>
+</body>
+
+</html>

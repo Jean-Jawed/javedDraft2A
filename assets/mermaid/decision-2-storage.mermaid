@@ -1,0 +1,81 @@
+flowchart TB
+    subgraph INPUTS["📥 CRITÈRES ÉVALUÉS"]
+        I1["🗃️ Type de données"]
+        I2["📈 Pattern de lecture"]
+        I3["⏱️ Latence requise"]
+        I4["🎯 Use cases"]
+    end
+
+    subgraph DATALAKE["💾 DATA LAKE — Toujours activé"]
+        L1["AWS → S3 + Lake Formation"]
+        L2["GCP → Cloud Storage + Dataplex"]
+        L3["Azure → ADLS Gen2 + Fabric"]
+        L4["Multi → Delta Lake / Iceberg"]
+        L5["On-prem → MinIO + Delta Lake"]
+    end
+
+    subgraph WAREHOUSE_DECISION["🏢 DATA WAREHOUSE"]
+        QW1{"Type = structuré ?"}
+        QW2{"Pattern = OLAP ?"}
+        QW3{"Use case inclut Reporting ?"}
+        QW_AND{"AU MOINS UNE\ncondition remplie ?"}
+    end
+
+    subgraph WAREHOUSE["✅ WAREHOUSE ACTIVÉ"]
+        W1["AWS → Redshift"]
+        W2["GCP → BigQuery"]
+        W3["Azure → Synapse Analytics"]
+        W4["Multi → Snowflake"]
+        W5["On-prem → ClickHouse / Trino"]
+    end
+
+    subgraph NOSQL_DECISION["⚡ NoSQL"]
+        QN1{"Type = semi-structuré ?"}
+        QN2{"Latence = temps réel ?"}
+        QN3{"Use case inclut API ?"}
+        QN_AND{"AU MOINS UNE\ncondition remplie ?"}
+    end
+
+    subgraph NOSQL["✅ NoSQL ACTIVÉ"]
+        N1["AWS → DynamoDB"]
+        N2["GCP → Firestore / Bigtable"]
+        N3["Azure → Cosmos DB"]
+        N4["Multi → MongoDB Atlas"]
+        N5["On-prem → MongoDB / Cassandra"]
+    end
+
+    subgraph SEARCH_DECISION["🔍 SEARCH ENGINE"]
+        QS1{"Use case inclut Search ?"}
+        QS2{"Use case inclut Logs ?"}
+        QS_AND{"AU MOINS UNE\ncondition remplie ?"}
+    end
+
+    subgraph SEARCH["✅ SEARCH ACTIVÉ"]
+        SE1["AWS → OpenSearch"]
+        SE2["GCP → Vertex AI Search"]
+        SE3["Azure → Cognitive Search"]
+        SE4["Multi/On-prem → Elasticsearch"]
+    end
+
+    %% Data Lake toujours
+    I1 --> DATALAKE
+
+    %% Warehouse
+    I1 --> QW1
+    I2 --> QW2
+    I4 --> QW3
+    QW1 & QW2 & QW3 --> QW_AND
+    QW_AND -->|Oui| WAREHOUSE
+
+    %% NoSQL
+    I1 --> QN1
+    I3 --> QN2
+    I4 --> QN3
+    QN1 & QN2 & QN3 --> QN_AND
+    QN_AND -->|Oui| NOSQL
+
+    %% Search
+    I4 --> QS1
+    I4 --> QS2
+    QS1 & QS2 --> QS_AND
+    QS_AND -->|Oui| SEARCH
