@@ -259,6 +259,33 @@
       "phare": true
     },
     {
+      "id": "chess-analyzer",
+      "titre": "Chess Analyzer",
+      "categorie": "webapp",
+      "images": {
+        "image1": "assets/images/chess-analyzer.png",
+        "image2": "assets/images/chess-analyzer2.png"
+      },
+      "descriptions": {
+        "courte": "Analyse de parties d'échecs",
+        "moyenne": "Outil open source et gratuit permettant d'analyser ses parties d'échecs",
+        "longue": "Application web permettant d'analyser ses parties d'échecs et de s'améliorer. Analyses gratuites et illimitées basées sur le moteur Stockfish 17"
+      },
+      "technologies": [
+        "bibliothèques javascript",
+        "web workers",
+        "stockfish",
+        "responsive"
+      ],
+      "liens": {
+        "projet": "https://jean-jawed.github.io/chess-analyzer",
+        "github": "https://github.com/Jean-Jawed/chess-analyzer"
+      },
+      "badges": [],
+      "ordre": 1,
+      "phare": false
+    },
+    {
       "id": "financequest",
       "titre": "FinanceQuest",
       "categorie": "webapp",
