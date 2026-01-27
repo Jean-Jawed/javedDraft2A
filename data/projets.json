@@ -256,7 +256,7 @@
       },
       "badges": [],
       "ordre": 7,
-      "phare": true
+      "phare": false
     },
     {
       "id": "chess-analyzer",
@@ -272,9 +272,10 @@
         "longue": "Application web permettant d'analyser ses parties d'échecs et de s'améliorer. Analyses gratuites et illimitées basées sur le moteur Stockfish 17"
       },
       "technologies": [
-        "bibliothèques javascript",
+        "chess.js",
         "web workers",
         "stockfish",
+        "jquery",
         "responsive"
       ],
       "liens": {
@@ -505,7 +506,7 @@
         "Coming Soon"
       ],
       "ordre": 2,
-      "phare": true
+      "phare": false
     },
     {
       "id": "prediktcityheat",

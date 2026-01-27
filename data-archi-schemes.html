@@ -89,6 +89,12 @@
     <section class="data-section" style="padding-top: 0;">
         <div class="container">
 
+            <!-- Global Scheme Controls / Info -->
+            <div
+                style="text-align: right; margin-bottom: 0.5rem; color: var(--data-text-secondary); font-size: 0.8rem; opacity: 0.7;">
+                Powered by <a href="https://mermaid.js.org/" target="_blank" style="text-decoration: underline;">Mermaid
+                    JS</a>
+            </div>
             <!-- Ingestion -->
             <div class="data-scheme-full scheme-container" id="scheme-ingestion">
                 <h2 class="data-scheme-full__title">
@@ -188,6 +194,14 @@
                 <div class="mermaid" id="mermaid-cloudmapping"></div>
             </div>
 
+        </div>
+
+        <!-- Download Container (Dynamic) -->
+        <div class="container" style="text-align: center; margin-top: 2rem;">
+            <a href="#" id="downloadSchemeBtn" class="data-btn data-btn--secondary" download>
+                <span class="data-btn__icon">⬇️</span>
+                Télécharger le schéma (.mermaid)
+            </a>
         </div>
     </section>
 

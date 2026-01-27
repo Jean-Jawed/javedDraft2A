@@ -77,9 +77,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+
     // Tab navigation
     const tabs = document.querySelectorAll('.data-tab');
     const containers = document.querySelectorAll('.scheme-container');
+    const downloadBtn = document.getElementById('downloadSchemeBtn');
+
+    function updateDownloadLink(scheme) {
+        if (downloadBtn && schemeFiles[scheme]) {
+            downloadBtn.href = schemeFiles[scheme];
+            // Optional: Update filename for download attribute
+            const filename = schemeFiles[scheme].split('/').pop();
+            downloadBtn.setAttribute('download', filename);
+        }
+    }
 
     tabs.forEach(tab => {
         tab.addEventListener('click', async function () {
@@ -88,6 +99,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Update active tab
             tabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
+
+            // Update download button
+            updateDownloadLink(targetScheme);
 
             // Show target container, hide others
             for (const container of containers) {
@@ -107,6 +121,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (activeTab) {
         const initialScheme = activeTab.getAttribute('data-scheme');
         const initialContainer = document.getElementById(`scheme-${initialScheme}`);
+
+        // Init download link
+        updateDownloadLink(initialScheme);
+
         if (initialContainer) {
             loadAndRenderScheme(initialScheme, initialContainer);
         }
