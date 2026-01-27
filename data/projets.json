@@ -325,7 +325,7 @@
       },
       "descriptions": {
         "courte": "Gestion dépenses de groupe",
-        "moyenne": "Application de rééquilibrage automatique des comptes",
+        "moyenne": "Application de rééquilibrage automatique des comptes. Alternative open source à Tricount.",
         "longue": "Outil web pour équilibrer les dépenses partagées entre amis ou colocataires avec calculs automatiques"
       },
       "technologies": [
