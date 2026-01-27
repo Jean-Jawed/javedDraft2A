@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos - Jawed Tahir</title>
-    <meta name="description" content="Découvrez mon parcours, mes compétences et ma philosophie de développement">
-    <meta name="keywords" content="développeur, compétences, parcours, philosophie, full-stack">
+    <meta name="description"
+        content="Architecte Solutions & Data Engineer depuis 12 ans. De Genève à Berlin, je conçois des pipelines data et des applications web sur mesure.">
+    <meta name="keywords" content="architecte solutions, data engineer, développeur full-stack, Marseille, freelance">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap"
@@ -18,9 +19,285 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-0QWX01RP7V');
     </script>
+    <style>
+        /* Styles spécifiques à la page About v2 */
+
+        .about-hero-v2 {
+            padding: 10rem 0 4rem 0;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .about-hero-v2__wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-hero-v2__image img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 4px solid var(--color-accent);
+            object-fit: cover;
+        }
+
+        .about-hero-v2__content {
+            max-width: 700px;
+        }
+
+        .about-hero-v2__eyebrow {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .about-hero-v2__title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero-v2__subtitle {
+            font-size: 1.35rem;
+            color: var(--color-secondary);
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        @media(max-width: 768px) {
+            .about-hero-v2 {
+                padding: 7rem 0 3rem 0;
+            }
+
+            .about-hero-v2__wrapper {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-hero-v2__image {
+                display: flex;
+                justify-content: center;
+            }
+
+            .about-hero-v2__image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .about-hero-v2__title {
+                font-size: 2rem;
+            }
+
+            .about-hero-v2__subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Bio blocks */
+        .bio-blocks {
+            padding: 4rem 0;
+        }
+
+        .bio-blocks__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .bio-block {
+            background: var(--color-bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bio-block:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .bio-block__hook {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            color: var(--color-white);
+        }
+
+        .bio-block__text {
+            color: var(--color-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        @media(max-width: 768px) {
+            .bio-blocks__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Parcours section */
+        .parcours {
+            padding: 4rem 0;
+            background: var(--color-bg-light);
+        }
+
+        .parcours__content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .parcours__intro {
+            font-size: 1.1rem;
+            color: var(--color-secondary);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .parcours__highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .parcours__tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--color-bg-lighter);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--color-white);
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+
+        .parcours__tag:hover {
+            border-color: var(--color-accent);
+            background: rgba(229, 9, 20, 0.1);
+        }
+
+        .parcours__tag-year {
+            color: var(--color-accent);
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Philosophy v2 */
+        .philosophy-v2 {
+            padding: 4rem 0;
+        }
+
+        .philosophy-v2__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .philosophy-v2-card {
+            text-align: left;
+            padding: 1.75rem;
+            background: var(--color-bg-light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-v2-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .philosophy-v2-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .philosophy-v2-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .philosophy-v2-card__title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .philosophy-v2-card__text {
+            color: var(--color-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media(max-width: 992px) {
+            .philosophy-v2__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 768px) {
+            .philosophy-v2__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Aside section */
+        .aside-section {
+            padding: 4rem 0;
+            background: var(--color-bg-light);
+        }
+
+        .aside-section__content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .aside-section__title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .aside-section__text {
+            color: var(--color-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .aside-section__interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .aside-section__interest {
+            padding: 0.5rem 1rem;
+            background: var(--color-bg-lighter);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--color-secondary);
+            border: 1px solid var(--color-border);
+        }
+    </style>
 </head>
 
 <body>
@@ -60,193 +337,164 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="about-hero">
+    <section class="about-hero-v2">
         <div class="container">
-            <div class="about-hero__content">
-                <div class="about-hero__image">
+            <div class="about-hero-v2__wrapper">
+                <div class="about-hero-v2__image">
                     <img src="assets/images/logo.png" alt="Jawed Tahir">
                 </div>
-                <div class="about-hero__text">
-                    <h1 class="about-hero__title">Développeur Full Stack passionné par l'innovation</h1>
-                    <p class="about-hero__subtitle">Créateur d'expériences numériques alliant design, performance et
-                        intelligence artificielle</p>
+                <div class="about-hero-v2__content">
+                    <p class="about-hero-v2__eyebrow">Architecte Solutions · Data Engineer · Marseille</p>
+                    <h1 class="about-hero-v2__title">12 ans à concevoir des systèmes qui tiennent la route.</h1>
+                    <p class="about-hero-v2__subtitle">De Genève à Berlin en passant par Montreuil, j'ai construit des
+                        pipelines data, automatisé des lignes de production et formé la prochaine génération de
+                        développeurs. Depuis 10 ans à Marseille, je conçois des architectures pensées pour durer.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bio Section -->
-    <section class="bio">
+    <!-- Bio Blocks -->
+    <section class="bio-blocks">
         <div class="container">
-            <div class="bio__content">
-                <p class="bio__text">Basé à Marseille, je suis un développeur full-stack avec une passion pour la
-                    création de solutions numériques innovantes. Mon approche combine expertise technique et sensibilité
-                    design pour concevoir des applications qui ne se contentent pas de fonctionner, mais qui offrent une
-                    expérience utilisateur exceptionnelle.</p>
-
-                <p class="bio__text">Mon parcours m'a conduit à explorer de multiples domaines du développement : de la
-                    création de sites web modernes aux applications mobiles natives, en passant par l'intelligence
-                    artificielle et l'automatisation. Cette polyvalence me permet d'aborder chaque projet avec une
-                    vision globale et d'identifier les meilleures technologies pour répondre aux besoins spécifiques.
-                </p>
-
-                <p class="bio__text">Au-delà du code, je m'intéresse particulièrement à l'intersection entre technologie
-                    et créativité. Que ce soit à travers des projets de live coding musical avec Tidal, des expériences
-                    de reconnaissance visuelle avec MediaPipe, ou des applications d'intelligence artificielle, je
-                    cherche constamment à repousser les limites du possible et à créer des solutions qui inspirent.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compétences Section -->
-    <section class="skills">
-        <div class="container">
-            <h2 class="section-title">Compétences Techniques</h2>
-            <div class="skills__grid">
-                <div class="skill-card">
-                    <div class="skill-card__icon">🎨</div>
-                    <h3 class="skill-card__title">Frontend</h3>
-                    <div class="skill-card__badges">
-                        <span class="tech-badge">HTML5</span>
-                        <span class="tech-badge">CSS3</span>
-                        <span class="tech-badge">JavaScript ES6+</span>
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">Responsive</span>
-                        <span class="tech-badge">Three.js</span>
-                        <span class="tech-badge">D3.js</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-card__icon">⚙️</div>
-                    <h3 class="skill-card__title">Backend</h3>
-                    <div class="skill-card__badges">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">API REST</span>
-                        <span class="tech-badge">SQL</span>
-                        <span class="tech-badge">SQLite</span>
-                        <span class="tech-badge">Database Design</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-card__icon">📱</div>
-                    <h3 class="skill-card__title">Mobile</h3>
-                    <div class="skill-card__badges">
-                        <span class="tech-badge">Android</span>
-                        <span class="tech-badge">Kotlin</span>
-                        <span class="tech-badge">Android Studio</span>
-                        <span class="tech-badge">Material Design</span>
-                        <span class="tech-badge">PWA</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-card__icon">🤖</div>
-                    <h3 class="skill-card__title">IA & ML</h3>
-                    <div class="skill-card__badges">
-                        <span class="tech-badge">LangChain</span>
-                        <span class="tech-badge">NLP</span>
-                        <span class="tech-badge">Deepseek</span>
-                        <span class="tech-badge">Prompt Engineering</span>
-                        <span class="tech-badge">MediaPipe</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-card__icon">📊</div>
-                    <h3 class="skill-card__title">Data</h3>
-                    <div class="skill-card__badges">
-                        <span class="tech-badge">SQL</span>
-                        <span class="tech-badge">Business Intelligence</span>
-                        <span class="tech-badge">Data Visualization</span>
-                        <span class="tech-badge">Chart.js</span>
-                        <span class="tech-badge">Analytics</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-card__icon">🛠️</div>
-                    <h3 class="skill-card__title">Outils</h3>
-                    <div class="skill-card__badges">
-                        <span class="tech-badge">Git</span>
-                        <span class="tech-badge">GitHub</span>
-                        <span class="tech-badge">n8n</span>
-                        <span class="tech-badge">VS Code</span>
-                        <span class="tech-badge">DevTools</span>
-                        <span class="tech-badge">Agile</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Philosophie Section -->
-    <section class="philosophy">
-        <div class="container">
-            <h2 class="section-title">Ma Philosophie</h2>
-            <div class="philosophy__grid">
-                <div class="philosophy-card">
-                    <svg class="philosophy-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                    </svg>
-                    <h3 class="philosophy-card__title">Simplicité</h3>
-                    <p class="philosophy-card__text">Privilégier le minimalisme et la clarté dans chaque ligne de code
-                        et chaque interface</p>
-                </div>
-
-                <div class="philosophy-card">
-                    <svg class="philosophy-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                    </svg>
-                    <h3 class="philosophy-card__title">Performance</h3>
-                    <p class="philosophy-card__text">Optimiser systématiquement pour offrir des expériences rapides et
-                        fluides</p>
-                </div>
-
-                <div class="philosophy-card">
-                    <svg class="philosophy-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                    <h3 class="philosophy-card__title">Efficacité</h3>
-                    <p class="philosophy-card__text">Respecter les délais tout en maintenant une qualité irréprochable
+            <div class="bio-blocks__grid">
+                <div class="bio-block">
+                    <p class="bio-block__hook">« Mon premier réflexe, c'est de penser système avant de penser code. »
                     </p>
+                    <p class="bio-block__text">Quel problème on résout ? Quelle donnée circule, et comment ? Comment ça
+                        évolue dans deux ans ? Un peu comme aux échecs : on ne joue pas le coup, on joue la position.
+                        Cette approche vient de mes années en industrie, où une mauvaise architecture coûte cher — et
+                        pas qu'en temps.</p>
                 </div>
 
-                <div class="philosophy-card">
-                    <svg class="philosophy-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    <h3 class="philosophy-card__title">Innovation</h3>
-                    <p class="philosophy-card__text">Veille technologique constante pour intégrer les meilleures
-                        solutions</p>
+                <div class="bio-block">
+                    <p class="bio-block__hook">« J'ai commencé par automatiser des bancs de tests chez ABB en Suisse. »
+                    </p>
+                    <p class="bio-block__text">400 appareils testés par jour, 60% de temps gagné. Depuis, j'applique la
+                        même logique partout : identifier les goulots d'étranglement, concevoir des solutions robustes,
+                        mesurer l'impact. Industrie, recherche, formation, TPE — le contexte change, la méthode reste.
+                        Et quand je veux analyser mes parties d'échecs, je code un outil pour ça aussi.</p>
                 </div>
 
-                <div class="philosophy-card">
-                    <svg class="philosophy-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                        <circle cx="9" cy="7" r="4" />
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-                    </svg>
-                    <h3 class="philosophy-card__title">Collaboration</h3>
-                    <p class="philosophy-card__text">Écoute active et communication transparente avec les clients</p>
+                <div class="bio-block">
+                    <p class="bio-block__hook">« Expliquer fait partie du job. »</p>
+                    <p class="bio-block__text">J'ai enseigné les maths au lycée, le Python à des débutants, vulgarisé le
+                        machine learning à des chercheurs. Mes lectures en psychologie m'ont appris que comprendre
+                        comment les gens apprennent change tout. Former, c'est aussi ce qui m'a appris à écrire du code
+                        que d'autres peuvent reprendre — et de la documentation qu'on lit vraiment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcours Section -->
+    <section class="parcours">
+        <div class="container">
+            <div class="parcours__content">
+                <h2 class="section-title">Quelques étapes</h2>
+                <p class="parcours__intro">Prépa maths sup/spé, puis ingénierie physique et informatique à l'INP
+                    Grenoble. Ensuite : une dizaine d'années entre la Suisse, l'Allemagne et la région parisienne avant
+                    de poser mes valises à Marseille. Chaque poste m'a appris quelque chose de différent — et souvent de
+                    façon inattendue.</p>
+
+                <div class="parcours__highlights">
+                    <span class="parcours__tag">
+                        <span class="parcours__tag-year">2010–12</span>
+                        Data Architect · Paris
+                    </span>
+                    <span class="parcours__tag">
+                        <span class="parcours__tag-year">2013</span>
+                        Recherche ML · Genève
+                    </span>
+                    <span class="parcours__tag">
+                        <span class="parcours__tag-year">2013–14</span>
+                        Automatisation · ABB Suisse
+                    </span>
+                    <span class="parcours__tag">
+                        <span class="parcours__tag-year">2015</span>
+                        Dev Web · Berlin
+                    </span>
+                    <span class="parcours__tag">
+                        <span class="parcours__tag-year">2015–16</span>
+                        Analyste Data · Montreuil
+                    </span>
+                    <span class="parcours__tag">
+                        <span class="parcours__tag-year">2020–24</span>
+                        Formateur & Dev · Marseille
+                    </span>
+                    <span class="parcours__tag">
+                        <span class="parcours__tag-year">2025</span>
+                        Freelance · Marseille
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy v2 -->
+    <section class="philosophy-v2">
+        <div class="container">
+            <h2 class="section-title">Ce qui guide mon travail</h2>
+            <div class="philosophy-v2__grid">
+                <div class="philosophy-v2-card">
+                    <h3 class="philosophy-v2-card__title">Moins de code, plus de clarté</h3>
+                    <p class="philosophy-v2-card__text">Chaque ligne qu'on n'écrit pas est une ligne qu'on n'aura pas à
+                        maintenir.</p>
                 </div>
 
-                <div class="philosophy-card">
-                    <svg class="philosophy-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <h3 class="philosophy-card__title">Qualité</h3>
-                    <p class="philosophy-card__text">Code propre, documenté et maintenable sur le long terme</p>
+                <div class="philosophy-v2-card">
+                    <h3 class="philosophy-v2-card__title">La latence, c'est personnel</h3>
+                    <p class="philosophy-v2-card__text">Une app lente, c'est du temps volé à l'utilisateur. Je mesure,
+                        je profile, j'optimise.</p>
+                </div>
+
+                <div class="philosophy-v2-card">
+                    <h3 class="philosophy-v2-card__title">Livrer, puis itérer</h3>
+                    <p class="philosophy-v2-card__text">Mieux vaut un MVP qui tourne qu'une cathédrale qui n'existe que
+                        sur Figma.</p>
+                </div>
+
+                <div class="philosophy-v2-card">
+                    <h3 class="philosophy-v2-card__title">Veille permanente, adoption raisonnée</h3>
+                    <p class="philosophy-v2-card__text">Je teste les nouveaux outils — mais je ne mets en prod que ce
+                        qui a fait ses preuves.</p>
+                </div>
+
+                <div class="philosophy-v2-card">
+                    <h3 class="philosophy-v2-card__title">Documenter pour de vrai</h3>
+                    <p class="philosophy-v2-card__text">Si le README ne suffit pas à onboarder quelqu'un, c'est qu'il
+                        manque quelque chose.</p>
+                </div>
+
+                <div class="philosophy-v2-card">
+                    <h3 class="philosophy-v2-card__title">Maintenable dans 5 ans</h3>
+                    <p class="philosophy-v2-card__text">Le code que j'écris aujourd'hui, c'est peut-être moi qui le
+                        relirai en 2030.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aside Section -->
+    <section class="aside-section">
+        <div class="container">
+            <div class="aside-section__content">
+                <h2 class="aside-section__title">En dehors du code</h2>
+                <p class="aside-section__text">Quand je ne suis pas devant un terminal, je fais de la musique
+                    algorithmique avec Tidal Cycles — du live coding où chaque beat est une ligne de Haskell. Je suis
+                    les lancements de fusées en temps réel, je cherche les quatre meilleurs films de chaque décennie, et
+                    je cartographie mon quartier parce que le Cours Julien méritait son guide interactif. Le dimanche
+                    soir, je suis au Vélodrome ou devant le match. Le reste du temps, j'analyse des parties d'échecs,
+                    j'explore ma ville ou je dévore des bouquins d'histoire économique.</p>
+
+                <div class="aside-section__interests">
+                    <span class="aside-section__interest">Échecs</span>
+                    <span class="aside-section__interest">OM</span>
+                    <span class="aside-section__interest">Live coding musical</span>
+                    <span class="aside-section__interest">Space tech</span>
+                    <span class="aside-section__interest">Cinéma</span>
+                    <span class="aside-section__interest">Psychologie</span>
+                    <span class="aside-section__interest">Littérature</span>
                 </div>
             </div>
         </div>
@@ -256,9 +504,9 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-card">
-                <h2 class="cta-card__title">Vous avez un projet en tête ?</h2>
-                <p class="cta-card__text">Discutons ensemble de vos besoins et de la manière dont je peux vous aider à
-                    concrétiser votre vision.</p>
+                <h2 class="cta-card__title">Un projet en tête ?</h2>
+                <p class="cta-card__text">Pipeline data, application web, automatisation — discutons de ce que je peux
+                    construire pour vous.</p>
                 <a href="contact.html" class="btn btn--primary">Me contacter</a>
             </div>
         </div>
@@ -280,8 +528,7 @@
                         class="footer__link">GitHub</a>
                     <a href="https://linkedin.com/in/Jawed-tahir" target="_blank" rel="noopener"
                         class="footer__link">LinkedIn</a>
-                    <a href="/cdn-cgi/l/email-protection#7913180e1c1d260d1811100b390018111616571f0b"
-                        class="footer__link">Email</a>
+                    <a href="mailto:jawed_tahir@yahoo.fr" class="footer__link">Email</a>
                 </div>
             </div>
         </div>
