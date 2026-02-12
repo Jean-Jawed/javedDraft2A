@@ -193,13 +193,16 @@
       },
       "technologies": [
         "React",
+        "Next.js",
+        "Neon",
+        "PostGreSQL",
+        "Python",
         "NBA API",
-        "Chart.js",
-        "Responsive"
+        "Chart.js"
       ],
       "liens": {
-        "projet": "https://nba-wemby-test-web.vercel.app/",
-        "github": "https://github.com/jean-jawed/nbaWembyTestWeb"
+        "projet": "https://nba-stats-wemby-v2.vercel.app/",
+        "github": "https://github.com/Jean-Jawed/nba-stats-wemby-v2"
       },
       "badges": [],
       "ordre": 1,
