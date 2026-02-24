@@ -353,6 +353,17 @@ function openModal(projet) {
         });
       }
     });
+
+    // Ajouter le bouton de soutien Stripe
+    const supportBtn = document.createElement('a');
+    supportBtn.href = 'https://buy.stripe.com/7sY7sL3vgbox3pPdhJ9AA00';
+    supportBtn.target = '_blank';
+    supportBtn.rel = 'noopener';
+    supportBtn.className = 'btn btn--ghost';
+    supportBtn.title = 'Soutenir ce projet';
+    supportBtn.textContent = '☕';
+    supportBtn.addEventListener('click', (e) => e.stopPropagation());
+    modalActions.appendChild(supportBtn);
   }
 
   // Afficher la modale

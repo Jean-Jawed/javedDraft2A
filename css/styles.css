@@ -1356,3 +1356,62 @@ button {
         padding: 0.5rem 0 0.5rem 1.5rem;
     }
 }
+
+/* ===== Support Section ===== */
+.support-section {
+    padding: 4rem 0;
+}
+
+.support-section__card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--color-bg-lighter);
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+    border-top: 3px solid var(--color-accent);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.support-section__emoji {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.support-section__title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.support-section__text {
+    color: var(--color-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.support-section__btn {
+    font-size: 1rem;
+}
+
+/* ===== Bouton ghost (modale) ===== */
+.btn--ghost {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-secondary);
+    font-size: 1.1rem;
+    padding: 0.875rem 1.25rem;
+}
+
+.btn--ghost:hover {
+    border-color: var(--color-accent);
+    color: var(--color-white);
+    background: rgba(229, 9, 20, 0.1);
+}
+
+@media(max-width:768px) {
+    .support-section__card {
+        padding: 2rem;
+    }
+}
