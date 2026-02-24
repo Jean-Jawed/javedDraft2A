@@ -829,26 +829,29 @@
       "phare": false
     },
     {
-      "id": "camtrack",
-      "titre": "CamTrack",
+      "id": "IRC",
+      "titre": "Image Recognition Center",
       "categorie": "mediapipe",
       "images": {
-        "image1": "assets/images/camtrack.jpg",
-        "image2": "assets/images/camtrack2.jpg"
+        "image1": "assets/images/irc.jpg",
+        "image2": "assets/images/irc2.jpg"
       },
       "descriptions": {
-        "courte": "Tracking mouvements webcam",
+        "courte": "Echantillon de tests de reconnaissance d'image",
         "moyenne": "Détection et suivi des mouvements corporels",
-        "longue": "Application Python utilisant MediaPipe pour le tracking en temps réel des poses et gestes"
+        "longue": "Application Python de démonstration des possibilités de tracking corporels et pouvant servir de squelettes à applications futures plus sophistiquées"
       },
       "technologies": [
-        "Python",
+        "Python 3.11",
         "MediaPipe",
         "Computer Vision",
-        "OpenCV"
+        "React",
+        "FastAPI",
+        "WebSocket"
       ],
       "liens": {
-        "github": "https://github.com/jean-jawed/CamTrack"
+        "projet": "https://image-recognition-center-front.vercel.app/",
+        "github": "https://github.com/Jean-Jawed/image-recognition-center-back"
       },
       "badges": [],
       "ordre": 1,
@@ -877,7 +880,9 @@
         "projet": "https://camtracktest.vercel.app",
         "github": "https://github.com/jean-jawed/CamTrackTest"
       },
-      "badges": [],
+      "badges": [
+        "Coming Soon"
+      ],
       "ordre": 2,
       "phare": false
     },
