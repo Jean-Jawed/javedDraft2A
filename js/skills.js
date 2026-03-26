@@ -1,226 +1,209 @@
-// ===================================
-// CHARGEMENT ET AFFICHAGE DES SKILLS
-// ===================================
+/* ============================================
+   SKILLS.JS — Données + génération dynamique
+   ============================================ */
 
-// Compteur global pour l'alternance gauche/droite
-let alternanceCounter = 0;
+const STACK = [
+  {
+    id: "backend",
+    label: "Backend & Langages",
+    colorClass: "backend",
+    items: [
+      { name: "Python", icon: "devicon-python-plain" },
+      { name: "Go", icon: "devicon-go-plain" },
+      { name: "Node.js", icon: "devicon-nodejs-plain" },
+      { name: "TypeScript", icon: "devicon-typescript-plain" },
+      { name: "FastAPI", icon: "devicon-fastapi-plain" },
+      { name: "Flask", icon: "devicon-flask-original" },
+      { name: "Ruby on Rails", icon: "devicon-rails-plain" },
+      { name: "PHP", icon: "devicon-php-plain" },
+    ]
+  },
+  {
+    id: "data",
+    label: "Data & Bases de données",
+    colorClass: "data",
+    items: [
+      { name: "PostgreSQL", icon: "devicon-postgresql-plain" },
+      { name: "PostGIS", icon: "devicon-postgresql-plain" },
+      { name: "MongoDB", icon: "devicon-mongodb-plain" },
+      { name: "Redis", icon: "devicon-redis-plain" },
+      { name: "Apache NiFi", icon: null, emoji: "⚙️" },
+      { name: "Power BI", icon: null, emoji: "📊" },
+      { name: "SQL Server", icon: "devicon-microsoftsqlserver-plain" },
+      { name: "Oracle", icon: "devicon-oracle-original" },
+    ]
+  },
+  {
+    id: "infra",
+    label: "DevOps & Infra",
+    colorClass: "infra",
+    items: [
+      { name: "Docker", icon: "devicon-docker-plain" },
+      { name: "Kubernetes", icon: "devicon-kubernetes-plain" },
+      { name: "GitHub Actions", icon: "devicon-github-original" },
+      { name: "GitLab CI/CD", icon: "devicon-gitlab-plain" },
+      { name: "Terraform", icon: "devicon-terraform-plain" },
+      { name: "Supabase", icon: null, emoji: "⚡" },
+      { name: "Firebase", icon: "devicon-firebase-plain" },
+    ]
+  },
+  {
+    id: "frontend",
+    label: "Frontend & Web",
+    colorClass: "frontend",
+    items: [
+      { name: "React", icon: "devicon-react-original" },
+      { name: "Next.js", icon: "devicon-nextjs-plain" },
+      { name: "Angular", icon: "devicon-angularjs-plain" },
+      { name: "HTML5", icon: "devicon-html5-plain" },
+      { name: "CSS3", icon: "devicon-css3-plain" },
+      { name: "D3.js", icon: "devicon-d3js-plain" },
+      { name: "WordPress", icon: "devicon-wordpress-plain" },
+    ]
+  },
+  {
+    id: "ai",
+    label: "IA & Machine Learning",
+    colorClass: "ai",
+    items: [
+      { name: "scikit-learn", icon: null, emoji: "🤖" },
+      { name: "NumPy / SciPy", icon: "devicon-numpy-plain" },
+      { name: "MATLAB", icon: "devicon-matlab-plain" },
+      { name: "RAG / LLM", icon: null, emoji: "🧠" },
+      { name: "pgvector", icon: null, emoji: "🔍" },
+      { name: "R", icon: "devicon-r-plain" },
+    ]
+  },
+  {
+    id: "scripting",
+    label: "Scripting & Outils",
+    colorClass: "scripting",
+    items: [
+      { name: "Bash", icon: "devicon-bash-plain" },
+      { name: "PowerShell", icon: null, emoji: "💻" },
+      { name: "VBA", icon: null, emoji: "📋" },
+      { name: "Rust", icon: "devicon-rust-plain" },
+      { name: "QGIS", icon: null, emoji: "🗺️" },
+      { name: "LabVIEW", icon: null, emoji: "🔬" },
+    ]
+  }
+];
 
-// Charger les skills au chargement de la page
-document.addEventListener('DOMContentLoaded', () => {
-  loadSkills();
-  initScrollButton();
-});
+const DOMAINS = [
+  {
+    icon: "🏗️",
+    title: "Architecture Backend & Systèmes distribués",
+    desc: "Conception de microservices, APIs REST/gRPC, messagerie asynchrone (Kafka, RabbitMQ). Choix d'architecture adaptés à la complexité métier, de l'appli monolithique au système distribué.",
+    tags: ["Microservices", "REST", "gRPC", "Event-driven", "API Gateway"],
+    color: "#4A9EFF"
+  },
+  {
+    icon: "🗄️",
+    title: "Data Engineering & Pipelines",
+    desc: "Pipelines ETL/ELT avec Apache NiFi, modélisation PostgreSQL avancée (PostGIS, partitionnement, sharding). Dashboards décisionnels, monitoring qualité des données, Data Contracts.",
+    tags: ["ETL/ELT", "Apache NiFi", "PostgreSQL", "PostGIS", "Power BI"],
+    color: "#34D399"
+  },
+  {
+    icon: "☁️",
+    title: "DevOps & Déploiement Cloud Native",
+    desc: "Containerisation Docker, orchestration Kubernetes, pipelines CI/CD GitLab/GitHub. Infrastructure as Code avec Terraform. Optimisation FinOps et résilience (Circuit Breaker, Rate Limiting).",
+    tags: ["Docker", "Kubernetes", "CI/CD", "Terraform", "GitHub Actions"],
+    color: "#F59E0B"
+  },
+  {
+    icon: "🤖",
+    title: "IA appliquée & Machine Learning",
+    desc: "Intégration LLM, systèmes RAG pour exploitation de données privées, recherche vectorielle (pgvector). Modélisation ML (scikit-learn), traitement statistique avancé en Python et R.",
+    tags: ["RAG", "LLM", "pgvector", "scikit-learn", "NLP"],
+    color: "#F87171"
+  },
+  {
+    icon: "🌐",
+    title: "Web & Applications full stack",
+    desc: "Applications React/Next.js performantes, SEO technique (Core Web Vitals, SSR), CMS headless. Intégrations Stripe, RGPD, Analytics. De la maquette à la mise en production.",
+    tags: ["React", "Next.js", "SSR", "SEO", "Stripe"],
+    color: "#A78BFA"
+  },
+  {
+    icon: "📐",
+    title: "Conseil & Audit technique",
+    desc: "Mentorat Clean Code, veille IA générative, audit digitalisation TPE/PME. Accompagnement dans les choix technologiques, migration legacy, et montée en compétence des équipes.",
+    tags: ["Clean Code", "Audit", "Migration", "Mentorat", "Agile"],
+    color: "#94A3B8"
+  }
+];
 
-// Initialiser le bouton de scroll
-function initScrollButton() {
-  const scrollBtn = document.getElementById('scrollToSkills');
-  if (!scrollBtn) return;
-
-  scrollBtn.addEventListener('click', () => {
-    const skillsSection = document.querySelector('.skills-section');
-    if (skillsSection) {
-      skillsSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-}
-
-async function loadSkills() {
-  const container = document.getElementById('skillsContainer');
+// ---- Génération Stack ----
+function renderStack() {
+  const container = document.getElementById('stackContainer');
   if (!container) return;
 
-  try {
-    const response = await fetch('data/skills.json');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
+  STACK.forEach((domain, i) => {
+    const block = document.createElement('div');
+    block.className = 'sk-domain-block';
+    block.style.animationDelay = `${i * 0.08}s`;
 
-    // Générer les cards pour chaque package
-    data.packages.forEach(pkg => {
-      if (pkg.subPackages) {
-        // Package avec sous-packages
-        container.appendChild(createPackageWithSubpackages(pkg));
-      } else {
-        // Package simple
-        container.appendChild(createSimplePackage(pkg));
+    const header = document.createElement('div');
+    header.className = 'sk-domain-block__header';
+    header.innerHTML = `
+      <div class="sk-domain-block__dot sk-dot--${domain.colorClass}"></div>
+      <span class="sk-domain-block__label">${domain.label}</span>
+      <div class="sk-domain-block__line"></div>
+    `;
+
+    const tags = document.createElement('div');
+    tags.className = 'sk-tags';
+
+    domain.items.forEach(item => {
+      const tag = document.createElement('div');
+      tag.className = `sk-tag sk-tag--${domain.colorClass}`;
+
+      let iconHtml = '';
+      if (item.icon) {
+        iconHtml = `<i class="${item.icon} colored"></i>`;
+      } else if (item.emoji) {
+        iconHtml = `<span>${item.emoji}</span>`;
       }
+
+      tag.innerHTML = `${iconHtml}<span>${item.name}</span>`;
+      tags.appendChild(tag);
     });
 
-  } catch (error) {
-    console.error('Erreur chargement skills:', error);
-    container.innerHTML = `
-      <div style="padding: 3rem; text-align: center; color: var(--color-secondary);">
-        <h3 style="color: var(--color-accent); margin-bottom: 1rem;">Impossible de charger les compétences</h3>
-        <p>Veuillez vérifier que le fichier data/skills.json existe.</p>
-      </div>
+    block.appendChild(header);
+    block.appendChild(tags);
+    container.appendChild(block);
+  });
+}
+
+// ---- Génération Domaines ----
+function renderDomains() {
+  const container = document.getElementById('domainsContainer');
+  if (!container) return;
+
+  DOMAINS.forEach((domain, i) => {
+    const card = document.createElement('div');
+    card.className = 'sk-expertise-card';
+    card.style.setProperty('--card-color', domain.color);
+    card.style.animationDelay = `${i * 0.1}s`;
+
+    const tagsHtml = domain.tags
+      .map(t => `<span class="sk-expertise-mini-tag">${t}</span>`)
+      .join('');
+
+    card.innerHTML = `
+      <span class="sk-expertise-card__icon">${domain.icon}</span>
+      <h3 class="sk-expertise-card__title">${domain.title}</h3>
+      <p class="sk-expertise-card__desc">${domain.desc}</p>
+      <div class="sk-expertise-card__tags">${tagsHtml}</div>
     `;
-  }
-}
 
-// ===================================
-// CRÉATION D'UN PACKAGE AVEC SOUS-PACKAGES
-// ===================================
-
-function createPackageWithSubpackages(pkg) {
-  const card = document.createElement('div');
-  card.className = 'skill-card';
-
-  // Titre principal
-  const title = document.createElement('h2');
-  title.className = 'skill-card__main-title';
-  title.textContent = pkg.name;
-  card.appendChild(title);
-
-  // Container des sous-cards
-  const subcardsContainer = document.createElement('div');
-  subcardsContainer.className = 'skill-card__subcards';
-
-  // Créer chaque sous-package
-  pkg.subPackages.forEach(subPkg => {
-    const subcard = createSubcard(subPkg);
-    subcardsContainer.appendChild(subcard);
+    container.appendChild(card);
   });
-
-  card.appendChild(subcardsContainer);
-  return card;
 }
 
-// ===================================
-// CRÉATION D'UN PACKAGE SIMPLE
-// ===================================
-
-function createSimplePackage(pkg) {
-  const card = document.createElement('div');
-  card.className = 'skill-card';
-
-  // Content (image + texte)
-  const content = createCardContent(pkg.name, pkg.skills, pkg.bigImages, alternanceCounter % 2 === 1);
-  card.appendChild(content);
-
-  // Logos
-  if (pkg.logos && pkg.logos.length > 0) {
-    const logos = createLogosSection(pkg.logos);
-    card.appendChild(logos);
-  }
-
-  alternanceCounter++;
-  return card;
-}
-
-// ===================================
-// CRÉATION D'UNE SUBCARD
-// ===================================
-
-function createSubcard(subPkg) {
-  const subcard = document.createElement('div');
-  subcard.className = 'skill-subcard';
-
-  // Content (image + texte)
-  const content = createCardContent(subPkg.name, subPkg.skills, subPkg.bigImages, alternanceCounter % 2 === 1);
-  subcard.appendChild(content);
-
-  // Logos
-  if (subPkg.logos && subPkg.logos.length > 0) {
-    const logos = createLogosSection(subPkg.logos);
-    subcard.appendChild(logos);
-  }
-
-  alternanceCounter++;
-  return subcard;
-}
-
-// ===================================
-// CRÉATION DU CONTENU (IMAGE + TEXTE)
-// ===================================
-
-function createCardContent(title, skills, images, isRight) {
-  const content = document.createElement('div');
-  content.className = 'skill-card__content';
-  if (isRight) {
-    content.classList.add('skill-card__content--right');
-  }
-
-  // Image (si existe)
-  if (images && images.length > 0) {
-    const imageDiv = document.createElement('div');
-    imageDiv.className = 'skill-card__image';
-    
-    const img = document.createElement('img');
-    img.src = `assets/images/${images[0]}`;
-    img.alt = title;
-    img.loading = 'lazy';
-    
-    // Gestion erreur image
-    img.onerror = function() {
-      this.src = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600';
-    };
-    
-    imageDiv.appendChild(img);
-    content.appendChild(imageDiv);
-  }
-
-  // Texte
-  const textDiv = document.createElement('div');
-  textDiv.className = 'skill-card__text';
-
-  // Titre
-  const titleElem = document.createElement('h3');
-  titleElem.className = 'skill-card__title';
-  titleElem.textContent = title;
-  textDiv.appendChild(titleElem);
-
-  // Liste des skills
-  const skillsList = document.createElement('div');
-  skillsList.className = 'skill-card__skills';
-
-  skills.forEach(skill => {
-    const skillItem = document.createElement('div');
-    skillItem.className = 'skill-item';
-
-    const skillName = document.createElement('div');
-    skillName.className = 'skill-item__name';
-    skillName.textContent = skill.name;
-
-    const skillDesc = document.createElement('div');
-    skillDesc.className = 'skill-item__description';
-    skillDesc.textContent = skill.description;
-
-    skillItem.appendChild(skillName);
-    skillItem.appendChild(skillDesc);
-    skillsList.appendChild(skillItem);
-  });
-
-  textDiv.appendChild(skillsList);
-  content.appendChild(textDiv);
-
-  return content;
-}
-
-// ===================================
-// CRÉATION DE LA SECTION LOGOS
-// ===================================
-
-function createLogosSection(logos) {
-  const logosDiv = document.createElement('div');
-  logosDiv.className = 'skill-card__logos';
-
-  logos.forEach(logoFilename => {
-    const img = document.createElement('img');
-    img.src = `assets/images/${logoFilename}`;
-    img.alt = logoFilename.replace(/\.(png|jpg|svg)/, '');
-    img.className = 'skill-card__logo';
-    img.loading = 'lazy';
-    
-    // Gestion erreur logo
-    img.onerror = function() {
-      this.style.display = 'none';
-    };
-    
-    logosDiv.appendChild(img);
-  });
-
-  return logosDiv;
-}
+// ---- Init ----
+document.addEventListener('DOMContentLoaded', () => {
+  renderStack();
+  renderDomains();
+});

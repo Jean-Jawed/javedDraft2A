@@ -5,22 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compétences - Jawed Tahir</title>
-    <meta name="description" content="Découvrez mes compétences en architecture système, data, DevOps, IA et bien plus">
-    <meta name="keywords" content="compétences, architecture, microservices, DevOps, IA, data">
+    <meta name="description" content="Développeur Full Stack & Architecte Data — Python, Go, PostgreSQL, IA/ML, Cloud Native">
+    <meta name="keywords" content="compétences, Python, Go, PostgreSQL, Docker, Kubernetes, FastAPI, React, Machine Learning, Data Engineering">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/skills.css">
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QWX01RP7V"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-0QWX01RP7V');
     </script>
 </head>
@@ -53,38 +50,74 @@
                     <a href="contact.html" class="header__nav-link">Contact</a>
                 </nav>
                 <button class="header__burger" id="burgerMenu" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Mini -->
-    <section class="hero-mini">
+    <!-- Hero -->
+    <section class="sk-hero">
         <div class="container">
-            <h1>Compétences</h1>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <button class="btn btn--primary btn--cta" id="scrollToSkills">
-                    Comment je travaille
-                    <span style="margin-left: 0.5rem;">↓</span>
-                </button>
-                <a href="/assets/CV_Jawed_TAHIR.pdf" class="btn btn--cta"
-                    style="background-color: white; color: var(--color-accent);" download>
-                    Télécharger mon CV
-                    <span style="margin-left: 0.5rem;">↓</span>
-                </a>
+            <div class="sk-hero__inner">
+                <div class="sk-hero__tag">12 ans d'expérience · Freelance & Consulting</div>
+                <h1 class="sk-hero__title">
+                    Développeur Full Stack<span class="sk-accent">.</span><br>
+                    <span class="sk-hero__title--sub">Architecte Data &amp; IA</span>
+                </h1>
+                <p class="sk-hero__desc">
+                    Je conçois et déploie des systèmes backend robustes, des pipelines data complexes et des applications IA — de l'industriel au SaaS.
+                </p>
+                <div class="sk-hero__actions">
+                    <a href="/assets/CV_Jawed_TAHIR.pdf" class="btn btn--primary" download>
+                        Télécharger le CV <span class="sk-btn-icon">↓</span>
+                    </a>
+                    <a href="#stack" class="btn btn--secondary">
+                        Voir la stack <span class="sk-btn-icon">↓</span>
+                    </a>
+                    <a href="contact.html" class="btn btn--ghost">
+                        Me contacter
+                    </a>
+                </div>
+                <div class="sk-hero__stats">
+                    <div class="sk-stat">
+                        <span class="sk-stat__num">12</span>
+                        <span class="sk-stat__label">ans d'expérience</span>
+                    </div>
+                    <div class="sk-stat__divider"></div>
+                    <div class="sk-stat">
+                        <span class="sk-stat__num">8+</span>
+                        <span class="sk-stat__label">secteurs différents</span>
+                    </div>
+                    <div class="sk-stat__divider"></div>
+                    <div class="sk-stat">
+                        <span class="sk-stat__num">3</span>
+                        <span class="sk-stat__label">langues</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Container -->
-    <section class="skills-section">
+    <!-- Stack -->
+    <section class="sk-stack" id="stack">
         <div class="container">
-            <div id="skillsContainer" class="skills-container">
-                <!-- Cards générées dynamiquement par JS -->
+            <div class="sk-section-header">
+                <h2 class="sk-section-title">Stack technique</h2>
+                <p class="sk-section-desc">Les outils avec lesquels je travaille au quotidien</p>
             </div>
+            <div id="stackContainer" class="sk-stack__grid"></div>
+        </div>
+    </section>
+
+    <!-- Domaines -->
+    <section class="sk-domains" id="expertise">
+        <div class="container">
+            <div class="sk-section-header">
+                <h2 class="sk-section-title">Domaines d'expertise</h2>
+                <p class="sk-section-desc">Ce que je construis concrètement, avec du contexte métier</p>
+            </div>
+            <div id="domainsContainer" class="sk-domains__grid"></div>
         </div>
     </section>
 
@@ -94,12 +127,9 @@
             <div class="footer__content">
                 <p class="footer__copyright">© 2025 Jawed Tahir</p>
                 <div class="footer__links">
-                    <a href="https://github.com/jean-jawed" target="_blank" rel="noopener"
-                        class="footer__link">GitHub</a>
-                    <a href="https://linkedin.com/in/Jawed-tahir" target="_blank" rel="noopener"
-                        class="footer__link">LinkedIn</a>
-                    <a href="/cdn-cgi/l/email-protection#b4ded5c3d1d0ebc0d5dcddc6f4cdd5dcdbdb9ad2c6"
-                        class="footer__link">Email</a>
+                    <a href="https://github.com/jean-jawed" target="_blank" rel="noopener" class="footer__link">GitHub</a>
+                    <a href="https://linkedin.com/in/Jawed-tahir" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
+                    <a href="contact.html" class="footer__link">Email</a>
                 </div>
             </div>
         </div>
@@ -108,5 +138,4 @@
     <script src="js/main.js"></script>
     <script src="js/skills.js"></script>
 </body>
-
 </html>
