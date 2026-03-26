@@ -693,6 +693,52 @@ function resetCarouselInterval() {
 }
 
 // ===================================
+// CHARGEMENT DES LOGOS ENTREPRISES
+// ===================================
+
+async function loadLogos() {
+  const logosTrack = document.getElementById('logosTrack');
+  if (!logosTrack) return;
+
+  try {
+    const response = await fetch('assets/images/entreprises/list.txt');
+    if (!response.ok) throw new Error('Could not fetch list.txt');
+    const text = await response.text();
+    
+    // Parse lines: "filename    Description"
+    const lines = text.split('\n').filter(l => l.trim() !== '');
+    
+    let htmlContent = '';
+    lines.forEach(line => {
+      const parts = line.split(/\s{2,}/); 
+      if (parts.length >= 2) {
+        const filename = parts[0].trim();
+        const description = parts.slice(1).join(' ').trim();
+        htmlContent += `<img src="assets/images/entreprises/${filename}" alt="${description}" class="logos-slider__logo" title="${description}">`;
+      }
+    });
+
+    if(htmlContent) {
+      logosTrack.innerHTML = htmlContent;
+    }
+    
+    // Add scroll logic
+    const btnPrev = document.getElementById('logosPrev');
+    const btnNext = document.getElementById('logosNext');
+    if(btnPrev && btnNext) {
+      btnPrev.addEventListener('click', () => {
+        logosTrack.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+      btnNext.addEventListener('click', () => {
+        logosTrack.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+    }
+  } catch (error) {
+    console.error('Erreur chargement logos:', error);
+  }
+}
+
+// ===================================
 // INITIALISATION AU CHARGEMENT
 // ===================================
 
@@ -700,6 +746,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Charger le carrousel 3D si on est sur la page d'accueil
   if (document.getElementById('carousel3DScene')) {
     loadCarousel3D();
+  }
+
+  // Charger les logos si le conteneur existe
+  if (document.getElementById('logosTrack')) {
+    loadLogos();
   }
 
   // Charger les projets si on est sur la page projets

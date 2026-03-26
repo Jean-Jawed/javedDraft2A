@@ -69,18 +69,68 @@
         <div class="container">
             <div class="hero__content">
                 <h1 class="hero__title">Jawed Tahir<span class="hero__title-dot">.</span></h1>
-                <p class="hero__subtitle">Développeur Full Stack • Web • Mobile • IA</p>
-                <a href="projets.html" class="btn btn--primary hero__cta">
-                    Découvrir mes projets →
-                </a>
+                <p class="hero__subtitle">Développeur Full Stack • Architecte Data • Web • Mobile • IA</p>
+                <div class="hero__visitor">
+                    <p class="hero__visitor-label">Vous êtes —</p>
+                    <div class="hero__visitor-menu">
+                        <a href="skills.html" class="hero__visitor-tab">
+                            <div class="hero__visitor-tab-left">
+                                <span class="hero__visitor-tab-role">Un recruteur</span>
+                                <span class="hero__visitor-tab-dest">→ compétences & CV</span>
+                            </div>
+                            <span class="hero__visitor-tab-arrow">↗</span>
+                        </a>
+                        <a href="produits.html" class="hero__visitor-tab">
+                            <div class="hero__visitor-tab-left">
+                                <span class="hero__visitor-tab-role">Un client</span>
+                                <span class="hero__visitor-tab-dest">→ solutions & tarifs</span>
+                            </div>
+                            <span class="hero__visitor-tab-arrow">↗</span>
+                        </a>
+                        <a href="projets.html" class="hero__visitor-tab">
+                            <div class="hero__visitor-tab-left">
+                                <span class="hero__visitor-tab-role">Juste curieux</span>
+                                <span class="hero__visitor-tab-dest">→ bibliothèque de projets</span>
+                            </div>
+                            <span class="hero__visitor-tab-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Logos Section -->
+    <section class="trusted-by">
+        <div class="container">
+            <h2 class="section-title">Ils m'ont fait confiance</h2>
+            <div class="logos-slider">
+                <div class="logos-slider__container">
+                    <button class="logos-slider__nav" id="logosPrev" aria-label="Précédent">‹</button>
+                    <div class="logos-slider__track" id="logosTrack">
+                        <!-- Logos injectés dynamiquement ici -->
+                    </div>
+                    <button class="logos-slider__nav" id="logosNext" aria-label="Suivant">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Text Section -->
+    <section class="about-text-section">
+        <div class="container">
+            <p class="about-text">
+                De Genève à Berlin en passant par Montreuil, j'ai construit des pipelines data, automatisé des lignes de
+                production et formé la prochaine génération de développeurs. Depuis 10 ans à Marseille, je conçois des
+                architectures pensées pour durer.
+            </p>
         </div>
     </section>
 
     <!-- Carrousel 3D - Projets Phares -->
     <section class="carousel-3d">
         <div class="container">
-            <h2 class="section-title">Projets Phares</h2>
+            <h2 class="section-title">Projets du moment</h2>
             <div class="carousel-3d__wrapper">
                 <div class="carousel-3d__scene" id="carousel3DScene">
                     <!-- Cards générées dynamiquement par JS -->
@@ -96,60 +146,17 @@
         </div>
     </section>
 
-    <!-- Grille des catégories -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="section-title">Explorer par catégorie</h2>
-            <div class="categories__grid">
-                <a href="projets.html#webdesign" class="category-card">
-                    <div class="category-card__icon">🌐</div>
-                    <h3 class="category-card__title">Web Design & Sites</h3>
-                    <p class="category-card__desc">Sites vitrines et plateformes web modernes</p>
-                    <div class="category-card__bar"></div>
-                </a>
-                <a href="projets.html#webapp" class="category-card">
-                    <div class="category-card__icon">🎮</div>
-                    <h3 class="category-card__title">Applications Web Interactives</h3>
-                    <p class="category-card__desc">Expériences web immersives et jeux</p>
-                    <div class="category-card__bar"></div>
-                </a>
-                <a href="projets.html#ia" class="category-card">
-                    <div class="category-card__icon">🤖</div>
-                    <h3 class="category-card__title">IA Learnings & ML</h3>
-                    <p class="category-card__desc">Projets d'intelligence artificielle et machine learning</p>
-                    <div class="category-card__bar"></div>
-                </a>
-                <a href="projets.html#data" class="category-card">
-                    <div class="category-card__icon">📊</div>
-                    <h3 class="category-card__title">Data & Business Intelligence</h3>
-                    <p class="category-card__desc">Analyse de données et tableaux de bord</p>
-                    <div class="category-card__bar"></div>
-                </a>
-                <a href="projets.html#android" class="category-card">
-                    <div class="category-card__icon">📱</div>
-                    <h3 class="category-card__title">Applications Android</h3>
-                    <p class="category-card__desc">Applications mobiles natives Android</p>
-                    <div class="category-card__bar"></div>
-                </a>
-                <a href="projets.html#automation" class="category-card">
-                    <div class="category-card__icon">⚙️</div>
-                    <h3 class="category-card__title">Automatisation & Workflow</h3>
-                    <p class="category-card__desc">Automatisation de tâches et workflows intelligents</p>
-                    <div class="category-card__bar"></div>
-                </a>
-                <a href="projets.html#mediapipe" class="category-card">
-                    <div class="category-card__icon">👁️</div>
-                    <h3 class="category-card__title">MediaPipe Détection d'Image</h3>
-                    <p class="category-card__desc">Reconnaissance visuelle et tracking en temps réel</p>
-                    <div class="category-card__bar"></div>
-                </a>
-                <a href="projets.html#tidal" class="category-card">
-                    <div class="category-card__icon">🎵</div>
-                    <h3 class="category-card__title">Son Live Tidal</h3>
-                    <p class="category-card__desc">Live coding musical et performances sonores</p>
-                    <div class="category-card__bar"></div>
-                </a>
-            </div>
+    <!-- More Projects CTA -->
+    <section class="cta-section">
+        <div class="container" style="text-align: center; margin-bottom: 2rem;">
+            <a href="projets.html" class="btn btn--primary" style="min-width: 250px;">Voir plus de projets</a>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="cta-section">
+        <div class="container" style="text-align: center; margin-bottom: 4rem;">
+            <a href="contact.html" class="btn btn--outline" style="min-width: 250px;">Me contacter</a>
         </div>
     </section>
 

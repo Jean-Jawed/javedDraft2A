@@ -200,7 +200,9 @@ button {
 }
 
 .btn--primary:hover {
-    background: var(--color-accent-hover);
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
     transform: scale(1.05);
 }
 
@@ -213,6 +215,18 @@ button {
 .btn--secondary:hover {
     background: var(--color-white);
     color: var(--color-primary);
+}
+
+.btn--outline {
+    background: var(--color-white);
+    color: var(--color-accent);
+    border: 2px solid var(--color-white);
+}
+
+.btn--outline:hover {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
 }
 
 .hero {
@@ -248,6 +262,169 @@ button {
     margin-top: 2rem;
 }
 
+.hero__visitor {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero__visitor-label {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+}
+
+.hero__visitor-menu {
+    border: 2px solid #1a1a1a;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 360px;
+    background: var(--color-white);
+}
+
+.hero__visitor-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    gap: 48px;
+    border-bottom: 1px solid #1a1a1a;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.hero__visitor-tab:last-child {
+    border-bottom: none;
+}
+
+.hero__visitor-tab:hover {
+    background: #f0f0f0;
+}
+
+.hero__visitor-tab:hover .hero__visitor-tab-role {
+    color: var(--color-accent);
+}
+
+.hero__visitor-tab:hover .hero__visitor-tab-arrow {
+    color: var(--color-accent);
+    transform: translate(2px, -2px);
+}
+
+.hero__visitor-tab-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hero__visitor-tab-role {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.hero__visitor-tab-dest {
+    font-size: 12px;
+    color: #666666;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.04em;
+}
+
+.hero__visitor-tab-arrow {
+    font-size: 18px;
+    color: #1a1a1a;
+    transition: color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+@media(max-width:768px) {
+    .hero__visitor-menu {
+        width: 100%;
+    }
+}
+
+/* Logos Banner and About Text Section Styles */
+.trusted-by {
+    padding: 4rem 0 2rem;
+    overflow: hidden;
+}
+
+.logos-slider {
+    width: 100%;
+    position: relative;
+    padding: 2rem;
+    background: var(--color-white);
+    border-radius: 8px;
+}
+
+.logos-slider__container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.logos-slider__track {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    gap: 4rem;
+    padding: 1rem 0;
+    flex: 1;
+}
+
+.logos-slider__track::-webkit-scrollbar {
+    display: none;
+}
+
+.logos-slider__logo {
+    height: 80px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.logos-slider__nav {
+    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--color-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.logos-slider__nav:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+.about-text-section {
+    padding: 2rem 0 4rem;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--color-secondary);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 @media(max-width:768px) {
     .hero {
         min-height: 40vh;
@@ -259,6 +436,30 @@ button {
 
     .hero__subtitle {
         font-size: 1.2rem;
+    }
+
+    .hero__buttons {
+        flex-direction: column;
+    }
+
+    .hero__buttons .btn {
+        width: 100%;
+    }
+
+    .about-text {
+        font-size: 1.1rem;
+    }
+
+    .logos-slider__nav {
+        display: none;
+    }
+    
+    .logos-slider__track {
+        gap: 2rem;
+    }
+
+    .logos-slider__logo {
+        height: 60px;
     }
 }
 

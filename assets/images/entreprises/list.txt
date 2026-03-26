@@ -1,0 +1,13 @@
+unige.jpg    Université de Genève
+cnim.png    Cnim
+secheron.jpg    ABB Secheron
+ac.jpg    Carle Avocats
+e2c.jpg    e2c Marseille
+js.jpg    Subay Photographies
+airliquide.png    AirLiquide
+VCU_Arts_Qatar.jpg    Virginia Commonwealth University School of the Arts in Qatar
+axens.jpg    Axens
+KulturTech.png    KulturTech Berlin
+nk.png    Nicolas Khatmi Research
+tva.jpg    TVA Engineering
+
