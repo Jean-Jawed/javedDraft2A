@@ -309,12 +309,10 @@
         "Responsive"
       ],
       "liens": {
-        "projet": "https://jean-jawed.github.io/FinanceQuest",
+        "projet": "https://finance-quest-alpha.vercel.app/",
         "github": "https://github.com/jean-jawed/FinanceQuest"
       },
-      "badges": [
-        "Coming Soon"
-      ],
+      "badges": [],
       "ordre": 1,
       "phare": false
     },

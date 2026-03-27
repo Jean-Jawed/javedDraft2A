@@ -2,185 +2,307 @@
    PRODUITS PAGE - Styles spécifiques
    ============================================ */
 
-/* CTA Navigation Buttons */
-.products-nav {
-    padding: 2rem 0 3rem;
-    background: var(--color-bg);
+/* Hero Mini */
+.hero-mini {
+    margin-top: 80px;
+    padding: 4rem 0 2rem;
+    text-align: center;
 }
 
-.products-nav__grid {
+.hero-mini h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-white);
+}
+
+.hero-mini p {
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+}
+
+/* ============================================
+   TABS NAVIGATION
+   ============================================ */
+
+.solutions-tabs {
+    padding: 2rem 0 0;
+    position: sticky;
+    top: 70px;
+    z-index: 10;
+    background: linear-gradient(180deg, var(--color-primary) 85%, transparent 100%);
+    padding-bottom: 1px; /* évite le flash de fond */
+}
+
+.solutions-tabs__nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 0.75rem;
+    padding-bottom: 1.5rem;
 }
 
-.products-nav__btn {
-    background: var(--color-bg-lighter);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 1.5rem 1rem;
-    font-size: 1rem;
-    color: var(--color-white);
-    cursor: pointer;
-    transition: all 0.3s ease;
+.solutions-tabs__btn {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    padding: 1.25rem 1rem;
+    background: var(--color-bg-light);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: var(--color-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
     text-align: center;
 }
 
-.products-nav__btn:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(244, 6, 18, 0.3);
+.solutions-tabs__btn:hover {
+    background: var(--color-bg-lighter);
+    color: var(--color-white);
+    border-color: var(--color-border);
 }
 
-.products-nav__emoji {
-    font-size: 2.5rem;
+.solutions-tabs__btn--active {
+    background: var(--color-bg-lighter);
+    border-color: var(--color-accent);
+    color: var(--color-white);
+    box-shadow: 0 4px 16px rgba(229, 9, 20, 0.2);
+}
+
+.solutions-tabs__emoji {
+    font-size: 1.75rem;
     line-height: 1;
 }
 
-.products-nav__text {
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-/* Section principale */
-.products-section {
-    padding: 4rem 0;
-    background: var(--color-bg);
-}
-
-.products-container {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
+.solutions-tabs__label {
+    font-size: 0.85rem;
+    line-height: 1.3;
 }
 
 /* ============================================
-   PRODUCT CARD - Card principale
+   PANELS
    ============================================ */
 
-.product-card {
-    background: var(--color-bg-lighter);
-    border-radius: 16px;
-    padding: 3rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    scroll-margin-top: 100px; /* Pour le scroll smooth */
+.solutions-panels {
+    padding: 3rem 0 5rem;
 }
 
-/* Header de la card */
-.product-card__header {
+.solutions-panel {
+    display: none;
+    animation: fadeInPanel 0.3s ease;
+}
+
+.solutions-panel--active {
+    display: block;
+}
+
+@keyframes fadeInPanel {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   INTRO : titre + hook + bénéfices
+   ============================================ */
+
+.solutions-panel__intro {
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
     text-align: center;
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.product-card__title {
+.solutions-panel__title {
     font-size: 2rem;
     color: var(--color-white);
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
 }
 
-.product-card__emoji {
-    font-size: 2.5rem;
-}
-
-.product-card__tagline {
-    font-size: 1.1rem;
+.solutions-panel__hook {
+    font-size: 1.05rem;
     color: var(--color-secondary);
     font-style: italic;
+    margin-bottom: 1.75rem;
     line-height: 1.6;
 }
 
-/* ============================================
-   CONTENT - Layout images + services
-   ============================================ */
-
-.product-card__content {
+/* Bénéfices clés */
+.solutions-benefits {
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-/* Bloc image + services */
-.product-block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-/* Alternance droite */
-.product-block--right .product-block__image {
-    order: 2;
-}
-
-.product-block--right .product-block__services {
-    order: 1;
-}
-
-/* Image */
-.product-block__image {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.product-block__image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-}
-
-/* Services */
-.product-block__services {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* Service item */
-.service-item {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.service-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.service-item__name {
-    font-size: 1.2rem;
-    color: var(--color-white);
-    font-weight: 600;
-    margin-bottom: 0.75rem;
+.solutions-benefit {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-white);
 }
 
-.service-item__name::before {
-    content: "▸";
+.solutions-benefit__icon {
+    display: flex;
+    align-items: center;
     color: var(--color-accent);
-    font-size: 1.3rem;
+    flex-shrink: 0;
 }
 
-.service-item__description {
+.solutions-benefit__icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ============================================
+   BANNIÈRE IMAGE
+   ============================================ */
+
+/* Bannière paysage 4/3 — Web et IA */
+.solutions-banner {
+    max-width: 600px;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    margin: 0 auto 2.5rem;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--color-bg-lighter);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.solutions-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.solutions-banner:hover img {
+    transform: scale(1.02);
+}
+
+/* Variante portrait — Mobile (android.png) */
+.solutions-banner--portrait {
+    max-width: 320px;
+    aspect-ratio: 3 / 4;
+}
+
+/* ============================================
+   SERVICE CARDS
+   ============================================ */
+
+.solutions-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--color-bg-light);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 24px rgba(229, 9, 20, 0.1);
+}
+
+/* Badge numéro */
+.service-card__badge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+
+/* Corps texte */
+.service-card__body {
+    padding: 1.75rem 1.75rem 1.5rem;
+    flex: 1;
+}
+
+.service-card__name {
     font-size: 1rem;
+    color: var(--color-white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    line-height: 1.35;
+    padding-right: 2.5rem; /* espace pour le badge */
+}
+
+.service-card__hook {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.service-card__desc {
+    font-size: 0.9rem;
     color: var(--color-secondary);
-    line-height: 1.7;
+    line-height: 1.65;
+}
+
+/* Preview image en bas de card */
+.service-card__preview {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-top: 1px solid var(--color-border);
+    flex-shrink: 0;
+    background: var(--color-bg-lighter);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card__preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-card__preview img {
+    transform: scale(1.04);
+}
+
+/* ============================================
+   CTA PAR PANEL
+   ============================================ */
+
+.solutions-panel__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
 }
 
 /* ============================================
@@ -188,81 +310,72 @@
    ============================================ */
 
 @media (max-width: 968px) {
-    .products-nav__grid {
+    .solutions-tabs__nav {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .product-block {
+    .solutions-services {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    /* Sur mobile, toujours image puis services */
-    .product-block--right .product-block__image,
-    .product-block--right .product-block__services {
-        order: initial;
-    }
-
-    .product-card__title {
-        font-size: 1.6rem;
-    }
-
-    .product-card__emoji {
-        font-size: 2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .products-nav {
-        padding: 1.5rem 0 2rem;
+    .hero-mini {
+        padding: 3rem 0 1.5rem;
     }
 
-    .products-nav__btn {
-        padding: 1.25rem 0.75rem;
+    .hero-mini h1 {
+        font-size: 1.85rem;
     }
 
-    .products-nav__emoji {
-        font-size: 2rem;
-    }
-
-    .products-nav__text {
-        font-size: 0.85rem;
-    }
-
-    .products-section {
-        padding: 2rem 0;
-    }
-
-    .products-container {
-        gap: 3rem;
-    }
-
-    .product-card {
-        padding: 2rem;
-    }
-
-    .product-card__header {
-        margin-bottom: 2rem;
-        padding-bottom: 1.5rem;
-    }
-
-    .product-card__content {
-        gap: 2rem;
-    }
-
-    .product-block__services {
-        gap: 1.5rem;
-    }
-
-    .service-item {
-        padding-bottom: 1.5rem;
-    }
-
-    .service-item__name {
-        font-size: 1.1rem;
-    }
-
-    .service-item__description {
+    .hero-mini p {
         font-size: 0.95rem;
+    }
+
+    .solutions-tabs {
+        top: 70px;
+        padding: 1rem 0 0;
+    }
+
+    .solutions-tabs__btn {
+        padding: 1rem 0.75rem;
+    }
+
+    .solutions-tabs__emoji {
+        font-size: 1.5rem;
+    }
+
+    .solutions-tabs__label {
+        font-size: 0.78rem;
+    }
+
+    .solutions-panel__title {
+        font-size: 1.6rem;
+    }
+
+    .solutions-panel__hook {
+        font-size: 0.95rem;
+    }
+
+    .solutions-benefits {
+        gap: 0.6rem;
+    }
+
+    .solutions-benefit {
+        font-size: 0.82rem;
+        padding: 0.4rem 0.85rem;
+    }
+
+    .solutions-banner {
+        border-radius: 10px;
+    }
+
+    .solutions-panel__cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .solutions-panel__cta .btn {
+        text-align: center;
     }
 }
