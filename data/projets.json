@@ -68,6 +68,33 @@
       "phare": false
     },
     {
+      "id": "portfolio-tatouage",
+      "titre": "Le point d'union - Tatouage",
+      "categorie": "webdesign",
+      "images": {
+        "image1": "assets/images/tatoo1.png",
+        "image2": "assets/images/tatoo2.png"
+      },
+      "descriptions": {
+        "courte": "Site web pour une association de tatouage, esthétique très personnalisée",
+        "moyenne": "Anaïs, Leo, le tatouage et Marseille. Une vitrine à leur image",
+        "longue": "Site vitrine présentant les oeuvres des deux tatours, leur démarche, leur association, et leur futur salon à Marseille."
+      },
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SEO"
+      ],
+      "liens": {
+        "projet": "https://tatouage-portfolio.vercel.app/",
+        "github": ""
+      },
+      "badges": [],
+      "ordre": 2,
+      "phare": false
+    },
+    {
       "id": "jean-plume",
       "titre": "Jean-Plume.fr",
       "categorie": "webdesign",
@@ -205,7 +232,7 @@
         "github": "https://github.com/Jean-Jawed/nba-stats-wemby-v2"
       },
       "badges": [],
-      "ordre": 1,
+      "ordre": 3,
       "phare": false
     },
     {
